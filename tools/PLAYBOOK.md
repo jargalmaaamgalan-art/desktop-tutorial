@@ -11,7 +11,10 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 - **Instagram:** a carousel. Slide 1 is the **PNG** (a still cover, so the grid never shows a black tile). Slides 2 to N are the **MP4** videos. Set `instagramData.type = "POST"`.
 - **Facebook:** a separate post, all slides as **PNG**. Facebook rejects carousels made of several videos (error 500).
 - Both go out at the same date and time, with the same caption.
-- First comment: `Бүртгэл, мэдээлэл: WhatsApp +1 428 880 1826`
+- First comment, Facebook post (links are clickable there):
+  `✅ Үнэгүй SAT тест: https://globalmathprep.academy/test` / `📝 Бүртгүүлэх: https://globalmathprep.academy/join` / `👩‍🏫 Багшийн тухай: https://globalmathprep.academy/about` (three lines)
+- First comment, Instagram post (Instagram never makes links in comments clickable):
+  `✅ Үнэгүй SAT тест, 📝 бүртгэл: profile дээрх линкээр орно уу 👆` / `💬 WhatsApp: +1 428 880 1826` (two lines)
 
 ## Building slides
 - The generators are in `tools/v2`. `gen30.py` is the model for a short lesson post: cover, idea, Bluebook question, answer, end page. Copy it to a new `genNN.py`, change the content, then run `python3 genNN.py --video`. Run it once without `--video` first to check for OVERFLOW.
