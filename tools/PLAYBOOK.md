@@ -24,7 +24,7 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 - Every post is built like a book: a cover with a hook, then content, then an end page with the QR code and class times.
 
 ## Reels
-- GMP brand pill (logo + "Global Math Prep" + "🍁 Канадаас") sits in the **top-left corner** (left 36px, top 150px), below Instagram's top bar, above the white title boxes.
+- GMP brand label (logo, thin divider, "GLOBAL MATH PREP" in spaced capitals, gold "КАНАДААС" + SVG maple leaf, dark translucent pill) sits in the **top-left corner** (left 36px, top 150px), below Instagram's top bar, above the white title boxes.
 
 ## Content rules (from the owner)
 - Take questions and examples **verbatim** from her own lesson modules in the private repo `jargalmaaamgalan-art/GMP-REPO`, for example `desktop-masters/2-KEEP-ON-DESKTOP/sat-writing-*.html`. Each module has a `const M = [...]` with stems, options, answers and explanations. Never invent SAT questions.
