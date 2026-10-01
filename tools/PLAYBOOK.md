@@ -26,7 +26,7 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 - Split topics so each post has one idea and 5 or 6 slides.
 - Write natural, teen-friendly Mongolian. Watch vowel harmony on Latin words: `Zoom-ээр`, `D-тэй`, `Meanwhile-ын`. Use no em-dashes.
 - Class times: SAT English **Мя · Пү · Бя**, Math **Да · Лх · Ба**, both **20:00–21:20** UB time. Groups are **2–6**.
-- Captions: 2 or 3 short lines, 1 or 2 emojis, then `#SAT #DigitalSAT #SATEnglish #GlobalMathPrep` (use `#SATMath` for Math).
+- Captions: 2 or 3 short lines, 1 or 2 emojis, then the line `Бүртгэл, хуваарь авах бол "SAT" гэж коммент бичээрэй 👇` (this triggers the owner's Meta comment→message automation; use "IGCSE" for IGCSE posts), then `#SAT #DigitalSAT #SATEnglish #GlobalMathPrep` (use `#SATMath` for Math).
 - Don't advertise student scores.
 
 ## Audit before scheduling (required)
