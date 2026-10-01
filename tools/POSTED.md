@@ -12,5 +12,5 @@ Each line: date | title | source module | colour
 - 2026-10-18 | 4/6 Meanwhile 2 утгатай | sat-writing-transitions.html | slate
 - 2026-10-20 | 5/6 As such урхи | sat-writing-transitions.html | brown
 - 2026-10-22 | 6/6 In fact ≠ That is | sat-writing-transitions.html | sky blue
-- 2026-10-08 | |x| бол зай: тэгийн 2 талыг тоол (absolute value, count integers) | sat-math/course/ch18-absolute-value.html (lesson 18-1) | teal
+- 2026-10-08 | Абсолют утга бол зай: тэгийн 2 талыг тоол (absolute value, count integers) | sat-math/course/ch18-absolute-value.html (lesson 18-1) | teal
 Next unused SAT Writing chapters: Ch 2 Focus, Ch 3 Fragments, Ch 4 Joining, Ch 6 Clauses, Ch 7 Commas, Ch 8 Verbs, Ch 9 Pronouns, Ch 10 Apostrophes, Ch 11 Modification, Ch 12 Parallel. Alternate English and Math. Next unused SAT Math: ch18 lessons 18-2 to 18-5 and other course chapters.
