@@ -26,7 +26,7 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 ## Reels
 - GMP brand label (logo, thin divider, "GLOBAL MATH PREP" in spaced capitals, gold "КАНАДААС" + SVG maple leaf, dark translucent pill) sits in the **top-left corner** (left 36px, top 150px), below Instagram's top bar, above the white title boxes.
 
-- Reel music: do NOT add Metricool audio (the short catalogue track stops mid-video). Schedule Reels with autoPublish false and no audioConfiguration; the owner publishes from the Metricool app notification and picks trending music in Instagram.
+- Reel music: do NOT add Metricool audio (the short catalogue track stops mid-video). Schedule Reels with autoPublish TRUE and no audioConfiguration; the owner adds trending music in Instagram after the Reel is posted.
 
 - Reel style approved Oct 2, 2026 (credits Reel): full-screen real footage with hard cuts every 3–4 s; big bold Montserrat captions popping in 1–2 lines at a time, key word in orange (#ffb43a); short orange label pill per scene; every term explained in a few words (e.g. "SL (энгийн түвшин)"); hook in the first 2 s; under 30 s; teen tone with "чи"; no emojis on screen. Builder: scratchpad reel/cap.py.
 
