@@ -28,6 +28,8 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 
 - Reel music: do NOT add Metricool audio (the short catalogue track stops mid-video). Schedule Reels with autoPublish false and no audioConfiguration; the owner publishes from the Metricool app notification and picks trending music in Instagram.
 
+- Reel style approved Oct 2, 2026 (credits Reel): full-screen real footage with hard cuts every 3–4 s; big bold Montserrat captions popping in 1–2 lines at a time, key word in orange (#ffb43a); short orange label pill per scene; every term explained in a few words (e.g. "SL (энгийн түвшин)"); hook in the first 2 s; under 30 s; teen tone with "чи"; no emojis on screen. Builder: scratchpad reel/cap.py.
+
 ## Content rules (from the owner)
 - Take questions and examples **verbatim** from her own lesson modules in the private repo `jargalmaaamgalan-art/GMP-REPO`, for example `desktop-masters/2-KEEP-ON-DESKTOP/sat-writing-*.html`. Each module has a `const M = [...]` with stems, options, answers and explanations. Never invent SAT questions.
 - Never call a question a "real SAT", "жинхэнэ" or "College Board" question unless the source says so. Use "дасгал" instead.
