@@ -28,6 +28,7 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 
 - Reel music: do NOT add Metricool audio (the short catalogue track stops mid-video). Schedule Reels with autoPublish TRUE and no audioConfiguration; the owner adds trending music in Instagram after the Reel is posted.
 
+- Reel covers: always a dedicated topic cover (orange label + big topic title, e.g. "SAT-д бүртгүүлэх 7 алхам"), readable in the 4:5 grid crop; never a mid-video hook frame.
 - Reel style approved Oct 2, 2026 (credits Reel): full-screen real footage with hard cuts every 3–4 s; big bold Montserrat captions popping in 1–2 lines at a time, key word in orange (#ffb43a); short orange label pill per scene; every term explained in a few words (e.g. "SL (энгийн түвшин)"); hook in the first 2 s; under 30 s; teen tone with "чи"; no emojis on screen. Builder: scratchpad reel/cap.py.
 
 ## Content rules (from the owner)
