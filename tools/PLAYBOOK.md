@@ -26,6 +26,8 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 ## Reels
 - GMP brand label (logo, thin divider, "GLOBAL MATH PREP" in spaced capitals, gold "КАНАДААС" + SVG maple leaf, dark translucent pill) sits in the **top-left corner** (left 36px, top 150px), below Instagram's top bar, above the white title boxes.
 
+- Reel music: do NOT add Metricool audio (the short catalogue track stops mid-video). Schedule Reels with autoPublish false and no audioConfiguration; the owner publishes from the Metricool app notification and picks trending music in Instagram.
+
 ## Content rules (from the owner)
 - Take questions and examples **verbatim** from her own lesson modules in the private repo `jargalmaaamgalan-art/GMP-REPO`, for example `desktop-masters/2-KEEP-ON-DESKTOP/sat-writing-*.html`. Each module has a `const M = [...]` with stems, options, answers and explanations. Never invent SAT questions.
 - Never call a question a "real SAT", "жинхэнэ" or "College Board" question unless the source says so. Use "дасгал" instead.
