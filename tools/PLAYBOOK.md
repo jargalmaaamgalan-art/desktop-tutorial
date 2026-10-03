@@ -55,3 +55,5 @@ Send the owner a short report:
 - a table of what was scheduled (date, title, slide count);
 - what the audit changed;
 - anything that needs her decision.
+
+- Reels: schedule for INSTAGRAM ONLY in Metricool (no Facebook provider). Facebook Reels ignore autoPublish false and post automatically with no music (owner saw this Oct 3, 2026). When posting from the Instagram app, the owner adds music and turns on "Share to Facebook" so both get the same music.
