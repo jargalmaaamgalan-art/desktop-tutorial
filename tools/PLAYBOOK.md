@@ -19,7 +19,8 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 ## Building slides
 - The generators are in `tools/v2`. `gen30.py` is the model for a short lesson post: cover, idea, Bluebook question, answer, end page. Copy it to a new `genNN.py`, change the content, then run `python3 genNN.py --video`. Run it once without `--video` first to check for OVERFLOW.
 - Emoji: use **only one** animated emoji, on the cover.
-- Size 1080×1350. The header uses the real GMP logo strip, never a redrawn logo.
+- Size 1080×1350. The header uses the real GMP logo strip, never a redrawn logo. Since Oct 5, 2026 the strip reads "GMP logo | DIGITAL SAT® БЭЛТГЭЛ": no College Board acorn or SAT logo (College Board forbids third parties using its logos). Old strips are in `v2/cb-old/`, do not use them.
+- Exam names in text only (SAT®, AP®, IB, A-Level, Cambridge); never IB, College Board or Cambridge logos. Add to the caption, before the hashtags: `SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.` (College Board's required wording; add AP® when AP is named)
 - Each post gets **its own colour**. Never repeat the colour of a recent post.
 - Every post is built like a book: a cover with a hook, then content, then an end page with the QR code and class times.
 
@@ -29,7 +30,7 @@ For the automatic weekly run that builds and schedules Global Math Prep (GMP) so
 - Reel music: Instagram does NOT allow adding music after a Reel is posted (owner tested Oct 2, 2026). Always schedule Reels with autoPublish FALSE and no audioConfiguration; the owner publishes from the Metricool app notification and adds trending music before sharing. Set a reminder 5 minutes before each Reel.
 
 - Reel covers: always a dedicated topic cover (orange label + big topic title, e.g. "SAT-д бүртгүүлэх 7 алхам"), readable in the 4:5 grid crop; never a mid-video hook frame.
-- Reel style approved Oct 2, 2026 (credits Reel): full-screen real footage with hard cuts every 3–4 s; big bold Montserrat captions popping in 1–2 lines at a time, key word in orange (#ffb43a); short orange label pill per scene; every term explained in a few words (e.g. "SL (энгийн түвшин)"); hook in the first 2 s; under 30 s; teen tone with "чи"; no emojis on screen. Builder: scratchpad reel/cap.py.
+- Reel style, Oct 5, 2026: the owner found stock-footage Reels too ordinary. New style: a mock exam paper (printed questions with [marks], answers in blue handwriting, red-pen circles and ticks), builder `tools/reel-exam.py`. Older style approved Oct 2, 2026 (credits Reel): full-screen real footage with hard cuts every 3–4 s; big bold Montserrat captions popping in 1–2 lines at a time, key word in orange (#ffb43a); short orange label pill per scene; every term explained in a few words (e.g. "SL (энгийн түвшин)"); hook in the first 2 s; under 30 s; teen tone with "чи"; no emojis on screen. Builder: scratchpad reel/cap.py.
 
 ## Content rules (from the owner)
 - Take questions and examples **verbatim** from her own lesson modules in the private repo `jargalmaaamgalan-art/GMP-REPO`, for example `desktop-masters/2-KEEP-ON-DESKTOP/sat-writing-*.html`. Each module has a `const M = [...]` with stems, options, answers and explanations. Never invent SAT questions.
