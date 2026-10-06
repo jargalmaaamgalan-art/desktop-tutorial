@@ -35,11 +35,11 @@ PAGES = [
  # 0 hook: the exam cover
  f'''<div class="top"><span>КРЕДИТ · ЖИШЭЭ ХУУДАС</span><span>30 сек</span></div>
  <div class="rule"></div>
- <div class="hook">Их сургуулийн <u class="mk">эхний</u> хичээлүүдээ <span class="red">үзэхгүй</span> байж болно</div>
+ <div class="hook"><u class="mk">Гадаадын</u> их сургуулийн эхний хичээлүүдээ <span class="red">үзэхгүй</span> байж болно</div>
  <div class="hw w1" data-t="0.9" data-d="1.0" style="font-size:80px;white-space:nowrap">Яаж? → дуустал нь үз</div>''',
  # 1
  f'''<div class="q"><b>1</b><span>Кредит гэж юу вэ?</span><i>[1]</i></div>
- <div class="hw" data-t="0.3" data-d="1.1">Их сургуульд «үзсэнд тооцогдох» хичээл.</div>
+ <div class="hw" data-t="0.3" data-d="1.1">Гадаадын их сургуульд «үзсэнд тооцогдох» хичээл.</div>
  <div class="hw" data-t="1.5" data-d="1.0">Ахлах ангидаа шалгалтаар авч болно.</div>
  <div class="tk" data-t="2.8">{TICK}</div>''',
  # 2 AP
@@ -93,7 +93,7 @@ body{{width:{W}px;height:{H}px;overflow:hidden;font-family:S;background:#1f2733}
 .pg{{position:absolute;inset:0;padding:70px 100px 0 130px;opacity:0}}
 .top{{display:flex;justify-content:space-between;font:700 30px M;letter-spacing:2px;color:#2a2f38}}
 .rule{{height:4px;background:#2a2f38;margin:18px 0 60px}}
-.hook{{font:700 112px/1.12 S;color:#141820}}
+.hook{{font:700 100px/1.12 S;color:#141820}}
 .hook .red{{color:#d6332c}}
 .mk{{text-decoration:none;background:linear-gradient(transparent 62%,rgba(255,196,0,.75) 62%)}}
 .q{{display:grid;grid-template-columns:76px 1fr auto;gap:10px;align-items:start;font:600 64px/1.24 S;color:#141820;margin-top:30px}}
@@ -138,13 +138,13 @@ page = f'<!doctype html><html><head><meta charset="utf-8"><style>{STYLE}</style>
 COVER = f'''<!doctype html><html><head><meta charset="utf-8"><style>{STYLE}
 .cv{{position:absolute;inset:0;padding:70px 64px 0 130px}}
 .lab{{display:inline-block;background:#ff9a1f;color:#111;font:900 44px M;letter-spacing:2px;padding:12px 32px;border-radius:999px;margin-top:40px}}
-.ttl{{font:700 96px/1.08 S;color:#141820;margin-top:40px}}
+.ttl{{font:700 88px/1.08 S;color:#141820;margin-top:40px}}
 .ttl .red{{color:#d6332c}}
 .sub{{font:700 70px/1.2 H;color:#1f3fa6;margin-top:40px}}
 </style></head><body><div class="desk"></div><div class="paper"><div class="margin"></div><div class="cv">
 <div class="top"><span>КРЕДИТ · ЖИШЭЭ ХУУДАС</span><span>7 асуулт</span></div><div class="rule"></div>
 <div class="lab">IB · AP® · A-LEVEL</div>
-<div class="ttl">Их сургуулийн эхний курсийн хичээлийг <span class="red">алгасах</span> арга</div>
+<div class="ttl">Гадаадын их сургуулийн эхний курсийн хичээлийг <span class="red">алгасах</span> арга</div>
 <div class="sub">Кредит гэж юу вэ?</div></div></div>{bhtml}</body></html>'''
 
 from playwright.sync_api import sync_playwright
