@@ -14,7 +14,9 @@ def face(name, pkg, ws):
             f = FD/pkg/'files'/f'{pkg}-{sub}-{w}-normal.woff2'
             if f.exists(): s += "@font-face{font-family:%s;font-weight:%d;unicode-range:%s;src:url(data:font/woff2;base64,%s)}\n" % (name, w, r, b(f))
     return s
-CSS = face('M', 'montserrat', (600, 700, 800, 900))
+CSS = face('M', 'montserrat', (600, 700, 800, 900)) + face('S', 'literata', (700,))
+# each school's name on a card in its own colour (text only, no logos or seals)
+SCHOOL = {'Harvard': '#A51C30', 'MIT': '#5A5D61', 'Yale': '#00356B', 'Princeton': '#E77500', 'Stanford': '#8C1515', 'Cornell': '#B31B1B', 'Columbia': '#1D4F91'}
 s0 = open('sat.py').read()
 bcss = s0[s0.index('.brand{{'):s0.index('\n', s0.index('.brand .bt small svg'))].replace('{{', '{').replace('}}', '}')
 bhtml = s0[s0.index('<div class="brand">'):s0.index('</div></div>', s0.index('<div class="brand">'))+12].replace('{LG}', 'data:image/png;base64,'+b('../fbcover/logo_t.png')).replace('{{', '{').replace('}}', '}')
@@ -31,12 +33,12 @@ COFFEE = U + '1a71d79f-6145404-uhd_2160_3840_24fps.mp4'   # students with coffee
 STAIRS = U + '1357ef54-7683445-hd_1080_1920_30fps.mp4'    # students walking down campus stairs (unnamed)
 # (clip, start, length, crop-x for landscape as a fraction of width, place label)
 SHOTS = [
- (QUAD, 0.3, 3.6, 0.42, ''),
- (BOS, 0.0, 6.1, None, 'Boston · Charles River'),
- (COFFEE, 1.0, 6.6, None, ''),
- (RIV, 1.0, 4.2, None, 'Boston · Charles River'),
- (STAIRS, 3.0, 4.2, None, ''),
- (GRAD, 2.0, 4.8, 0.45, ''),
+ (QUAD, 0.3, 3.8, 0.42, ''),
+ (BOS, 0.0, 5.2, None, 'Boston · Charles River'),
+ (COFFEE, 1.0, 8.4, None, ''),
+ (RIV, 1.0, 5.4, None, 'Boston · Charles River'),
+ (STAIRS, 3.0, 4.8, None, ''),
+ (GRAD, 2.0, 5.0, 0.45, ''),
 ]
 ST = []; t = 0
 for sh in SHOTS: ST.append(round(t, 2)); t += sh[2]
@@ -44,12 +46,12 @@ DUR = round(t, 2)
 
 # scenes, one per shot: title (*word* = marker), pills [(text, offset)], big line
 SC = [
- dict(tag='ЭРТ ӨРГӨДӨЛ · 2027 ЭЛСЭЛТ', title='*11-р сарын 1* бол оны хамгийн чухал өдөр', sub='Гадаадад сурах бол дуустал нь үз'),
- dict(tag='ЭЦСИЙН ХУГАЦАА', title='Early өргөдөл хаагдана: *11-р сарын 1*', pills=['Harvard', 'MIT', 'Yale', 'Princeton', 'Stanford', 'Cornell']),
- dict(tag='ТЭТГЭЛГИЙН МАЯГТ', title='Огноо нь *өөр* байдаг', pills=['Harvard|11/1', 'Cornell|11/1', 'Princeton|11/9', 'Stanford|11/15', 'MIT|11/30', 'Yale|12/1'], note='Early үе · олон улсын сурагч'),
- dict(tag='CORNELL', title='Маягтаа хоцроовол?', big='Бакалаврын бүх хугацаанд тэтгэлэг хүсэх *эрхгүй*'),
- dict(tag='PRINCETON', title='CSS Profile?', big='Хүлээж авдаггүй. Өөрийн *үнэгүй* маягттай.'),
- dict(tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээ', cta='Аль сургуульд Early өгөх вэ? Коммент бичээрэй', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
+ dict(tag='ГАДААДАД СУРАХ · 2027', title='Энэ өдрийг алдвал тэтгэлэг алдаж болно: *11-р сарын 1*'),
+ dict(tag='EARLY ГЭЖ ЮУ ВЭ?', title='Эрт өргөдөл = *Early*', big='Энгийн хугацаанаас эрт өгч, хариугаа *эрт* авна. Олон сургуульд 11-р сарын 1-нд хаагдана.'),
+ dict(tag='11-Р САРЫН 1-ЭЭС ӨМНӨ', title='Хийх *3* зүйл', pills=['Өргөдлөө илгээ', 'Тэтгэлгийн маягтаа илгээ: огноо нь өөр', 'Өргөдөл дээрээ тэтгэлэг хүсэхээ тэмдэглэ'], long=True, gap=1.4),
+ dict(tag='ЖИШЭЭ', title='Маягтын огноо *өөр*', pills=['Harvard|11/1', 'MIT|11/30'], gap=0.8, note='Early үе · олон улсын сурагч'),
+ dict(tag='АНХААР', title='Дараа нь хүсэх боломжгүй', big='Cornell: хугацаандаа хүсээгүй бол бакалаврын бүх хугацаанд тэтгэлэг хүсэх *эрхгүй*'),
+ dict(tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээ', cta='Бүх сургуулийн огноо тайлбар хэсэгт байгаа', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
 ]
 
 import re as _re
@@ -68,10 +70,11 @@ def scene_html(i, s):
     h = f'<div class="sc" id="s{i}"><div class="hd"><div class="tag">{s["tag"]}</div><div class="ttl">{words(s["title"])}</div></div>'
     if s.get('sub'): h += f'<div class="sub">{s["sub"]}</div>'
     if s.get('pills'):
-        h += '<div class="pills">'
+        h += f'<div class="pills{" long" if s.get("long") else ""}" data-gap="{s.get("gap", 0.45)}">'
         for k, p in enumerate(s['pills']):
             name, _, date = p.partition('|')
-            h += f'<div class="pl" data-k="{k}"><i>{k+1}</i><span class="nm">{name}</span>' + (f'<span class="dt">{date}</span>' if date else '') + '</div>'
+            col = SCHOOL.get(name)
+            h += f'<div class="pl{" uni" if col else ""}" data-k="{k}"' + (f' style="--c:{col}"' if col else '') + f'><i>{k+1}</i><span class="nm">{name}</span>' + (f'<span class="dt">{date}</span>' if date else '') + '</div>'
         h += '</div>'
     if s.get('note'): h += f'<div class="note">{s["note"]}</div>'
     if s.get('big'): h += f'<div class="big">{words(s["big"])}</div>'
@@ -97,11 +100,13 @@ body{{width:{W}px;height:{H}px;overflow:hidden;font-family:M;background:transpar
 .mk{{background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 88%/0% 38%;padding:0 4px}}
 .sub{{position:absolute;left:70px;top:640px;font:700 40px M;color:#111;background:#fff;border-radius:999px;padding:14px 30px;opacity:0;box-shadow:0 10px 26px rgba(0,0,0,.3)}}
 .pills{{position:absolute;left:70px;right:70px;top:760px;display:flex;flex-direction:column;gap:12px}}
-.pl{{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.94);border-radius:22px;padding:10px 26px 10px 12px;box-shadow:0 10px 26px rgba(0,0,0,.28);opacity:0}}
+.pl{{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.96);border-radius:22px;padding:10px 26px 10px 12px;box-shadow:0 10px 26px rgba(0,0,0,.28);opacity:0;white-space:nowrap}}
 .pl i{{font-style:normal;width:60px;height:60px;border-radius:50%;background:#111;color:#ffd43b;display:flex;align-items:center;justify-content:center;font:900 34px M;flex:none}}
 .pl .nm{{font:800 50px M;color:#111;flex:1}}
 .pl .dt{{font:900 48px M;color:#e8590c}}
-.note{{position:absolute;left:70px;top:1345px;font:800 32px M;color:#fff;letter-spacing:1px;opacity:0;background:rgba(10,18,40,.88);padding:12px 22px;border-radius:999px}}
+.pl.uni{{background:var(--c);padding:16px 30px 16px 14px}} .pl.uni .nm{{font:700 60px S;color:#fff;letter-spacing:1px}} .pl.uni .dt{{color:#fff;background:rgba(0,0,0,.28);padding:4px 16px;border-radius:12px}} .pl.uni i{{background:#fff;color:#111}}
+.pills.long{{gap:20px}} .pills.long .pl{{padding:18px 28px 18px 14px;align-items:flex-start}} .pills.long .nm{{font:800 48px/1.2 M;white-space:normal}} .pills.long .pl i{{margin-top:2px}}
+.note{{position:absolute;left:70px;top:1040px;font:800 32px M;color:#fff;letter-spacing:1px;opacity:0;background:rgba(10,18,40,.88);padding:12px 22px;border-radius:999px}}
 .big{{position:absolute;left:70px;right:70px;top:700px;font:800 66px/1.18 M;color:#111;background:rgba(255,255,255,.95);border-radius:28px;padding:36px 40px;box-shadow:0 16px 40px rgba(0,0,0,.35);opacity:0}}
 .cta{{position:absolute;left:70px;right:70px;top:720px;text-align:center;background:#ff9a1f;color:#111;border-radius:28px;padding:28px 34px;font:900 50px/1.2 M;opacity:0;box-shadow:0 16px 40px rgba(0,0,0,.35)}}
 .disc{{position:absolute;left:70px;right:70px;top:1250px;text-align:center;font:600 27px/1.4 M;color:#fff;background:rgba(10,18,40,.88);border-radius:18px;padding:14px 20px;opacity:0}}
@@ -124,7 +129,7 @@ function render(t){{
   /* highlight sweeps left to right after its word lands */
   el.querySelectorAll('.mk').forEach(m=>{{const w=m.parentElement; const k=[...el.querySelectorAll('.ttl .w,.big .w')].indexOf(w); const inBig=w.closest('.big');
     const st=(inBig?0.55:0.12)+0.07*k+0.3; m.style.backgroundSize=inBig?`${{eo((a-st)/0.4)*100}}% 38%`:`${{eo((a-st)/0.4)*100}}% 8px`;}});
-  el.querySelectorAll('.pl').forEach(p=>{{const la=a-0.7-0.45*(+p.dataset.k); const q=eo(la/0.35); p.style.opacity=q; p.style.transform=`translateX(${{(1-q)*120}}px)`;}});
+  el.querySelectorAll('.pl').forEach(p=>{{const la=a-0.7-(+p.parentElement.dataset.gap)*(+p.dataset.k); const q=eo(la/0.35); p.style.opacity=q; p.style.transform=`translateX(${{(1-q)*120}}px)`;}});
   el.querySelectorAll('.sub,.note,.big,.cta,.disc').forEach(x=>{{const d={{'sub':0.8,'note':3.6,'big':0.4,'cta':0.7,'disc':1.2}}[x.className]; const q=eo((a-d)/0.4);
     x.style.opacity=q; x.style.transform=`translateY(${{(1-q)*30}}px) scale(${{0.97+0.03*q}})`;}});
  }}
