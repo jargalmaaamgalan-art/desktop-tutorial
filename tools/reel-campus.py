@@ -47,11 +47,11 @@ DUR = round(t, 2)
 # scenes, one per shot: title (*word* = marker), pills [(text, offset)], big line
 SC = [
  dict(kind='hook', tag='ГАДААДАД СУРАХ · 2027', hero='11/1', line='Энэ өдрийг алдвал *тэтгэлэг* алдаж болно'),
- dict(kind='early', tag='EARLY ГЭЖ ЮУ ВЭ?', title='Эрт өгөөд, *эрт* хариу ав', tiles=[('ӨРГӨДӨЛ ӨГӨХ','11/1'),('ХАРИУ ИРЭХ','12-р сарын дунд')], note='Yale, Princeton: хариу 12-р сарын дунд'),
- dict(kind='check', tag='11/1-ЭЭС ӨМНӨ', title='Хийх *3* зүйл', items=[('Өргөдлөө илгээ',''),('Тэтгэлгийн маягт','Ихэнх сургууль: CSS Profile'),('Тэтгэлэг хүс','Өргөдөл дээрээ тэмдэглэ')]),
+ dict(kind='early', tag='EARLY ГЭЖ ЮУ ВЭ?', title='Эрт өгвөл хариу *эрт* ирнэ', tiles=[('ӨРГӨДӨЛ ӨГӨХ','11/1'),('ХАРИУ ИРЭХ','12-р сарын дунд')], note='Yale, Princeton: хариу 12-р сарын дунд'),
+ dict(kind='check', tag='11/1-ЭЭС ӨМНӨ', title='Хийх *3* зүйл', items=[('Өргөдлөө илгээх',''),('Тэтгэлгийн маягт илгээх','Ихэнх сургууль: CSS Profile'),('Тэтгэлэг хүсэх','Өргөдөл дээрээ тэмдэглэх')]),
  dict(kind='vs', tag='ЖИШЭЭ · EARLY', title='Маягтын огноо *өөр*', schools=[('Harvard','11/1'),('MIT','11/30')], note='Олон улсын сурагч · CSS Profile + IDOC'),
  dict(kind='warn', tag='АНХААР', title='Хугацаа хэтэрвэл?', school='Cornell', big='Тэтгэлэг хүсэх *эрхгүй*', sub='бакалаврын бүх хугацаанд'),
- dict(kind='end', tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээ', cta='Бүх сургуулийн огноо тайлбарт байгаа', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
+ dict(kind='end', tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээгээрэй', cta='Бүх сургуулийн огноо тайлбарт байгаа', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
 ]
 
 import re as _re
@@ -196,5 +196,5 @@ if mode == 'stills': overlay('stills')
 if mode in ('frames', 'all'): overlay('frames')
 if mode == 'all':
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', 'campus_bg/bg.mp4', '-framerate', str(FPS), '-i', 'framesC/f%04d.png',
-                    '-filter_complex', '[0:v][1:v]overlay=0:0:format=auto', '-t', str(DUR), '-c:v', 'libx264', '-crf', '19', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', 'GMP-Reel-Nov1-Campus-v4.mp4'], check=True)
+                    '-filter_complex', '[0:v][1:v]overlay=0:0:format=auto', '-t', str(DUR), '-c:v', 'libx264', '-crf', '19', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', 'GMP-Reel-Nov1-Campus-v5.mp4'], check=True)
 print('ST', ST, 'DUR', DUR)
