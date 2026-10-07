@@ -33,12 +33,12 @@ COFFEE = U + '1a71d79f-6145404-uhd_2160_3840_24fps.mp4'   # students with coffee
 STAIRS = U + '1357ef54-7683445-hd_1080_1920_30fps.mp4'    # students walking down campus stairs (unnamed)
 # (clip, start, length, crop-x for landscape as a fraction of width, place label)
 SHOTS = [
- (QUAD, 0.3, 3.8, 0.42, ''),
- (BOS, 0.0, 5.2, None, 'Boston · Charles River'),
- (COFFEE, 1.0, 8.4, None, ''),
- (RIV, 1.0, 5.4, None, 'Boston · Charles River'),
- (STAIRS, 3.0, 4.8, None, ''),
- (GRAD, 2.0, 5.0, 0.45, ''),
+ (QUAD, 0.3, 3.4, 0.42, ''),
+ (BOS, 0.0, 4.4, None, 'Boston · Charles River'),
+ (COFFEE, 1.0, 6.4, None, ''),
+ (RIV, 1.0, 4.8, None, 'Boston · Charles River'),
+ (STAIRS, 3.0, 4.6, None, ''),
+ (GRAD, 2.0, 4.6, 0.45, ''),
 ]
 ST = []; t = 0
 for sh in SHOTS: ST.append(round(t, 2)); t += sh[2]
@@ -46,12 +46,12 @@ DUR = round(t, 2)
 
 # scenes, one per shot: title (*word* = marker), pills [(text, offset)], big line
 SC = [
- dict(tag='ГАДААДАД СУРАХ · 2027', title='Энэ өдрийг алдвал тэтгэлэг алдаж болно: *11-р сарын 1*'),
- dict(tag='EARLY ГЭЖ ЮУ ВЭ?', title='Эрт өргөдөл = *Early*', big='Энгийн хугацаанаас эрт өгч, хариугаа *эрт* авна. Олон сургуульд 11-р сарын 1-нд хаагдана.'),
- dict(tag='11-Р САРЫН 1-ЭЭС ӨМНӨ', title='Хийх *3* зүйл', pills=['Өргөдлөө илгээ', 'Тэтгэлгийн маягтаа илгээ: огноо нь өөр', 'Өргөдөл дээрээ тэтгэлэг хүсэхээ тэмдэглэ'], long=True, gap=1.4),
- dict(tag='ЖИШЭЭ', title='Маягтын огноо *өөр*', pills=['Harvard|11/1', 'MIT|11/30'], gap=0.8, note='Early үе · олон улсын сурагч'),
- dict(tag='АНХААР', title='Дараа нь хүсэх боломжгүй', big='Cornell: хугацаандаа хүсээгүй бол бакалаврын бүх хугацаанд тэтгэлэг хүсэх *эрхгүй*'),
- dict(tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээ', cta='Бүх сургуулийн огноо тайлбар хэсэгт байгаа', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
+ dict(kind='hook', tag='ГАДААДАД СУРАХ · 2027', hero='11/1', line='Энэ өдрийг алдвал *тэтгэлэг* алдаж болно'),
+ dict(kind='early', tag='EARLY ГЭЖ ЮУ ВЭ?', title='Эрт өгөөд, *эрт* хариу ав', tiles=[('ӨРГӨДӨЛ ӨГӨХ','11/1'),('ХАРИУ ИРЭХ','12-р сарын дунд')], note='Yale, Princeton: хариу 12-р сарын дунд'),
+ dict(kind='check', tag='11/1-ЭЭС ӨМНӨ', title='Хийх *3* зүйл', items=[('Өргөдлөө илгээ',''),('Тэтгэлгийн маягт','Ихэнх сургууль: CSS Profile'),('Тэтгэлэг хүс','Өргөдөл дээрээ тэмдэглэ')]),
+ dict(kind='vs', tag='ЖИШЭЭ · EARLY', title='Маягтын огноо *өөр*', schools=[('Harvard','11/1'),('MIT','11/30')], note='Олон улсын сурагч · CSS Profile + IDOC'),
+ dict(kind='warn', tag='АНХААР', title='Хугацаа хэтэрвэл?', school='Cornell', big='Тэтгэлэг хүсэх *эрхгүй*', sub='бакалаврын бүх хугацаанд'),
+ dict(kind='end', tag='GLOBAL MATH PREP', title='Хадгалаад, *найздаа* илгээ', cta='Бүх сургуулийн огноо тайлбарт байгаа', disc='Огноог 2026.10.06-нд албан ёсны сайтаас шалгасан, өөрчлөгдөж болно. Not affiliated with or endorsed by any university named.'),
 ]
 
 import re as _re
@@ -67,18 +67,22 @@ def words(txt):
     return ' '.join(out)
 
 def scene_html(i, s):
-    h = f'<div class="sc" id="s{i}"><div class="hd"><div class="tag">{s["tag"]}</div><div class="ttl">{words(s["title"])}</div></div>'
-    if s.get('sub'): h += f'<div class="sub">{s["sub"]}</div>'
-    if s.get('pills'):
-        h += f'<div class="pills{" long" if s.get("long") else ""}" data-gap="{s.get("gap", 0.45)}">'
-        for k, p in enumerate(s['pills']):
-            name, _, date = p.partition('|')
-            col = SCHOOL.get(name)
-            h += f'<div class="pl{" uni" if col else ""}" data-k="{k}"' + (f' style="--c:{col}"' if col else '') + f'><i>{k+1}</i><span class="nm">{name}</span>' + (f'<span class="dt">{date}</span>' if date else '') + '</div>'
-        h += '</div>'
+    k = s['kind']
+    h = f'<div class="sc k-{k}" id="s{i}"><div class="hd"><div class="tag">{s["tag"]}</div>'
+    if s.get('title'): h += f'<div class="ttl">{words(s["title"])}</div>'
+    h += '</div>'
+    if k == 'hook':
+        h += f'<div class="hero pop" data-d="0.15"><small>11-Р САРЫН</small><b>1</b></div><div class="line">{words(s["line"])}</div>'
+    if k == 'early':
+        h += '<div class="tiles">' + ''.join(f'<div class="tile pop" data-d="{0.6+0.5*j}"><small>{l}</small><b>{v}</b></div>' for j, (l, v) in enumerate(s['tiles'])) + '</div>'
+    if k == 'check':
+        h += '<div class="items">' + ''.join(f'<div class="it" data-k="{j}"><span class="bx"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tx"><b>{m}</b>' + (f'<small>{sub}</small>' if sub else '') + '</span></div>' for j, (m, sub) in enumerate(s['items'])) + '</div>'
+    if k == 'vs':
+        h += '<div class="vs">' + ''.join(f'<div class="sch pop" data-d="{0.6+0.6*j}" style="--c:{SCHOOL[n]}"><span class="nm">{n}</span><span class="lb">МАЯГТ</span><b>{d}</b></div>' for j, (n, d) in enumerate(s['schools'])) + '</div>'
+    if k == 'warn':
+        h += f'<div class="wbox pop" data-d="0.5" style="--c:{SCHOOL[s["school"]]}"><span class="nm">{s["school"]}</span><div class="wb">{words(s["big"])}</div><small>{s["sub"]}</small></div>'
     if s.get('note'): h += f'<div class="note">{s["note"]}</div>'
-    if s.get('big'): h += f'<div class="big">{words(s["big"])}</div>'
-    if s.get('cta'): h += f'<div class="cta">{s["cta"]}</div>'
+    if s.get('cta'): h += f'<div class="cta pop" data-d="0.7">{s["cta"]}</div>'
     if s.get('disc'): h += f'<div class="disc">{s["disc"]}</div>'
     if SHOTS[i][4]: h += f'<div class="place"><b></b>{SHOTS[i][4]}</div>'
     return h + '</div>'
@@ -88,29 +92,50 @@ page = f'''<!doctype html><html><head><meta charset="utf-8"><style>{CSS}
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{width:{W}px;height:{H}px;overflow:hidden;font-family:M;background:transparent}}
 {bcss}
-.shade{{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.12) 36%,rgba(0,0,0,.05) 60%,rgba(0,0,0,.5))}}
+.shade{{position:absolute;inset:0;background:linear-gradient(rgba(5,10,25,.55),rgba(5,10,25,.15) 30%,rgba(5,10,25,.25) 55%,rgba(5,10,25,.75))}}
 .bars{{position:absolute;left:36px;right:36px;top:118px;display:flex;gap:8px}}
 .bar{{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.35);overflow:hidden}} .bar b{{display:block;height:100%;width:0;background:#fff}}
 .sc{{position:absolute;inset:0;opacity:0}}
-.hd{{position:absolute;left:70px;right:70px;top:300px}}
+.hd{{position:absolute;left:64px;right:64px;top:290px}}
 .tag{{display:table;font:900 28px M;letter-spacing:4px;color:#111;padding:10px 20px;border-radius:999px;background:#ffd43b;margin-bottom:18px;opacity:0;box-shadow:0 6px 18px rgba(0,0,0,.35)}}
-.ttl{{display:inline-block;font:900 72px/1.12 M;color:#fff;letter-spacing:-1px;background:rgba(10,18,40,.9);border-radius:26px;padding:24px 30px 28px;box-shadow:0 16px 40px rgba(0,0,0,.4)}}
-.ttl .mk{{color:#ffd43b;background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 100%/0% 8px;padding:0 2px 6px}}
+.ttl{{display:inline-block;font:900 74px/1.1 M;color:#fff;letter-spacing:-1px;background:rgba(10,18,40,.9);border-radius:26px;padding:22px 30px 26px;box-shadow:0 16px 40px rgba(0,0,0,.4)}}
 .w{{display:inline-block;opacity:0;margin-right:.18em}}
-.mk{{background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 88%/0% 38%;padding:0 4px}}
-.sub{{position:absolute;left:70px;top:640px;font:700 40px M;color:#111;background:#fff;border-radius:999px;padding:14px 30px;opacity:0;box-shadow:0 10px 26px rgba(0,0,0,.3)}}
-.pills{{position:absolute;left:70px;right:70px;top:760px;display:flex;flex-direction:column;gap:12px}}
-.pl{{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.96);border-radius:22px;padding:10px 26px 10px 12px;box-shadow:0 10px 26px rgba(0,0,0,.28);opacity:0;white-space:nowrap}}
-.pl i{{font-style:normal;width:60px;height:60px;border-radius:50%;background:#111;color:#ffd43b;display:flex;align-items:center;justify-content:center;font:900 34px M;flex:none}}
-.pl .nm{{font:800 50px M;color:#111;flex:1}}
-.pl .dt{{font:900 48px M;color:#e8590c}}
-.pl.uni{{background:var(--c);padding:16px 30px 16px 14px}} .pl.uni .nm{{font:700 60px S;color:#fff;letter-spacing:1px}} .pl.uni .dt{{color:#fff;background:rgba(0,0,0,.28);padding:4px 16px;border-radius:12px}} .pl.uni i{{background:#fff;color:#111}}
-.pills.long{{gap:20px}} .pills.long .pl{{padding:18px 28px 18px 14px;align-items:flex-start}} .pills.long .nm{{font:800 48px/1.2 M;white-space:normal}} .pills.long .pl i{{margin-top:2px}}
-.note{{position:absolute;left:70px;top:1040px;font:800 32px M;color:#fff;letter-spacing:1px;opacity:0;background:rgba(10,18,40,.88);padding:12px 22px;border-radius:999px}}
-.big{{position:absolute;left:70px;right:70px;top:700px;font:800 66px/1.18 M;color:#111;background:rgba(255,255,255,.95);border-radius:28px;padding:36px 40px;box-shadow:0 16px 40px rgba(0,0,0,.35);opacity:0}}
-.cta{{position:absolute;left:70px;right:70px;top:720px;text-align:center;background:#ff9a1f;color:#111;border-radius:28px;padding:28px 34px;font:900 50px/1.2 M;opacity:0;box-shadow:0 16px 40px rgba(0,0,0,.35)}}
-.disc{{position:absolute;left:70px;right:70px;top:1250px;text-align:center;font:600 27px/1.4 M;color:#fff;background:rgba(10,18,40,.88);border-radius:18px;padding:14px 20px;opacity:0}}
-.place{{position:absolute;left:40px;top:1400px;display:flex;align-items:center;gap:12px;background:rgba(10,18,40,.85);color:#fff;font:800 30px M;padding:10px 22px 10px 16px;border-radius:999px}}
+.mk{{color:#ffd43b;background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 100%/0% 8px;padding:0 2px 6px}}
+.pop{{opacity:0}}
+/* hook: one giant date */
+.hero{{position:absolute;left:0;right:0;top:470px;text-align:center;color:#fff}}
+.hero small{{display:block;font:900 64px M;letter-spacing:10px;text-shadow:0 6px 30px rgba(0,0,0,.6)}}
+.hero b{{display:block;font:900 560px/0.9 M;color:#ffd43b;letter-spacing:-20px;text-shadow:0 20px 60px rgba(0,0,0,.55)}}
+.line{{position:absolute;left:64px;right:64px;top:1120px;text-align:center;font:900 70px/1.15 M;color:#fff;background:rgba(10,18,40,.9);border-radius:28px;padding:26px 30px 32px;box-shadow:0 16px 40px rgba(0,0,0,.4)}}
+.k-hook .hd{{top:300px}}
+/* early: two stat tiles */
+.tiles{{position:absolute;left:64px;right:64px;top:720px;display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+.tile{{background:#fff;border-radius:30px;padding:30px 28px 34px;box-shadow:0 16px 40px rgba(0,0,0,.35);min-height:300px;display:flex;flex-direction:column;justify-content:space-between}}
+.tile small{{font:900 28px M;letter-spacing:3px;color:#667}}
+.tile b{{font:900 92px/1.02 M;color:#111;letter-spacing:-2px}}
+.tile:nth-child(2) b{{font-size:70px;color:#1d4fd8}}
+/* checklist */
+.items{{position:absolute;left:64px;right:64px;top:640px;display:flex;flex-direction:column;gap:22px}}
+.it{{display:flex;align-items:center;gap:28px;background:#fff;border-radius:28px;padding:26px 30px;box-shadow:0 14px 34px rgba(0,0,0,.32);opacity:0}}
+.bx{{flex:none;width:92px;height:92px;border-radius:22px;border:6px solid #111;display:flex;align-items:center;justify-content:center}}
+.bx svg{{width:64px;height:64px;fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24}}
+.tx b{{display:block;font:900 58px/1.1 M;color:#111}} .tx small{{display:block;font:700 36px/1.2 M;color:#555;margin-top:6px}}
+/* vs: two school tiles */
+.vs{{position:absolute;left:64px;right:64px;top:700px;display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+.sch{{background:var(--c);border-radius:32px;padding:40px 24px 44px;text-align:center;color:#fff;box-shadow:0 18px 44px rgba(0,0,0,.4);border:4px solid rgba(255,255,255,.85)}}
+.sch .nm{{display:block;font:700 76px S;letter-spacing:1px}}
+.sch .lb{{display:block;font:800 26px M;letter-spacing:5px;opacity:.85;margin-top:26px}}
+.sch b{{display:block;font:900 128px/1 M;letter-spacing:-4px;margin-top:6px}}
+/* warn */
+.wbox{{position:absolute;left:64px;right:64px;top:700px;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.4);text-align:center;padding-bottom:40px}}
+.wbox .nm{{display:block;background:var(--c);color:#fff;font:700 70px S;padding:22px 0 26px;letter-spacing:1px}}
+.wb{{font:900 78px/1.12 M;color:#111;margin:36px 36px 10px}}
+.wb .mk{{color:#c92a2a;background-image:linear-gradient(#c92a2a,#c92a2a)}}
+.wbox small{{display:block;font:800 44px M;color:#444}}
+.note{{position:absolute;left:64px;right:64px;top:1150px;text-align:center;font:800 34px/1.3 M;color:#fff;opacity:0;background:rgba(10,18,40,.88);padding:16px 24px;border-radius:22px}}
+.cta{{position:absolute;left:64px;right:64px;top:700px;text-align:center;background:#ffd43b;color:#111;border-radius:30px;padding:34px 34px;font:900 58px/1.2 M;box-shadow:0 16px 40px rgba(0,0,0,.35)}}
+.disc{{position:absolute;left:64px;right:64px;top:1250px;text-align:center;font:600 27px/1.4 M;color:#fff;background:rgba(10,18,40,.88);border-radius:18px;padding:14px 20px;opacity:0}}
+.place{{position:absolute;left:40px;top:1420px;display:flex;align-items:center;gap:12px;background:rgba(10,18,40,.85);color:#fff;font:800 30px M;padding:10px 22px 10px 16px;border-radius:999px}}
 .place b{{width:12px;height:12px;border-radius:50%;background:#ff4b4b}}
 </style></head><body><div class="shade"></div><div class="bars">{bars}</div>{bhtml}{"".join(scene_html(i, s) for i, s in enumerate(SC))}
 <script>
@@ -122,16 +147,15 @@ function render(t){{
   document.getElementById('b'+i).style.width=(cl((t-s)/(e-s))*100)+'%';
   if(a<0||t>=e+(i+1<ST.length?0:1)){{el.style.opacity=0;continue;}}
   el.style.opacity=1;
-  const tg=el.querySelector('.tag'); const pt=eo(a/0.3); tg.style.opacity=pt; tg.style.transform=`translateX(${{(1-pt)*-30}}px)`;
-  /* words: rise out of a soft blur, one after another */
-  el.querySelectorAll('.ttl .w,.big .w').forEach((w,k)=>{{const inBig=w.closest('.big'); const st=(inBig?0.55:0.12)+0.07*k; const p=eo((a-st)/0.35);
-    w.style.opacity=p; w.style.transform=`translateY(${{(1-p)*34}}px)`; w.style.filter=`blur(${{(1-p)*10}}px)`;}});
-  /* highlight sweeps left to right after its word lands */
-  el.querySelectorAll('.mk').forEach(m=>{{const w=m.parentElement; const k=[...el.querySelectorAll('.ttl .w,.big .w')].indexOf(w); const inBig=w.closest('.big');
-    const st=(inBig?0.55:0.12)+0.07*k+0.3; m.style.backgroundSize=inBig?`${{eo((a-st)/0.4)*100}}% 38%`:`${{eo((a-st)/0.4)*100}}% 8px`;}});
-  el.querySelectorAll('.pl').forEach(p=>{{const la=a-0.7-(+p.parentElement.dataset.gap)*(+p.dataset.k); const q=eo(la/0.35); p.style.opacity=q; p.style.transform=`translateX(${{(1-q)*120}}px)`;}});
-  el.querySelectorAll('.sub,.note,.big,.cta,.disc').forEach(x=>{{const d={{'sub':0.8,'note':3.6,'big':0.4,'cta':0.7,'disc':1.2}}[x.className]; const q=eo((a-d)/0.4);
-    x.style.opacity=q; x.style.transform=`translateY(${{(1-q)*30}}px) scale(${{0.97+0.03*q}})`;}});
+  const tg=el.querySelector('.tag'); const pt=eo(a/0.25); tg.style.opacity=pt; tg.style.transform=`translateX(${{(1-pt)*-30}}px)`;
+  const ws=[...el.querySelectorAll('.w')];
+  ws.forEach((w,k)=>{{const inLine=w.closest('.line,.wb'); const st=(inLine?(w.closest('.wb')?1.0:0.9):0.1)+0.05*(inLine?ws.filter(x=>x.closest('.line,.wb')).indexOf(w):k); const p=eo((a-st)/0.3);
+    w.style.opacity=p; w.style.transform=`translateY(${{(1-p)*30}}px)`; w.style.filter=`blur(${{(1-p)*8}}px)`;
+    const m=w.querySelector('.mk'); if(m) m.style.backgroundSize=`${{eo((a-st-0.25)/0.35)*100}}% 8px`;}});
+  el.querySelectorAll('.pop').forEach(x=>{{const q=cl((a-(+x.dataset.d))/0.35); const e2=q<1?1+0.7*Math.sin(q*Math.PI)*(1-q):1; x.style.opacity=eo(q*1.6); x.style.transform=`scale(${{(0.82+0.18*eo(q))*e2}})`;}});
+  el.querySelectorAll('.it').forEach(x=>{{const la=a-0.6-1.15*(+x.dataset.k); const q=eo(la/0.3); x.style.opacity=q; x.style.transform=`translateX(${{(1-q)*120}}px)`;
+    const c=cl((la-0.45)/0.3); x.querySelector('.bx').style.background=c>0?`rgba(43,179,95,${{c}})`:'transparent'; x.querySelector('.bx').style.borderColor=c>0.5?'#2bb35f':'#111'; x.querySelector('svg').style.strokeDashoffset=24*(1-c);}});
+  el.querySelectorAll('.note,.disc').forEach(x=>{{const d=x.className=='note'?1.9:1.2; const q=eo((a-d)/0.4); x.style.opacity=q; x.style.transform=`translateY(${{(1-q)*24}}px)`;}});
  }}
 }}
 </script></body></html>'''
@@ -172,5 +196,5 @@ if mode == 'stills': overlay('stills')
 if mode in ('frames', 'all'): overlay('frames')
 if mode == 'all':
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', 'campus_bg/bg.mp4', '-framerate', str(FPS), '-i', 'framesC/f%04d.png',
-                    '-filter_complex', '[0:v][1:v]overlay=0:0:format=auto', '-t', str(DUR), '-c:v', 'libx264', '-crf', '19', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', 'GMP-Reel-Nov1-Campus.mp4'], check=True)
+                    '-filter_complex', '[0:v][1:v]overlay=0:0:format=auto', '-t', str(DUR), '-c:v', 'libx264', '-crf', '19', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', 'GMP-Reel-Nov1-Campus-v4.mp4'], check=True)
 print('ST', ST, 'DUR', DUR)
