@@ -85,13 +85,14 @@ page = f'''<!doctype html><html><head><meta charset="utf-8"><style>{CSS}
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{width:{W}px;height:{H}px;overflow:hidden;font-family:M;background:transparent}}
 {bcss}
-.shade{{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.05) 34%,rgba(0,0,0,0) 60%,rgba(0,0,0,.5))}}
+.shade{{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.12) 36%,rgba(0,0,0,.05) 60%,rgba(0,0,0,.5))}}
 .bars{{position:absolute;left:36px;right:36px;top:118px;display:flex;gap:8px}}
 .bar{{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.35);overflow:hidden}} .bar b{{display:block;height:100%;width:0;background:#fff}}
 .sc{{position:absolute;inset:0;opacity:0}}
 .hd{{position:absolute;left:70px;right:70px;top:300px}}
-.tag{{display:inline-block;font:800 26px M;letter-spacing:5px;color:#fff;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.55);margin-bottom:22px;opacity:0}}
-.ttl{{font:900 76px/1.08 M;color:#fff;letter-spacing:-1px;text-shadow:0 4px 24px rgba(0,0,0,.55)}}
+.tag{{display:table;font:900 28px M;letter-spacing:4px;color:#111;padding:10px 20px;border-radius:999px;background:#ffd43b;margin-bottom:18px;opacity:0;box-shadow:0 6px 18px rgba(0,0,0,.35)}}
+.ttl{{display:inline-block;font:900 72px/1.12 M;color:#fff;letter-spacing:-1px;background:rgba(10,18,40,.9);border-radius:26px;padding:24px 30px 28px;box-shadow:0 16px 40px rgba(0,0,0,.4)}}
+.ttl .mk{{color:#ffd43b;background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 100%/0% 8px;padding:0 2px 6px}}
 .w{{display:inline-block;opacity:0;margin-right:.18em}}
 .mk{{background:linear-gradient(#ffd43b,#ffd43b) no-repeat 0 88%/0% 38%;padding:0 4px}}
 .sub{{position:absolute;left:70px;top:640px;font:700 40px M;color:#111;background:#fff;border-radius:999px;padding:14px 30px;opacity:0;box-shadow:0 10px 26px rgba(0,0,0,.3)}}
@@ -100,11 +101,11 @@ body{{width:{W}px;height:{H}px;overflow:hidden;font-family:M;background:transpar
 .pl i{{font-style:normal;width:60px;height:60px;border-radius:50%;background:#111;color:#ffd43b;display:flex;align-items:center;justify-content:center;font:900 34px M;flex:none}}
 .pl .nm{{font:800 50px M;color:#111;flex:1}}
 .pl .dt{{font:900 48px M;color:#e8590c}}
-.note{{position:absolute;left:70px;top:1345px;font:700 30px M;color:#fff;letter-spacing:1px;opacity:0;text-shadow:0 2px 10px rgba(0,0,0,.9)}}
+.note{{position:absolute;left:70px;top:1345px;font:800 32px M;color:#fff;letter-spacing:1px;opacity:0;background:rgba(10,18,40,.88);padding:12px 22px;border-radius:999px}}
 .big{{position:absolute;left:70px;right:70px;top:700px;font:800 66px/1.18 M;color:#111;background:rgba(255,255,255,.95);border-radius:28px;padding:36px 40px;box-shadow:0 16px 40px rgba(0,0,0,.35);opacity:0}}
 .cta{{position:absolute;left:70px;right:70px;top:720px;text-align:center;background:#ff9a1f;color:#111;border-radius:28px;padding:28px 34px;font:900 50px/1.2 M;opacity:0;box-shadow:0 16px 40px rgba(0,0,0,.35)}}
-.disc{{position:absolute;left:70px;right:70px;top:1250px;text-align:center;font:600 26px/1.4 M;color:#fff;background:rgba(0,0,0,.62);border-radius:18px;padding:14px 20px;opacity:0}}
-.place{{position:absolute;left:40px;top:1400px;display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.5);color:#fff;font:700 28px M;padding:10px 22px 10px 16px;border-radius:999px}}
+.disc{{position:absolute;left:70px;right:70px;top:1250px;text-align:center;font:600 27px/1.4 M;color:#fff;background:rgba(10,18,40,.88);border-radius:18px;padding:14px 20px;opacity:0}}
+.place{{position:absolute;left:40px;top:1400px;display:flex;align-items:center;gap:12px;background:rgba(10,18,40,.85);color:#fff;font:800 30px M;padding:10px 22px 10px 16px;border-radius:999px}}
 .place b{{width:12px;height:12px;border-radius:50%;background:#ff4b4b}}
 </style></head><body><div class="shade"></div><div class="bars">{bars}</div>{bhtml}{"".join(scene_html(i, s) for i, s in enumerate(SC))}
 <script>
@@ -122,7 +123,7 @@ function render(t){{
     w.style.opacity=p; w.style.transform=`translateY(${{(1-p)*34}}px)`; w.style.filter=`blur(${{(1-p)*10}}px)`;}});
   /* highlight sweeps left to right after its word lands */
   el.querySelectorAll('.mk').forEach(m=>{{const w=m.parentElement; const k=[...el.querySelectorAll('.ttl .w,.big .w')].indexOf(w); const inBig=w.closest('.big');
-    const st=(inBig?0.55:0.12)+0.07*k+0.3; m.style.backgroundSize=`${{eo((a-st)/0.4)*100}}% 38%`;}});
+    const st=(inBig?0.55:0.12)+0.07*k+0.3; m.style.backgroundSize=inBig?`${{eo((a-st)/0.4)*100}}% 38%`:`${{eo((a-st)/0.4)*100}}% 8px`;}});
   el.querySelectorAll('.pl').forEach(p=>{{const la=a-0.7-0.45*(+p.dataset.k); const q=eo(la/0.35); p.style.opacity=q; p.style.transform=`translateX(${{(1-q)*120}}px)`;}});
   el.querySelectorAll('.sub,.note,.big,.cta,.disc').forEach(x=>{{const d={{'sub':0.8,'note':3.6,'big':0.4,'cta':0.7,'disc':1.2}}[x.className]; const q=eo((a-d)/0.4);
     x.style.opacity=q; x.style.transform=`translateY(${{(1-q)*30}}px) scale(${{0.97+0.03*q}})`;}});
