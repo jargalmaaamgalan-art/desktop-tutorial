@@ -43,20 +43,20 @@ DUR = round(t, 2)
 # colours: each school's own colour (a colour bar, no logos)
 C = {'Harvard':'#A51C30','MIT':'#5A5D61','Yale':'#00356B','Princeton':'#E77500','Dartmouth':'#00693E','Brown':'#4E3629','Amherst':'#3F1F69','Bowdoin':'#1d1d1f'}
 SCHOOLS = [
- ('Harvard','11/1','Олон улсын сурагч АНУ-ын сурагчтай <b>ижил</b> тэтгэлэг авна'),
- ('MIT','11/1','Оюутнуудын <b>88%</b> нь өргүй төгсдөг'),
- ('Yale','11/1','Тэтгэлгийн маягтын хугацаа: <b>12/1</b>'),
- ('Princeton','11/1','Зээл биш, <b>буцалтгүй</b> тэтгэлэг олгодог'),
- ('Dartmouth','11/1','Зээл авах <b>шаардлагагүй</b>'),
- ('Brown','11/1','Тэтгэлгээ өргөдөлтэйгөө <b>хамт</b> хүсэх ёстой'),
- ('Amherst','11/9','SAT оноо <b>заавал биш</b>'),
- ('Bowdoin','11/15','Тэтгэлгийн баримтаа <b>тэнцсэний дараа</b> өгнө'),
+ ('Harvard','REA','11/1','Олон улсын сурагч АНУ-ын сурагчтай <b>ижил</b> тэтгэлэг авна'),
+ ('MIT','EA','11/1','Оюутнуудын <b>88%</b> нь өргүй төгсдөг'),
+ ('Yale','SCEA','11/1','Тэтгэлгийн маягтын хугацаа: <b>12/1</b>'),
+ ('Princeton','SCEA','11/1','Зээл биш, <b>буцалтгүй</b> тэтгэлэг олгодог'),
+ ('Dartmouth','ED','11/1','Зээл авах <b>шаардлагагүй</b>'),
+ ('Brown','ED','11/1','Тэтгэлгээ өргөдөлтэйгөө <b>хамт</b> хүсвэл 100% хангана'),
+ ('Amherst','ED','11/9','SAT оноо <b>заавал биш</b>'),
+ ('Bowdoin','ED I','11/15','Тэтгэлгийн баримтаа <b>тэнцсэнээс хойш 7 хоногт</b> өгнө'),
 ]
-def school_html(k, n, d, f):
+def school_html(k, n, plan, d, f):
     return f"""<div class="sc" id="s{k+1}" style="--c:{C[n]}">
- <div class="cnt"><b>{k+1:02d}</b><span>/ 08</span><div class="chips"><i>NEED-BLIND</i><i>100% ХЭРЭГЦЭЭ</i></div></div>
+ <div class="cnt"><b>{k+1:02d}</b><span>/ 08</span><div class="chips"><i>NEED-BLIND</i><i>100% ХЭРЭГЦЭЭ{"*" if n=="Brown" else ""}</i></div></div>
  <div class="nm"><span>{n}</span></div><div class="rl"></div>
- <div class="row r1"><small>EARLY ХУГАЦАА</small><b>{d}</b></div>
+ <div class="row r1"><small>{plan}</small><b>{d}</b>{"<em>ТЭНЦВЭЛ ЗААВАЛ ОЧНО</em>" if plan.startswith("ED") else ""}</div>
  <div class="row r2">{f}</div></div>"""
 scenes = """<div class="sc" id="s0" style="--c:#c2410c">
  <div class="kick">NEED-BLIND · 2027 ЭЛСЭЛТ</div>
@@ -91,7 +91,7 @@ body{{width:{W}px;height:{H}px;overflow:hidden;font-family:M;background:transpar
 .nm{{overflow:hidden;margin-top:0}} .nm span{{display:block;font:700 150px/1.12 S;color:#15171c;letter-spacing:-2px}}
 .rl{{height:12px;width:220px;background:var(--c);border-radius:6px;margin:10px 0 30px;transform-origin:left}}
 .row{{opacity:0}}
-.r1{{display:flex;align-items:baseline;gap:24px}} .r1 small{{font:900 28px M;letter-spacing:3px;color:#8a8f99}} .r1 b{{font:900 104px/1 M;color:var(--c);letter-spacing:-3px}}
+.r1{{display:flex;align-items:baseline;gap:24px}} .r1 small{{font:900 34px M;letter-spacing:3px;color:#8a8f99}} .r1 em{{font-style:normal;align-self:center;font:900 22px M;letter-spacing:1px;color:#fff;background:#c92a2a;padding:8px 12px;border-radius:8px}} .r1 b{{font:900 104px/1 M;color:var(--c);letter-spacing:-3px}}
 .r2{{margin-top:24px;font:700 52px/1.25 M;color:#15171c;padding-right:90px}} .r2 b{{color:var(--c);font-weight:900}}
 .disc{{margin-top:34px;font:600 25px/1.4 M;color:#6b6f78;padding-right:60px}}
 </style></head><body><div class="topfade"></div><div class="bars">{''.join(f'<div class="bar"><b id="b{i}"></b></div>' for i in range(len(SHOTS)))}</div>{bhtml}
