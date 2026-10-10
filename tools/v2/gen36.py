@@ -18,10 +18,10 @@ EXTRA = """
 .vc.tp{border:3px solid #c62828}
 .vc .top2{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 .vc .wd{font-family:S,serif;font-size:40px;font-weight:700;color:#c62828}
-.vc .pr{font-size:24px;font-weight:700;color:#667}
+.vc .pr{font-size:27px;font-weight:700;color:#667}
 .vc .tg{font-size:20px;font-weight:800;letter-spacing:1px;background:#c62828;color:#fff;border-radius:20px;padding:3px 14px}
 .vc .why{font-size:31px;font-weight:600;color:#223;line-height:1.35;margin-top:4px}
-.vc .ex{font-family:S,serif;font-style:italic;font-size:29px;color:#556;margin-top:4px}
+.vc .ex{font-family:S,serif;font-style:italic;font-size:30px;color:#556;margin-top:4px}
 .trio{display:flex;gap:12px}
 .trio span{flex:1;text-align:center;background:#fff;border:2.5px solid @AC@;border-radius:18px;padding:12px 6px;font-family:S,serif;font-size:34px;font-weight:700;color:@AC@}
 .trio span.on{background:@AC@;color:#fff}
@@ -44,12 +44,12 @@ PASS = f'<span style="font-size:27px;line-height:1.5;display:block">{S1} {S2}</s
 
 # 1 cover
 cov = f"""<div style="display:flex;justify-content:space-between;align-items:center"><div class="pill">DOMAIN · CRAFT AND STRUCTURE</div>{E('1f331',110,'fl')}</div>
-<div style="align-self:flex-start;display:flex;align-items:center;gap:20px;background:#1e1e1e;color:#fff;border-radius:26px;padding:14px 34px 14px 30px"><span style="font-family:IN,M,sans-serif;font-weight:900;font-size:110px;letter-spacing:-3px;line-height:1">SAT<sup style="font-size:36px;vertical-align:top;position:relative;top:14px">&reg;</sup></span><span style="font-size:27px;font-weight:800;line-height:1.3;border-left:3px solid {AC};padding-left:20px">Reading &amp; Writing<br>practice question</span></div>
+<div style="font-family:IN,M,sans-serif;font-weight:900;font-size:58px;letter-spacing:-1px;color:#1e1e1e"><span style="color:{AC}">SAT</span>&reg; Reading &amp; Writing</div>
 <div class="h" style="font-size:96px"><span class="blue">Corn</span><br>looks nothing like<br>its ancestor</div>
 <div class="lead">So how did scientists find out who its ancestor was? One SAT word answers it.</div><div class="chips"><span>SKILL · Words in Context</span><span>4 choices</span><span>3 clues</span></div><div class="swipe">Swipe →</div>"""
 
-p2 = f"""<div class="pill">YOUR TURN · TRY IT FIRST</div>{frame(1, PASS, CH, prompt=PR)}
-<div class="card big" style="padding:16px 24px">Which word fits the blank? Decide, then swipe for the answer.</div>"""
+p2 = f"""<div class="pill">YOUR TURN · TRY IT FIRST</div>{frame(1, PASS, CH, prompt=PR).replace("Section 1, Module 1: Reading and Writing","Reading and Writing · GMP practice").replace("Question 1 of 27","Practice question 1")}
+<div class="card big" style="padding:16px 24px">Which word fits the blank? Decide, then swipe for the answer.<div style="font-size:22px;font-weight:600;color:#667;margin-top:6px">Original Global Math Prep practice question. Not from the College Board.</div></div>"""
 
 S2h = ('Maize (corn), another crop domesticated by Indigenous Americans, shows <span class="hk">so little resemblance</span> to any wild plant that '
        '<span class="hk">genetic research was necessary</span> to ______ <span class="hk">teosinte grass as its ancestor</span>.')
@@ -61,15 +61,15 @@ p3 = f"""<div class="pill">KEY CLUES</div>
 <div class="h" style="font-size:72px"><span class="blue">3 clues</span> point<br>to the answer</div>
 <div class="card" style="padding:16px 24px"><div class="sen" style="font-size:31px;line-height:1.55">{S2h}</div></div>
 <div class="card" style="padding:6px 24px">{rows}</div>
-<div class="rule" style="font-size:27px">Looks cannot tell us, so research was needed. Research gave proof.</div>"""
+<div class="rule" style="font-size:27px">Looks alone cannot tell us, so research was needed. Research gave the proof.</div>"""
 
 p4 = f"""<div class="pill">ANSWER</div>
 <div class="okrow"><div class="ok">D) confirm</div><div class="h" style="font-size:56px">= prove</div></div>
 <div class="lead" style="font-size:32px">Say it: <b>kun-FURM</b>. It means to show that something is true.</div>
-<div class="card" style="padding:14px 24px"><div class="lab">ASK: “WHAT DOES RESEARCH DO?”</div>
+<div class="card" style="padding:14px 24px"><div class="lab" style="font-size:26px">ASK: “WHAT DOES RESEARCH DO?”</div>
 <div class="trio"><span>finds</span><span>proves</span><span class="on">confirms</span></div></div>
 <div class="card" style="padding:14px 24px"><div class="lab">TEST IT</div><div class="sen" style="font-size:36px">…genetic research was necessary to <b>confirm</b> teosinte grass as its ancestor.</div></div>
-<div class="rule" style="font-size:26px">Pattern: <u>to ___ X as Y</u> → confirm, identify, establish<br>so … that research was necessary → proof was needed</div>"""
+<div class="rule" style="font-size:26px">PATTERN · <u>to ___ X as Y</u> → confirm, identify, establish<br>CLUE · so … that research was necessary → proof was needed</div>"""
 
 def vc(w, pr, mean, why, ex, trap=False):
     tag = '<span class="tg">MOST TEMPTING</span>' if trap else ''
@@ -78,7 +78,8 @@ p5 = f"""<div class="pill">WHY THE OTHERS ARE WRONG</div>
 <div class="h" style="font-size:66px">Why is <span class="blue">develop</span><br>the trap?</div>
 {vc('B) develop', 'di-VEL-up', 'create, build', 'Research cannot create an ancestor. Teosinte already existed. It sounds scientific, so many students pick it.', 'Scientists developed a vaccine.', True)}
 {vc('A) acquire', 'uh-KWY-er', 'get, obtain', 'Research does not get grass.', 'The museum acquired a painting.')}
-{vc('C) attract', 'uh-TRAKT', 'pull toward', 'Research does not pull grass toward it.', 'Flowers attract bees.')}"""
+{vc('C) attract', 'uh-TRAKT', 'pull toward', 'Research does not pull grass toward it.', 'Flowers attract bees.')}
+<div style="font-size:28px;font-weight:800;color:#445;text-align:center">D) confirm is explained on the previous slide.</div>"""
 
 p6 = f"""<div class="pill">THE END</div>
 <div style="text-align:center"><div class="in" style="font-size:58px">Want more practice like this?</div>
@@ -87,7 +88,7 @@ p6 = f"""<div class="pill">THE END</div>
 <div style="display:flex;gap:20px;align-items:stretch">
  <div class="card" style="text-align:center;padding:14px"><img src="{gen29.QR}" style="width:220px;height:220px;display:block"><div style="font-weight:800;font-size:22px;margin-top:4px">Scan to sign up</div></div>
  <div class="card" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:12px;font-size:27px;font-weight:700">
-  <div><span class="blue">English</span> · Tue · Thu · Sat · 20:00–21:20</div><div><span class="blue">Math</span> · Mon · Wed · Fri · 20:00–21:20</div><div style="color:#556">Ulaanbaatar time · WhatsApp +1 428 880 1826</div></div></div>"""
+  <div><span class="blue">English</span> · Tue · Thu · Sat · 20:00–21:20</div><div><span class="blue">Math</span> · Mon · Wed · Fri · 20:00–21:20</div><div style="color:#556">Ulaanbaatar, Mongolia time</div><div style="color:#556;white-space:nowrap">WhatsApp +1 428 880 1826</div></div></div>"""
 
 POST = dict(key='Cacao-Maize-EN', AC=AC, SOFT=SOFT, TINT=TINT, nxt='New',
             pages=[cov, p2, p3, p4, p5, p6])
