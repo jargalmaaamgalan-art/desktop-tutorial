@@ -43,9 +43,10 @@ PR = 'Which choice completes the text with the most logical and precise word or 
 PASS = f'<span style="font-size:27px;line-height:1.5;display:block">{S1} {S2}</span>'
 
 # 1 cover
-cov = gen30.cover('SAT R&amp;W · WORDS IN CONTEXT', '<span class="blue">Corn</span><br>looks nothing like<br>its ancestor',
-                  'So how did scientists find out who its ancestor was? One SAT word answers it.',
-                  ['Words in Context', '4 choices', '3 clues'], '1f331').replace('Гүйлгээд үз →', 'Swipe →')
+cov = f"""<div style="display:flex;justify-content:space-between;align-items:center"><div class="pill">READING &amp; WRITING · WORDS IN CONTEXT</div>{E('1f331',110,'fl')}</div>
+<div style="align-self:flex-start;display:flex;align-items:center;gap:20px;background:#1e1e1e;color:#fff;border-radius:26px;padding:14px 34px 14px 30px"><span style="font-family:IN,M,sans-serif;font-weight:900;font-size:110px;letter-spacing:-3px;line-height:1">SAT<sup style="font-size:36px;vertical-align:top;position:relative;top:14px">&reg;</sup></span><span style="font-size:27px;font-weight:800;line-height:1.3;border-left:3px solid {AC};padding-left:20px">Digital SAT<br>practice question</span></div>
+<div class="h" style="font-size:96px"><span class="blue">Corn</span><br>looks nothing like<br>its ancestor</div>
+<div class="lead">So how did scientists find out who its ancestor was? One SAT word answers it.</div><div class="chips"><span>Words in Context</span><span>4 choices</span><span>3 clues</span></div><div class="swipe">Swipe →</div>"""
 
 p2 = f"""<div class="pill">YOUR TURN · TRY IT FIRST</div>{frame(1, PASS, CH, prompt=PR)}
 <div class="card big" style="padding:16px 24px">Which word fits the blank? Decide, then swipe for the answer.</div>"""
