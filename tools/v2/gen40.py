@@ -110,7 +110,7 @@ def cover():
 <div class="rx2" style="align-self:flex-start">Swipe to level up →</div>"""
 
 def quiz():
-    o = ''.join(f'<div class="opt"><i>{a}</i><span>{b}</span></div>' for a, b in [('A', 'carry something heavy'), ('B', 'show that it is true'), ('C', 'stand a bad thing')])
+    o = ''.join(f'<div class="opt"><i>{a}</i><span>{b}</span></div>' for a, b in [('A', 'carry something heavy'), ('B', 'show that it is true'), ('C', 'put up with something bad')])
     return f"""<div class="row"><div class="chip3">QUIZ · POLL TIME</div>{E('1f914',92,'fl')}</div>
 <div class="ttl" style="font-size:66px">What does <span style="color:{PINK}">“bear out”</span> mean here?</div>
 <div class="chat" style="padding:16px 22px"><div class="m"><div class="av">{E('1f60e',60)}</div><div class="b1" style="font-size:32px">The latest experiments {hi('bear out','bear out')} the scientist’s hypothesis.</div></div></div>
@@ -133,16 +133,16 @@ def tip():
  <div class="su" style="text-align:center;padding:12px"><img src="{gen29.QR}" style="width:190px;height:190px;display:block"><div style="font-weight:800;font-size:21px;margin-top:4px">Scan to sign up</div></div>
  <div class="su" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;font-size:26px;font-weight:700">
   <div class="in" style="font-size:36px">Comment “SAT” below</div>
-  <div><span style="color:{PINK};font-weight:900">English</span> · Tue · Thu · Sat · 20:00–21:20</div><div><span style="color:{PINK};font-weight:900">Math</span> · Mon · Wed · Fri · 20:00–21:20</div><div style="color:#556">Ulaanbaatar, Mongolia time</div><div style="color:#556;white-space:nowrap">WhatsApp +1 428 880 1826</div></div></div>"""
+  <div><span style="color:{PINK};font-weight:900">English</span> · Tue · Thu · Sat · 20:00 to 21:20</div><div><span style="color:{PINK};font-weight:900">Math</span> · Mon · Wed · Fri · 20:00 to 21:20</div><div style="color:#556">Ulaanbaatar, Mongolia time</div><div style="color:#556;white-space:nowrap">WhatsApp +1 428 880 1826</div></div></div>"""
 
 def build():
     P = [cover(),
-      exp(1, 'BEAR IN MIND', 'Remember it and think about it.', 'Санаж явах, анхаарах', 'Bear in mind that the shop closes at six.', 'Bear in mind', 'Bear in mind: the honey is MINE.', 'think', '1f4a1', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>', ('1f525', '1f92f', '1f4af')),
+      exp(1, 'BEAR IN MIND', 'To remember something and think about it.', 'Санаж явах, анхаарах', 'Bear in mind that the shop closes at six.', 'Bear in mind', 'Bear in mind: the honey is MINE.', 'think', '1f4a1', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>', ('1f525', '1f92f', '1f4af')),
       exp(2, 'BEAR FRUIT', 'To give good results after hard work.', 'Үр дүнгээ өгөх', 'Years of study finally bore fruit.', 'bore fruit', 'My tree bore fruit! Apples. Not honey.', 'fruit', '1f4aa', 'Name a goal that will <b>bear fruit</b> for you 👇', ('1f4aa', '1f525', '1f3af')),
       exp(3, 'BEAR WITH ME', 'Be patient with me for a short time.', 'Жаахан хүлээгээрэй', 'Please bear with me while I find the file.', 'bear with me', 'Bear with me… I am still thinking.', 'please', '1f605', 'Who says this the most? <b>Tag a friend</b>', ('1f605', '1f64c', '1f525')),
       exp(4, 'BEAR THE COST', 'To pay for something or take the responsibility.', 'Зардлыг хариуцах', 'The school will bear the cost of the trip.', 'bear the cost', 'Who bears the cost of my honey? You.', 'cost', '1f631', 'Who <b>bears the cost</b> at your home?', ('1f631', '1f4af', '1f525')),
-      exp(5, 'CAN’T BEAR', 'To not be able to stand something.', 'Тэвчиж чадахгүй', 'I can’t bear the noise in this room.', 'can’t bear', 'I can’t bear it! Too loud!', 'ears', '1f62e', 'What can you <b>not bear</b>? Comment it 👇', ('1f62e', '1f92f', '1f525')),
-      exp(6, 'BEAR OUT', 'To show that something is true.', 'Баталж өгөх, зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out', '1f913', '<b>Save</b> this post for your SAT revision', ('1f913', '1f4af', '1f3c6')),
+      exp(5, 'CAN’T BEAR', 'To be unable to stand something.', 'Тэвчиж чадахгүй', 'I can’t bear the noise in this room.', 'can’t bear', 'I can’t bear it! Too loud!', 'ears', '1f62e', 'What can you <b>not bear</b>? Comment it 👇', ('1f62e', '1f92f', '1f525')),
+      exp(6, 'BEAR OUT', 'To show that something is true.', 'Зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out', '1f913', '<b>Save</b> this post for your SAT revision', ('1f913', '1f4af', '1f3c6')),
       quiz(), tip()]
     return dict(key='BearLight', prefix='GMP-SATWords-Light', AC=PINK, SOFT='#fff1cf', TINT='#fff8ea', nxt='New', pages=P, foot='WORDS IN CONTEXT · BEAR')
 

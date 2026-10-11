@@ -14,7 +14,7 @@ WORDS['DRAW'] = dict(
    X('DRAW ON', 'To use knowledge or experience.', 'Туршлага, мэдлэгээ ашиглах', 'The author draws on her childhood memories.', 'draws on', 'I draw on my honey experience.', 'out', '📚', '🧠', 'Tag a friend who <b>draws on</b> notes before a test'),
    X('DRAWBACK', 'A bad side of something.', 'Сул тал', 'The main drawback of the plan is its cost.', 'drawback', 'Drawback: my honey jar is empty.', 'cost', '🍯', '😬', 'Name one <b>drawback</b> of homework 😅'),
    X('DRAW A DISTINCTION', 'To show the difference between two things.', 'Ялгааг тодруулах', 'The essay draws a distinction between speed and quality.', 'draws a distinction', 'I draw a distinction: honey, not jam.', 'point', '⚖️', '🤓', '<b>Save</b> this post for your SAT revision'),
-   X('DRAW TO A CLOSE', 'To be almost finished.', 'Дуусах дөхөх', 'The meeting drew to a close at noon.', 'drew to a close', 'The movie draws to a close. More snacks!', 'sleepy', '🎬', '🏁', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
+   X('DRAW TO A CLOSE', 'To be ending, or to end.', 'Дуусах дөхөх', 'The meeting drew to a close at noon.', 'drew to a close', 'The movie draws to a close. More snacks!', 'sleepy', '🎬', '🏁', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='draws on', sent='The historian draws on letters from soldiers to describe daily life.', key='draws on',
             opts=['makes a picture of', 'uses as a source', 'pulls with force'], ans='B', expl='“Draw on” = use something as a source.', quip='Careful! Nobody is making a picture here. ✏️'),
@@ -28,7 +28,7 @@ WORDS['ACCOUNT'] = dict(
    X('ACCOUNT FOR (A SHARE)', 'To make up a part of a total.', 'Тодорхой хувийг эзлэх', 'Exports account for 40 percent of the company’s sales.', 'account for', 'Honey accounts for 90% of my diet.', 'happy', '🥧', '📊', 'What <b>accounts for</b> most of your day? 👇'),
    X('TAKE INTO ACCOUNT', 'To think about something before you decide.', 'Тооцоолох, анхаарч үзэх', 'The plan must take the cost into account.', 'take the cost into account', 'Take my nap into account, please.', 'sleepy', '😴', '🧐', 'Tag a friend who never <b>takes</b> time <b>into account</b>'),
    X('ON ACCOUNT OF', 'Because of.', '…-ын улмаас, учраас', 'The game was moved on account of the rain.', 'on account of', 'I stayed in on account of the rain.', 'please', '🏠', '🌧️', 'What do you skip <b>on account of</b> homework?'),
-   X('AN ACCOUNT OF', 'A report or story of what happened.', 'Тайлан, өгүүлэмж', 'She wrote an account of her trip to Japan.', 'an account of', 'My account of the honey theft: it was a bee.', 'shrug', '📖', '📝', '<b>Save</b> this post for your SAT revision'),
+   X('AN ACCOUNT OF', 'A report or story of what happened.', 'Тайлан, түүх', 'She wrote an account of her trip to Japan.', 'an account of', 'My account of the honey theft: it was a bee.', 'shrug', '📖', '📝', '<b>Save</b> this post for your SAT revision'),
    X('BY ALL ACCOUNTS', 'According to what most people say.', 'Бүгдийн ярьж байгаагаар', 'By all accounts, the new teacher is excellent.', 'By all accounts', 'By all accounts, I am the cutest.', 'sun', '⭐', '🌟', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='accounts for', sent='Tourism accounts for most of the island’s income.', key='accounts for',
@@ -39,7 +39,7 @@ WORDS['ACCOUNT'] = dict(
 WORDS['HOLD'] = dict(
   pov='POV: you think HOLD means to grab something ✋', cover_em='✋', hook='Нэг үг, 6 өөр утга!',
   exps=[
-   X('HOLD TRUE', 'To still be correct.', 'Хүчинтэй хэвээр байх', 'The rule holds true for every triangle.', 'holds true', 'It holds true: bears love honey.', 'out', '✅', '💯', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
+   X('HOLD TRUE', 'To still be correct.', 'Үнэн хэвээр байх', 'The rule holds true for every triangle.', 'holds true', 'It holds true: bears love honey.', 'out', '✅', '💯', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
    X('HOLD BACK', 'To stop yourself or something from moving forward.', 'Барьж зогсоох, ухрах', 'Fear held her back from speaking.', 'held her back', 'Fear held me back from the honey.', 'cost', '😨', '🛑', 'What <b>holds you back</b> the most? 👇'),
    X('HOLD UP', 'To stay strong when tested.', 'Тэсвэрлэх, бат бэх байх', 'The old bridge still holds up well.', 'holds up', 'This branch holds up well.', 'flex', '🌉', '💪', 'Tag a friend who <b>holds up</b> under stress'),
    X('HOLD A VIEW', 'To have an opinion.', 'Үзэл бодолтой байх', 'Many scientists hold the view that the climate is changing.', 'hold the view', 'I hold the view that naps are good.', 'think', '💭', '🗣️', 'Your view: <b>naps are good</b>. YES or NO?'),
@@ -100,22 +100,22 @@ WORDS['CHARGE'] = dict(
   pov='POV: you think CHARGE is only for phones 🔋', cover_em='🔋', hook='Нэг үг, 6 өөр утга!',
   exps=[
    X('CHARGE A FEE', 'To ask for money for something.', 'Хураамж авах', 'The museum charges ten dollars.', 'charges ten dollars', 'The cave charges ten dollars.', 'cost', '💵', '🎟️', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
-   X('IN CHARGE', 'The boss; the person responsible.', 'Хариуцсан, эрхлэгч', 'Who is in charge of the club?', 'in charge', 'I am in charge of the honey.', 'flex', '👑', '😎', 'Who is <b>in charge</b> at your home? 👇'),
+   X('IN CHARGE', 'Responsible for; in control of.', 'Хариуцсан, эрхлэгч', 'Who is in charge of the club?', 'in charge', 'I am in charge of the honey.', 'flex', '👑', '😎', 'Who is <b>in charge</b> at your home? 👇'),
    X('TAKE CHARGE', 'To start leading.', 'Удирдаж эхлэх', 'She took charge of the project.', 'took charge', 'I take charge: everyone, dinner!', 'point', '🍽️', '📣', 'Tag a friend who always <b>takes charge</b>'),
-   X('CHARGE (BLAME)', 'To say that someone did a crime.', 'Буруутгах, яллах', 'Police charged him with theft.', 'charged him with theft', 'They charged me with cookie theft.', 'please', '🚔', '😱', '<b>Save</b> this post for your SAT revision'),
-   X('CHARGE A PHONE', 'To fill a battery with power.', 'Цэнэглэх', 'I need to charge my phone.', 'charge my phone', 'Charge me! I am at 1 percent.', 'sleepy', '🔋', '⚡', 'What is your phone battery now? Comment <b>%</b>'),
-   X('CHARGE AHEAD', 'To go forward fast.', 'Давшин гарах', 'The team charged ahead with the plan.', 'charged ahead', 'Charge ahead! Honey is near.', 'wow', '🏃', '🚀', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
+   X('CHARGE WITH (A CRIME)', 'To officially say that someone committed a crime.', 'Буруутгах, яллах', 'Police charged him with theft.', 'charged him with theft', 'They charged me with cookie theft.', 'please', '🚔', '😱', '<b>Save</b> this post for your SAT revision'),
+   X('CHARGE A PHONE', 'To fill a battery with power.', 'Цэнэглэх', 'I need to charge my phone.', 'charge my phone', 'Charge me! I am at 1 percent.', 'sleepy', '🔋', '🔌', 'What is your phone battery now? Comment <b>%</b>'),
+   X('CHARGE AHEAD', 'To go ahead boldly.', 'Давшин гарах', 'The team charged ahead with the plan.', 'charged ahead', 'Charge ahead! Honey is near.', 'wow', '🏃', '🚀', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='charges', sent='The company charges a fee for late returns.', key='charges',
             opts=['attacks', 'asks for payment', 'fills with power'], ans='B', expl='“Charges a fee” = asks for money.', quip='Careful! No batteries here. 🔋'),
-  cells=[('PAY', 'charge a fee', 'It charges ten dollars.', 'хураамж авах'), ('LEAD', 'take charge', 'She took charge.', 'удирдах'), ('BLAME', 'charge with', 'He was charged with theft.', 'буруутгах'), ('POWER', 'charge a phone', 'Charge my phone.', 'цэнэглэх')],
+  cells=[('PAY', 'charge a fee', 'It charges ten dollars.', 'хураамж авах'), ('LEAD', 'take charge', 'She took charge.', 'удирдах'), ('ACCUSE', 'charge with', 'He was charged with theft.', 'буруутгах'), ('POWER', 'charge a phone', 'Charge my phone.', 'цэнэглэх')],
 )
 
 WORDS['MAINTAIN'] = dict(
   pov='POV: you think MAINTAIN only means to fix 🔧', cover_em='🔧', hook='Нэг үг, 6 өөр утга!',
   exps=[
    X('MAINTAIN THAT', 'To say firmly that something is true.', 'Үнэн гэж батлан хэлэх', 'She maintains that the plan is fair.', 'maintains that', 'I maintain that honey is a fruit.', 'point', '🍯', '🗞️', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
-   X('MAINTAIN A BUILDING', 'To keep it in good condition.', 'Засвар үйлчилгээ хийх', 'Workers maintain the old bridge.', 'maintain the old bridge', 'I maintain my cave every spring.', 'flex', '🛠️', '🏗️', 'What do you <b>maintain</b> every day? 👇'),
+   X('MAINTAIN A BRIDGE', 'To keep it in good condition.', 'Засварлан хадгалах', 'Workers maintain the old bridge.', 'maintain the old bridge', 'I maintain my cave every spring.', 'flex', '🛠️', '🏗️', 'What do you <b>maintain</b> every day? 👇'),
    X('MAINTAIN A PACE', 'To keep the same speed.', 'Хурдаа хэвээр барих', 'Runners must maintain a steady pace.', 'maintain a steady pace', 'Maintain your pace, bear!', 'happy', '🏃', '⏱️', 'Tag a friend who <b>maintains</b> a good pace'),
    X('MAINTAIN CONTACT', 'To stay in touch.', 'Холбоо тогтмол барих', 'They maintain contact by email.', 'maintain contact', 'We maintain contact by email.', 'out', '📧', '🤝', '<b>Save</b> this post for your SAT revision'),
    X('MAINTAIN ORDER', 'To keep things calm and safe.', 'Дэг журам сахих', 'Guards maintain order in the hall.', 'maintain order', 'I maintain order in the forest.', 'sun', '👮', '🛡️', 'Who <b>maintains order</b> in your class?'),
@@ -123,7 +123,7 @@ WORDS['MAINTAIN'] = dict(
   ],
   quiz=dict(word='maintains', sent='The author maintains that cities should grow slowly.', key='maintains',
             opts=['repairs', 'states firmly', 'keeps running'], ans='B', expl='“Maintains that” = states firmly that it is true.', quip='Careful! Nothing is broken here. 🔧'),
-  cells=[('SAY', 'maintain that', 'She maintains that it is fair.', 'батлан хэлэх'), ('FIX', 'maintain a building', 'Maintain the old bridge.', 'засварлах'), ('KEEP', 'maintain a pace', 'Maintain a steady pace.', 'хэвээр барих'), ('CONTROL', 'maintain order', 'Guards maintain order.', 'дэг журам сахих')],
+  cells=[('SAY', 'maintain that', 'She maintains that it is fair.', 'батлан хэлэх'), ('UPKEEP', 'maintain a bridge', 'Maintain the old bridge.', 'засварлах'), ('KEEP', 'maintain a pace', 'Maintain a steady pace.', 'хэвээр барих'), ('KEEP ORDER', 'maintain order', 'Guards maintain order.', 'дэг журам сахих')],
 )
 
 WORDS['TRACE'] = dict(
@@ -133,8 +133,8 @@ WORDS['TRACE'] = dict(
    X('A TRACE OF', 'A very small amount.', 'Бага зэрэг, ор мөр', 'There was a trace of sadness in his voice.', 'a trace of sadness', 'A trace of honey on my nose.', 'shrug', '👃', '🤏', 'Name something with <b>a trace of</b> sugar 👇'),
    X('TRACE BACK TO', 'To come from an earlier time or cause.', 'Эх үүсвэр нь …', 'The word traces back to Latin.', 'traces back to Latin', 'This word traces back to Latin.', 'think', '🏛️', '📜', 'Tag a friend who loves <b>word origins</b>'),
    X('TRACE A PATH', 'To follow a route step by step.', 'Замыг мөшгөх', 'Detectives trace the thief’s path.', 'trace the thief’s path', 'I trace the paw prints.', 'point', '🐾', '🗺️', '<b>Save</b> this post for your SAT revision'),
-   X('TRACE A DRAWING', 'To copy lines through thin paper.', 'Хуулан зурах', 'She traced the map onto thin paper.', 'traced the map', 'I traced the map onto paper.', 'flex', '🗺️', '✏️', 'Do you <b>trace</b> or draw free? Comment <b>T</b> or <b>F</b>'),
-   X('WITHOUT A TRACE', 'Leaving no sign at all.', 'Ор мөргүй', 'The ship vanished without a trace.', 'without a trace', 'The honey vanished without a trace.', 'wow', '💨', '🫥', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
+   X('TRACE A DRAWING', 'To copy lines through thin paper.', 'Хуулан зурах', 'She traced the map onto thin paper.', 'traced the map', 'I traced the map onto paper.', 'flex', '🗺️', '✏️', 'Do you <b>trace</b> or draw freehand? Comment <b>TRACE</b> or <b>FREE</b>'),
+   X('WITHOUT A TRACE', 'Leaving no sign at all.', 'Ор мөргүй', 'The ship vanished without a trace.', 'without a trace', 'The honey vanished without a trace.', 'wow', '💨', '👻', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='trace', sent='Historians trace the tradition back to the 1600s.', key='trace',
             opts=['draw over', 'find the starting point of', 'hide'], ans='B', expl='“Trace back to” = find where it started.', quip='Careful! Nobody is drawing here. 🔍'),

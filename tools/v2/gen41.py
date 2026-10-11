@@ -1,3 +1,4 @@
+import re
 """SAT multi-meaning word posts, one design technique per post.
 Run: python3 gen41.py [--video] WORD [WORD ...]   (WORD in words.WORDS; default all)"""
 import sys, os, base64
@@ -31,7 +32,7 @@ BASE = """
 .hd .l{display:flex;align-items:center;gap:16px}
 .no{flex:none;width:90px;height:90px;border-radius:50%;background:var(--a);color:var(--on);font-family:var(--ft);font-size:56px;display:flex;align-items:center;justify-content:center}
 .of,.dom{background:var(--card);color:var(--on);border:3px solid var(--on);border-radius:30px;padding:8px 22px;font-weight:900;font-size:23px;letter-spacing:1.5px}
-.em{font-size:84px;line-height:1;animation:fl 3s ease-in-out infinite}
+.em{font-size:84px;line-height:1;filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 3px #fff);animation:fl 3s ease-in-out infinite}
 .T{font-family:var(--ft);color:var(--ink);line-height:1.02}
 .en{font-size:30px;font-weight:700;color:var(--ink);line-height:1.3}
 .mg{align-self:flex-start;background:var(--a);color:var(--on);border-radius:44px;padding:10px 32px;font-size:46px;font-weight:900}
@@ -44,7 +45,7 @@ BASE = """
 .vis .q{max-width:400px;margin-bottom:150px;background:var(--card);color:var(--on);border:3px solid var(--on);border-radius:28px;padding:14px 22px;font-size:32px;font-weight:800;line-height:1.25;animation:pop .6s 1s both}
 .prop{font-size:130px;line-height:1;position:absolute;right:10px;bottom:6px}
 .rxn{align-self:center;background:var(--b);color:var(--on);border-radius:44px;padding:12px 28px;font-weight:900;font-size:32px;display:flex;gap:14px;align-items:center;text-align:center}
-.rxn .lb{font-size:19px;letter-spacing:2px;opacity:.65;font-weight:900}.rxn span b{color:var(--a2)}
+.rxn .lb{font-size:19px;letter-spacing:2px;opacity:.65;font-weight:900;white-space:nowrap;flex:none}.rxn span{text-wrap:balance}.rxn span b{color:inherit;text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:5px}
 .sat{font-weight:900;font-size:54px;letter-spacing:-1px;color:var(--ink)} .sat span{color:var(--a2)}
 .pov{font-size:38px;font-weight:900;color:var(--a2);font-style:italic;line-height:1.25}
 .W{font-family:var(--ft);color:var(--ink);line-height:.95}
@@ -106,7 +107,7 @@ SKINS['comic'] = dict(
 SKINS['notebook'] = dict(
   vars='--ink:#1e2a52;--on:#1e2a52;--card:#fffdf0;--a:#fff176;--a2:#e0475b;--b:#ffb3c7;--c1:#fff176;--c2:#a7e3ff;--c3:#ffb3c7;--c4:#c5f0a4;--ft:Caveat,cursive;--fb:Caveat,cursive',
   fonts=lambda: F('Caveat', 'caveat', [400, 700]),
-  ts=(150, 0.5), wsz=(250, 0.56), t2=66, t3=68,
+  ts=(150, 0.5), wsz=(190, 0.56), t2=66, t3=68,
   css="""
 .pg{background:linear-gradient(90deg,transparent 88px,#ef5b5b 88px,#ef5b5b 91px,transparent 91px),repeating-linear-gradient(#fdfcf3 0 47px,#a9c9ee 47px 49px)}
 .pg:after{content:'';position:absolute;left:20px;top:150px;width:40px;height:1100px;background:radial-gradient(circle,#d9d2bd 0 17px,transparent 18px) 0 0/40px 380px}
@@ -201,7 +202,6 @@ SKINS['postcard'] = dict(
 .ex{border:none;background:repeating-linear-gradient(transparent 0 52px,#c9b79c 52px 54px);border-radius:0;padding:0 6px;font-size:50px;font-weight:400;line-height:54px}
 .k{background:#ffd7a0;font-weight:400;font-size:1.05em}
 .vis{height:440px}.vis .mas{width:390px;height:390px}.vis .q{border:none;background:#fff;border:3px solid #3b2a1a;border-radius:10px;font-size:38px;font-weight:400;transform:rotate(-2deg);margin-bottom:120px}
-.vis:after{content:'';position:absolute;right:150px;top:-20px;width:120px;height:120px;border:5px solid rgba(60,40,20,.28);border-radius:50%;transform:rotate(-12deg);z-index:0}
 .prop{background:#fff;border:4px dotted #9b1c1c;padding:8px;font-size:84px;right:6px;top:0;bottom:auto;transform:rotate(4deg);width:130px;height:150px;display:flex;align-items:center;justify-content:center}
 .rxn{border:3px solid #3b2a1a;border-radius:10px;font-size:38px;font-weight:400;background:#9be0d0}
 .opt,.sent,.ban,.g4 .c,.su .qr,.su .info,.s1,.s2,.s3,.sw{border-radius:10px}.opt{font-size:36px;font-weight:400}.opt i{font-family:Playfair,serif;font-weight:900}
@@ -388,12 +388,13 @@ def exp(i, X, sk):
 
 def quiz(D, sk):
     Q = D['quiz']
+    QP = re.sub(r'\s*[^\x00-\u2000]+\s*$', '', Q['quip'])
     o = ''.join(f'<div class="opt"><i>{a}</i><span>{b}</span></div>' for a, b in zip('ABC', Q['opts']))
     return f"""<div class="hd"><div class="dom">QUIZ · POLL TIME</div><div class="em">🤔</div></div>
 <div class="T2" style="font-size:{sk['t2']}px">What does <span class="k2">“{Q['word']}”</span> mean here?</div>
 <div class="sent">{hi(Q['sent'], Q['key'])}</div>
 <div class="opts">{o}</div>
-<div class="vis sm"><div class="q">{Q['quip']}</div>{mas('think')}</div>
+<div class="vis sm"><div class="q">{QP}</div>{mas('think')}</div>
 <div class="rxn"><span>👇 Comment A, B or C below!</span></div>
 <div class="note">Original Global Math Prep practice question. Not from the College Board.</div>"""
 
@@ -405,7 +406,7 @@ def tip(W, D, sk):
 <div class="T3" style="font-size:{sk['t3']}px">{W} has <span class="k2">4 hidden jobs</span></div>
 <div class="g4">{cells}</div>
 <div class="su"><div class="qr"><img src="{gen29.QR}"><div>Scan to sign up</div></div>
-<div class="info"><h4>Comment “SAT” below</h4><div><b>English</b> · Tue · Thu · Sat · 20:00–21:20</div><div><b>Math</b> · Mon · Wed · Fri · 20:00–21:20</div><div style="opacity:.75">Ulaanbaatar, Mongolia time</div><div style="opacity:.75;white-space:nowrap">WhatsApp +1 428 880 1826</div></div></div>"""
+<div class="info"><h4>Comment “SAT” below</h4><div><b>English</b> · Tue · Thu · Sat · 20:00 to 21:20</div><div><b>Math</b> · Mon · Wed · Fri · 20:00 to 21:20</div><div style="opacity:.75">Ulaanbaatar, Mongolia time</div><div style="opacity:.75;white-space:nowrap">WhatsApp +1 428 880 1826</div></div></div>"""
 
 CUR = {}
 def make_css(a, s, t):
