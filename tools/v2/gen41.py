@@ -277,7 +277,7 @@ SKINS['newspaper'] = dict(
 .ex{background:transparent;border:none;border-top:2px solid #161616;border-bottom:2px solid #161616;border-radius:0;font-size:36px;font-weight:700}
 .k{background:#ffe08a;font-weight:900}
 .vis{height:380px;border:3px solid #161616;background:radial-gradient(rgba(0,0,0,.16) 1.6px,transparent 2px) 0 0/8px 8px,#ddd2b8}
-.vis:after{content:'PHOTO: BEARY, SPECIAL CORRESPONDENT';position:absolute;left:0;right:0;bottom:-34px;font-size:17px;font-weight:700;letter-spacing:2px}
+.vis:after{content:'PHOTO: BEAVER, SPECIAL CORRESPONDENT';position:absolute;left:0;right:0;bottom:-34px;font-size:17px;font-weight:700;letter-spacing:2px}
 .vis .q{border-radius:0;border:3px solid #161616;background:#f8f2e2;font-size:30px;font-style:italic;font-weight:700}
 .prop{font-size:92px;right:14px;top:12px;bottom:auto}
 .rxn{border-radius:0;border:3px solid #161616;font-size:30px;font-weight:700;margin-top:18px}
@@ -328,7 +328,7 @@ PLAN = {  # word -> skin
 # ---------------------------------------------------------------- mascot with extra moods
 FUR, LIGHT, DARK = gen38.FUR, gen38.LIGHT, gen38.DARK
 
-def bear2(mood):
+def bear_base(mood):
     if mood in ('think', 'fruit', 'please', 'cost', 'ears', 'out', 'sun'):
         return gen38.bear(mood)
     ear = f'<circle cx="112" cy="70" r="40" fill="{FUR}"/><circle cx="288" cy="70" r="40" fill="{FUR}"/><circle cx="112" cy="72" r="21" fill="{LIGHT}"/><circle cx="288" cy="72" r="21" fill="{LIGHT}"/>'
@@ -356,6 +356,47 @@ def bear2(mood):
       'sleepy': body + hang + head + ear + shut + smile + '<text x="300" y="70" font-size="60" font-weight="900" fill="#60a5fa" font-family="Arial Black,sans-serif">Z</text><text x="344" y="30" font-size="40" font-weight="900" fill="#93c5fd" font-family="Arial Black,sans-serif">z</text>',
     }
     return f'<svg viewBox="-10 -10 420 420" xmlns="http://www.w3.org/2000/svg">{P[mood]}</svg>'
+
+
+
+# ---------------------------------------------------------------- species: same skeleton, different animal
+EAR0 = f'<circle cx="112" cy="70" r="40" fill="{FUR}"/><circle cx="288" cy="70" r="40" fill="{FUR}"/><circle cx="112" cy="72" r="21" fill="{LIGHT}"/><circle cx="288" cy="72" r="21" fill="{LIGHT}"/>'
+HEAD0 = f'<circle cx="200" cy="165" r="108" fill="{FUR}"/>'
+def tri(f, i, tall=1.0):
+    y = 56 - 50 * tall
+    return (f'<path d="M72 100 L92 {y:.0f} L158 60 Z" fill="{f}"/><path d="M328 100 L308 {y:.0f} L242 60 Z" fill="{f}"/>'
+            f'<path d="M98 84 L102 {y+36:.0f} L134 62 Z" fill="{i}"/><path d="M302 84 L298 {y+36:.0f} L266 62 Z" fill="{i}"/>')
+def beak(c): return f'<path d="M180 168 L220 168 L200 210 Z" fill="{c}" stroke="{DARK}" stroke-width="4" stroke-linejoin="round"/>'
+SPECIES = {
+ 'DRAW': dict(fur='#f08a24', light='#fff1dc', behind=tri('#f08a24', '#3b2210'),
+    over='<ellipse cx="206" cy="64" rx="84" ry="30" fill="#7c3aed"/><circle cx="216" cy="32" r="9" fill="#7c3aed"/><path d="M130 70 Q206 92 282 66" stroke="#5b21b6" stroke-width="5" fill="none"/>'),
+ 'ACCOUNT': dict(fur='#8a6a4a', light='#f3e2c0', behind=tri('#8a6a4a', '#d9b98a', .7), head='<ellipse cx="200" cy="158" rx="90" ry="62" fill="#fff7e0"/>',
+    over=beak('#f5a623') + '<path d="M200 276 L164 256 L164 296Z M200 276 L236 256 L236 296Z" fill="#dc2626"/><circle cx="200" cy="276" r="9" fill="#991b1b"/>'),
+ 'HOLD': dict(fur='#9aa8b6', light='#dfe6ec', behind='<circle cx="52" cy="150" r="58" fill="#9aa8b6"/><circle cx="52" cy="150" r="36" fill="#f3b7c4"/><circle cx="348" cy="150" r="58" fill="#9aa8b6"/><circle cx="348" cy="150" r="36" fill="#f3b7c4"/>',
+    over=f'<path d="M178 188 Q168 268 210 276 Q240 278 232 254 Q214 260 224 188 Z" fill="#8795a3" stroke="{DARK}" stroke-width="4" stroke-linejoin="round"/>'),
+ 'SUPPORT': dict(fur='#d9a066', light='#fff3e0', behind='<ellipse cx="92" cy="130" rx="34" ry="72" fill="#8a5a2b" transform="rotate(22 92 130)"/><ellipse cx="308" cy="130" rx="34" ry="72" fill="#8a5a2b" transform="rotate(-22 308 130)"/>',
+    over=f'<path d="M186 230 Q200 276 214 230 Z" fill="#f26b6b" stroke="{DARK}" stroke-width="3"/><rect x="138" y="262" width="124" height="16" rx="8" fill="#dc2626"/><circle cx="200" cy="292" r="11" fill="#ffd43b" stroke="{DARK}" stroke-width="3"/>'),
+ 'ADDRESS': dict(fur='#9fb4c9', light='#eef3f8', behind='',
+    over=beak('#fbbf24') + '<path d="M104 94 Q200 6 296 94 Z" fill="#1d4ed8"/><rect x="96" y="86" width="208" height="18" rx="9" fill="#1e3a8a"/><circle cx="200" cy="58" r="9" fill="#fbbf24"/>'),
+ 'FIGURE': dict(fur='#3d4f73', light='#ffffff', behind='', head='<ellipse cx="200" cy="170" rx="84" ry="74" fill="#ffffff"/>',
+    over=beak('#fb923c') + '<rect x="112" y="262" width="176" height="24" rx="12" fill="#38bdf8"/><rect x="240" y="272" width="28" height="54" rx="12" fill="#38bdf8"/>'),
+ 'CHARGE': dict(fur='#8fa3b8', light='#dfe9f3', head='<rect x="108" y="104" width="184" height="110" rx="34" fill="#eaf6ff"/>',
+    behind='<rect x="94" y="56" width="212" height="212" rx="52" fill="#8fa3b8"/><rect x="62" y="128" width="40" height="64" rx="10" fill="#6b7c8f"/><rect x="298" y="128" width="40" height="64" rx="10" fill="#6b7c8f"/><rect x="194" y="14" width="12" height="60" fill="#6b7c8f"/><circle cx="200" cy="14" r="18" fill="#ffd43b" stroke="#a16207" stroke-width="4"/>',
+    over='<rect x="170" y="258" width="60" height="18" rx="6" fill="#6b7c8f"/>'),
+ 'MAINTAIN': dict(fur='#8a5a2c', light='#e9d3b0', behind='<circle cx="104" cy="96" r="30" fill="#5b3a1a"/><circle cx="296" cy="96" r="30" fill="#5b3a1a"/>',
+    over=f'<rect x="184" y="214" width="32" height="32" rx="5" fill="#fff" stroke="{DARK}" stroke-width="4"/><path d="M200 214 V246" stroke="{DARK}" stroke-width="3"/><path d="M104 94 Q104 18 200 18 Q296 18 296 94 Z" fill="#facc15" stroke="#a16207" stroke-width="4"/><rect x="90" y="86" width="220" height="18" rx="9" fill="#eab308" stroke="#a16207" stroke-width="4"/><rect x="188" y="22" width="24" height="62" fill="#eab308"/>'),
+ 'TRACE': dict(fur='#b0b7c3', light='#f1f3f6', behind=tri('#b0b7c3', '#f4a6b8', .8),
+    over='<path d="M188 172 L212 172 L200 190Z" fill="#f472b6"/><path d="M150 198 L84 184 M150 208 L80 210 M150 218 L88 236 M250 198 L316 184 M250 208 L320 210 M250 218 L312 236" stroke="#3b2210" stroke-width="4" stroke-linecap="round"/><path d="M200 102 L200 128 M178 106 L184 128 M222 106 L216 128" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/><ellipse cx="200" cy="76" rx="126" ry="20" fill="#6b4423"/><path d="M130 76 Q132 14 200 14 Q268 14 270 76 Z" fill="#8b5e34"/><rect x="132" y="56" width="136" height="14" fill="#3b2210"/>'),
+}
+def bear2(mood):
+    s = bear_base(mood)
+    sp = SPECIES.get(CUR.get('word'))
+    if not sp: return s
+    assert EAR0 in s and HEAD0 in s, mood
+    s = s.replace(EAR0, '').replace(HEAD0, HEAD0 + sp.get('head', ''))
+    s = s.replace(FUR, sp['fur']).replace(LIGHT, sp['light'])
+    i = s.index('>') + 1
+    return s[:i] + sp['behind'].replace(FUR, sp['fur']) + s[i:-6] + sp['over'] + '</svg>'
 
 # ---------------------------------------------------------------- builders
 def hi(s, k):
