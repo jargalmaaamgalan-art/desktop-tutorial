@@ -3,7 +3,8 @@ Run: python3 gen39.py [--video]"""
 import sys
 import gen30, gen29
 import gen38
-from gen38 import bear
+import chars
+bear = lambda m: chars.draw_kid('BEAR', m)
 from gen18 import E, HERE
 
 PINK, LIME, CYAN, YEL, INK, LIL = '#ff5a4e', '#9be564', '#35b6ff', '#ffd43b', '#1c2a6b', '#5b6490'
@@ -67,7 +68,7 @@ gen30.css = css
 gen30.page = page
 
 def head(mood):
-    return bear(mood).replace('viewBox="-10 -10 420 420"', 'viewBox="75 25 250 250"')
+    return bear(mood).replace('viewBox="-10 -10 420 420"', 'viewBox="60 10 280 280"')
 
 import base64, io, os
 from PIL import Image

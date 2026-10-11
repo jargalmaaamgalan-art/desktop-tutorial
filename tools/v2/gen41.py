@@ -40,10 +40,10 @@ BASE = """
 .k{background:var(--a);padding:0 8px;border-radius:10px;font-weight:900;font-size:1.1em}
 .vis{display:flex;align-items:flex-end;justify-content:center;gap:16px;position:relative;height:380px}
 .mas{flex:none;width:340px;height:340px;position:relative}
-.mas svg{width:100%;height:100%;animation:bob 1.6s ease-in-out infinite;transform-origin:50% 100%}
+.mas svg{filter:drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff) drop-shadow(0 4px 0 #fff) drop-shadow(0 -4px 0 #fff) drop-shadow(0 8px 10px rgba(0,0,0,.25));width:100%;height:100%;animation:bob 1.6s ease-in-out infinite;transform-origin:50% 100%}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
 .vis .q{max-width:400px;margin-bottom:150px;background:var(--card);color:var(--on);border:3px solid var(--on);border-radius:28px;padding:14px 22px;font-size:32px;font-weight:800;line-height:1.25;animation:pop .6s 1s both}
-.prop{font-size:130px;line-height:1;position:absolute;right:10px;bottom:6px}
+.vis.rev{flex-direction:row-reverse}.prop{font-size:130px;line-height:1;position:absolute;right:10px;bottom:6px}
 .rxn{align-self:center;background:var(--b);color:var(--on);border-radius:44px;padding:12px 28px;font-weight:900;font-size:32px;display:flex;gap:14px;align-items:center;text-align:center}
 .rxn .lb{font-size:19px;letter-spacing:2px;opacity:.65;font-weight:900;white-space:nowrap;flex:none}.rxn span{text-wrap:balance}.rxn span b{color:inherit;text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:5px}
 .sat{font-weight:900;font-size:54px;letter-spacing:-1px;color:var(--ink)} .sat span{color:var(--a2)}
@@ -389,6 +389,8 @@ SPECIES = {
     over='<path d="M188 172 L212 172 L200 190Z" fill="#f472b6"/><path d="M150 198 L84 184 M150 208 L80 210 M150 218 L88 236 M250 198 L316 184 M250 208 L320 210 M250 218 L312 236" stroke="#3b2210" stroke-width="4" stroke-linecap="round"/><path d="M200 102 L200 128 M178 106 L184 128 M222 106 L216 128" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/><ellipse cx="200" cy="76" rx="126" ry="20" fill="#6b4423"/><path d="M130 76 Q132 14 200 14 Q268 14 270 76 Z" fill="#8b5e34"/><rect x="132" y="56" width="136" height="14" fill="#3b2210"/>'),
 }
 def bear2(mood):
+    import chars
+    if CUR.get('word') in chars.CAST: return chars.draw_kid(CUR['word'], mood)
     s = bear_base(mood)
     sp = SPECIES.get(CUR.get('word'))
     if not sp: return s
@@ -424,7 +426,7 @@ def exp(i, X, sk):
 <div class="T" style="font-size:{tsize(sk, X['t'])}px">{X['t']}</div>
 <div class="en">{X['en']}</div><div class="mg">{X['mg']}</div>
 <div class="ex">{hi(X['ex'], X['key'])}</div>
-<div class="vis"><div class="q">{X['quip']}</div>{mas(X['mood'])}<div class="prop">{X['prop']}</div></div>
+<div class="vis{' rev' if i % 2 == 0 else ''}"><div class="q">{X['quip']}</div>{mas(X['mood'])}<div class="prop">{X['prop']}</div></div>
 <div class="rxn"><span class="lb">YOUR TURN</span><span>{X['q']}</span></div>"""
 
 def quiz(D, sk):
