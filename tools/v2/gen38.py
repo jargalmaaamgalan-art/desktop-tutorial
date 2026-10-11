@@ -95,7 +95,7 @@ def cover():
 <div class="chips"><span>SKILL · Words in Context</span><span>6 meanings</span></div>'''
 
 def tip():
-    cells = [('CARRY', 'bear the cost', 'The school bears the cost.', 'үүрэх, хариуцах'),
+    cells = [('CARRY', 'bear the cost', 'The school bears the cost.', 'хариуцах'),
              ('ENDURE', 'can’t bear', 'I can’t bear the noise.', 'тэвчих'),
              ('PRODUCE', 'bear fruit', 'Her work bore fruit.', 'үр дүнгээ өгөх'),
              ('CONFIRM', 'bear out', 'The data bear out his idea.', 'баталж өгөх')]
@@ -116,7 +116,7 @@ def build():
       exp(1, 'BEAR IN MIND', 'Remember it and think about it.', 'Санаж явах, анхаарах', 'Bear in mind that the shop closes at six.', 'Bear in mind', 'Bear in mind: the honey is MINE.', 'think'),
       exp(2, 'BEAR FRUIT', 'To give good results after hard work.', 'Үр дүнгээ өгөх', 'Years of study finally bore fruit.', 'bore fruit', 'My tree bore fruit! Apples. Not honey.', 'fruit'),
       exp(3, 'BEAR WITH ME', 'Be patient with me for a short time.', 'Жаахан хүлээгээрэй', 'Please bear with me while I find the file.', 'bear with me', 'Bear with me… I am still thinking.', 'please'),
-      exp(4, 'BEAR THE COST', 'To pay for something or take the responsibility.', 'Зардлыг үүрэх', 'The school will bear the cost of the trip.', 'bear the cost', 'Who bears the cost of my honey? You.', 'cost'),
+      exp(4, 'BEAR THE COST', 'To pay for something or take the responsibility.', 'Зардлыг хариуцах', 'The school will bear the cost of the trip.', 'bear the cost', 'Who bears the cost of my honey? You.', 'cost'),
       exp(5, 'CAN’T BEAR', 'To not be able to stand something.', 'Тэвчиж чадахгүй', 'I can’t bear the noise in this room.', 'can’t bear', 'I can’t bear it! Too loud!', 'ears'),
       exp(6, 'BEAR OUT', 'To show that something is true.', 'Баталж өгөх, зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out'),
       tip()]
