@@ -11,7 +11,9 @@ OUT = ('drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0
        'drop-shadow(4px 4px 0 #fff) drop-shadow(-4px -4px 0 #fff) drop-shadow(0 14px 16px rgba(0,0,0,.45))')
 
 def css(a, s, t):
-    return gen29.CSS + f"""
+    FONTS = open(__import__("os").path.join(__import__("os").path.dirname(__file__), "fonts_lr.css")).read()
+    return gen29.CSS + FONTS + f"""
+body,.pg{{font-family:RB,sans-serif}}
 .pg{{background:linear-gradient(rgba(28,42,107,.09) 2px,transparent 2px) 0 0/44px 44px,linear-gradient(90deg,rgba(28,42,107,.09) 2px,transparent 2px) 0 0/44px 44px,#fff8ea}}
 .pg:before{{background:linear-gradient(90deg,{PINK},{YEL},{LIME},{CYAN})}}
 .top{{top:34px}} .top img{{height:70px;background:#fff;border-radius:40px;padding:6px 22px}}
@@ -19,38 +21,39 @@ def css(a, s, t):
 .ft{{color:{LIL};border-top:2px dashed rgba(28,42,107,.3)}}
 .mn{{gap:22px}}
 .row{{display:flex;justify-content:space-between;align-items:center;gap:14px}}
-.num{{flex:none;width:92px;height:92px;border-radius:50%;background:{YEL};color:{INK};font-family:IN,M,sans-serif;font-weight:900;font-size:58px;display:flex;align-items:center;justify-content:center;transform:rotate(-8deg);box-shadow:5px 5px 0 {PINK}}}
+.num{{flex:none;width:92px;height:92px;border-radius:50%;background:{YEL};color:{INK};font-family:LL,RB,sans-serif;font-weight:900;font-size:58px;display:flex;align-items:center;justify-content:center;transform:rotate(-8deg);box-shadow:5px 5px 0 {PINK}}}
 .chip2{{background:#fff;border:2.5px solid {INK};color:{INK};border-radius:30px;padding:9px 22px;font-weight:800;font-size:23px;letter-spacing:1.5px}}
 .chip3{{background:{PINK};color:#fff;border-radius:30px;padding:9px 22px;font-weight:800;font-size:23px;letter-spacing:1.5px;box-shadow:4px 4px 0 {INK}}}
-.ttl{{font-family:IN,M,sans-serif;font-weight:900;color:{INK};line-height:1;letter-spacing:-1px;text-shadow:4px 4px 0 {YEL},8px 8px 0 {PINK}}}
-.eng{{color:{INK};font-size:31px;font-weight:700;line-height:1.3}}
-.mgl{{align-self:flex-start;background:{YEL};color:{INK};border-radius:40px;padding:10px 28px;font-size:34px;font-weight:900;box-shadow:5px 5px 0 {PINK}}}
+.ttl{{font-family:LL,RB,sans-serif;font-weight:900;color:{INK};line-height:1;letter-spacing:-1px;text-shadow:4px 4px 0 {YEL},8px 8px 0 {PINK}}}
+.eng{{color:{INK};font-size:30px;font-weight:700;line-height:1.3}}
+.mgl{{align-self:flex-start;background:{YEL};color:{INK};border-radius:44px;padding:10px 32px;font-size:46px;font-weight:900;box-shadow:5px 5px 0 {PINK}}}
 .chat{{background:rgba(255,255,255,.75);border:3px solid {INK};border-radius:40px;padding:16px 22px 22px;display:flex;flex-direction:column;gap:14px}}
 .chh{{display:flex;align-items:center;gap:12px;color:{LIL};font-weight:800;font-size:22px}}
 .chh i{{width:14px;height:14px;border-radius:50%;background:#4ade80;display:block}}
 .m{{display:flex;align-items:flex-end;gap:12px}} .m.r{{justify-content:flex-end}}
 .av{{flex:none;width:76px;height:76px;border-radius:50%;background:#ffe9b8;overflow:hidden;display:flex;align-items:center;justify-content:center;border:3px solid #fff}}
 .av svg{{width:100%;height:100%}}
-.b1{{background:#fff;border:3px solid {INK};color:{INK};border-radius:30px 30px 30px 8px;padding:14px 24px;font-size:33px;font-weight:700;line-height:1.35;max-width:800px}}
-.b2{{background:linear-gradient(135deg,{PINK},#a24dff);color:#fff;border-radius:30px 30px 8px 30px;padding:14px 24px;font-size:31px;font-weight:800;line-height:1.3;max-width:760px}}
-.mk{{background:{YEL};color:{INK};border-radius:8px;padding:0 6px;font-weight:900}}
+.b1{{background:#fff;border:3px solid {INK};color:{INK};border-radius:30px 30px 30px 8px;padding:14px 26px;font-size:37px;font-weight:700;line-height:1.3;max-width:800px}}
+.b2{{background:linear-gradient(135deg,{PINK},#a24dff);color:#fff;border-radius:30px 30px 8px 30px;padding:14px 26px;font-size:34px;font-weight:800;line-height:1.25;max-width:760px}}
+.mk{{background:{YEL};color:{INK};border-radius:10px;padding:0 8px;font-weight:900;font-size:1.12em;box-shadow:3px 3px 0 {PINK}}}
 .stk{{flex:none}} .stk svg{{width:100%;height:100%;filter:{OUT};animation:bob 1.6s ease-in-out infinite;transform-origin:50% 100%}}
 @keyframes bob{{0%,100%{{transform:translateY(0) rotate(-1.5deg)}}50%{{transform:translateY(-12px) rotate(1.5deg)}}}}
 .qc{{flex:1;background:#fff;border:3px solid {INK};color:{INK};border-radius:30px;padding:18px 24px;box-shadow:6px 6px 0 {CYAN}}}
 .qc small{{display:block;font-size:20px;font-weight:900;letter-spacing:2px;color:{PINK};margin-bottom:6px}}
-.qc div{{font-size:33px;font-weight:800;line-height:1.3}} .qc b{{color:{PINK}}}
+.qc div{{font-size:37px;font-weight:900;line-height:1.25}} .qc b{{color:{PINK}}}
 .sk{{display:inline-block;border-radius:16px;padding:8px 20px;font-weight:900;color:{INK}}}
 .opt{{display:flex;align-items:center;gap:20px;background:#fff;border:3px solid {INK};color:{INK};border-radius:60px;padding:10px 26px 10px 12px;font-size:37px;font-weight:900;box-shadow:6px 6px 0 {PINK}}}
-.opt i{{flex:none;width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,{PINK},#a24dff);color:#fff;font-style:normal;font-family:IN,M,sans-serif;font-size:40px;display:flex;align-items:center;justify-content:center}}
+.opt i{{flex:none;width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,{PINK},#a24dff);color:#fff;font-style:normal;font-family:LL,RB,sans-serif;font-size:40px;display:flex;align-items:center;justify-content:center}}
 .rx2{{display:flex;align-items:center;gap:14px;background:{YEL};color:{INK};border-radius:44px;padding:12px 28px;font-weight:900;font-size:30px;box-shadow:5px 5px 0 {PINK};align-self:center}}
 .ban{{background:{YEL};color:{INK};border-radius:26px;padding:16px 26px;font-size:32px;font-weight:900;box-shadow:6px 6px 0 {PINK};line-height:1.3}}
 .g4{{display:grid;grid-template-columns:1fr 1fr;gap:16px}}
 .g4 .c{{border-radius:24px;padding:14px 20px;color:{INK};box-shadow:5px 5px 0 rgba(0,0,0,.35)}}
-.g4 .c b{{display:block;font-family:IN,M,sans-serif;font-size:42px;letter-spacing:-1px}}
+.g4 .c b{{display:block;font-family:LL,RB,sans-serif;font-size:42px;letter-spacing:-1px}}
 .g4 .c u{{text-decoration:none;display:block;font-size:27px;font-weight:900}}
-.g4 .c i{{display:block;font-family:S,serif;font-size:26px;margin-top:2px}}
+.g4 .c i{{display:block;font-family:RB,sans-serif;font-size:26px;margin-top:2px}}
 .g4 .c em{{display:block;font-style:normal;font-size:27px;font-weight:900;margin-top:2px}}
 .su{{background:#fff;border:3px solid {INK};color:{INK};border-radius:28px;padding:14px 22px;box-shadow:6px 6px 0 {CYAN}}}
+.ttl span{{text-shadow:none}}
 .note{{color:{LIL};font-size:21px;font-weight:700;text-align:center}}
 """
 
@@ -85,20 +88,20 @@ def stk(mood, size):
 def hi(s, k): return s.replace(k, f'<span class="mk">{k}</span>')
 
 def exp(n, title, en, mg, example, key, quip, mood, stick, q, em):
-    fs = 100 if len(title) < 12 else 86
+    fs = 128 if len(title) < 12 else 108
     return f"""<div class="row"><div style="display:flex;align-items:center;gap:16px"><div class="num">{n}</div><div class="chip2">OF 6 MEANINGS</div></div>{E(stick,92,'fl')}</div>
 <div class="ttl" style="font-size:{fs}px">{title}</div>
 <div class="eng">{en}</div><div class="mgl">{mg}</div>
 <div class="chat"><div class="chh"><i></i>bear_buddy · online</div>
 <div class="m"><div class="av">{E('1f60e',60)}</div><div class="b1">{hi(example, key)}</div></div>
 <div class="m r"><div class="b2">{quip}</div><div class="av">{head(mood)}</div></div></div>
-<div class="row" style="align-items:flex-end;gap:20px">{stk(mood, 270)}<div class="qc"><small>YOUR TURN</small><div>{q}</div><div style="margin-top:8px;display:flex;gap:10px">{E(em[0],46)}{E(em[1],46)}{E(em[2],46)}</div></div></div>"""
+<div class="row" style="align-items:flex-end;gap:20px">{stk(mood, 250)}<div class="qc"><small>YOUR TURN</small><div>{q}</div><div style="margin-top:8px;display:flex;gap:10px">{E(em[0],46)}{E(em[1],46)}{E(em[2],46)}</div></div></div>"""
 
 def cover():
     return f"""<div class="row"><div class="chip3">DOMAIN · CRAFT AND STRUCTURE</div>{E('1f92f',92,'fl')}</div>
-<div style="font-family:IN,M,sans-serif;font-weight:900;font-size:54px;letter-spacing:-1px;color:{INK}"><span style="color:{PINK}">SAT</span>&reg; Reading &amp; Writing</div>
+<div style="font-family:LL,RB,sans-serif;font-weight:900;font-size:54px;letter-spacing:-1px;color:{INK}"><span style="color:{PINK}">SAT</span>&reg; Reading &amp; Writing</div>
 <div style="font-size:38px;font-weight:900;color:{PINK};font-style:italic;line-height:1.25">POV: you think BEAR is just an animal 🐻</div>
-<div class="ttl" style="font-size:262px;transform:rotate(-2deg);text-shadow:8px 8px 0 {YEL},16px 16px 0 {PINK};margin:4px 0 14px">BEAR</div>
+<div class="ttl" style="font-size:270px;transform:rotate(-2deg);text-shadow:8px 8px 0 {YEL},16px 16px 0 {PINK};margin:4px 0 14px">BEAR</div>
 <div class="row" style="align-items:center;gap:20px">{stk('sun', 350)}
  <div style="flex:1;display:flex;flex-direction:column;gap:18px;align-items:flex-start">
   <div class="sk" style="background:{YEL};font-size:50px;transform:rotate(4deg);box-shadow:5px 5px 0 {PINK}">6 MEANINGS 🤯</div>
