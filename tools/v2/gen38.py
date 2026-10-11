@@ -28,7 +28,7 @@ def extra2():
 
 .pg{{background-color:{TINT};background-image:radial-gradient({SOFT} 3px,transparent 3.5px);background-size:44px 44px}}
 .bb{{position:relative;flex:none;width:380px;height:380px}}
-.bb:before{{content:"";position:absolute;left:-10px;bottom:-6px;width:390px;height:390px;border-radius:50%;background:{SOFT}}}
+.bb:before{{content:"";position:absolute;left:-6px;bottom:-6px;width:calc(100% + 12px);height:calc(100% + 12px);border-radius:50%;background:{SOFT}}}
 .bb svg{{position:relative;z-index:1;width:100%;height:100%}}
 .rx{{display:flex;align-items:center;gap:14px;background:#fff;border:3px dashed {AC};border-radius:44px;padding:10px 26px;font-size:28px;font-weight:800;align-self:center;color:#222}}
 .rx b{{color:{AC}}}
