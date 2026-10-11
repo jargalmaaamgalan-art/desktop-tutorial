@@ -99,7 +99,7 @@ def mk_neander():
       '<span class="blue">One claim.</span><br>Strong<br>or weak?', 'One word decides it. Look at what the author ignores.', '1f9d0',
       'The author’s claim about the relationship between Neanderthals and Homo sapiens is ______, as it fails to account for several recent archaeological discoveries. To be convincing, his argument would need to address recent finds of additional hominid fossils, such as the latest Denisovan specimens and Homo longi.',
       ['disorienting', 'tenuous', 'nuanced', 'unoriginal'],
-      'The author’s claim about the relationship between Neanderthals and Homo sapiens is ______, as <span class="hk">it fails to account for</span> several recent archaeological discoveries. <span class="hk">To be convincing</span>, his argument <span class="hk">would need to address</span> recent finds of additional hominid fossils.',
+      'The author’s claim about the relationship between Neanderthals and Homo sapiens is ______, as <span class="hk">it fails to account for</span> several recent archaeological discoveries. <span class="hk">To be convincing</span>, his argument <span class="hk">would need to address</span> recent finds of additional hominid fossils, such as the latest Denisovan specimens and Homo longi.',
       [('fails to account for', 'The claim leaves out evidence.'), ('To be convincing, ... would need to', 'Right now it is not convincing.'), ('recent finds of additional hominid fossils', 'New evidence the claim ignores.')],
       'Negative clues, so the blank must be negative: the claim is weak.',
       'B) tenuous', '= weak', 'Say it: <b>TEN-yoo-us</b>. It means weak, not well supported by evidence.',
@@ -121,7 +121,7 @@ def mk_state():
       'C) overshadowed by', '= less important than', 'Say it: <b>OH-ver-shad-ohd</b>. Made to seem less important than something bigger.',
       'State taxes are <b>overshadowed by</b> other factors when considering an interstate move.',
       ['Think of a small tree in the shadow of a big one.', 'Similar: outweighed by · less important than', 'Opposite: more important than'],
-      [('D) irrelevant to', 'i-REL-uh-vunt', 'not connected to', '“Almost no effect” is not zero, so taxes are less important, not unimportant. The blank also links taxes to the other factors, which does not fit.', 'His age is irrelevant to the job.', True),
+      [('D) irrelevant to', 'i-REL-uh-vunt', 'not connected to', '“Almost no effect” is not zero, so taxes are less important, not unimportant. Taxes are unimportant to people’s decisions, not to the other factors.', 'His age is irrelevant to the job.', True),
        ('A) consistent with', 'kun-SIS-tunt', 'in agreement with', 'Taxes and the other factors are contrasted, not in agreement.', 'His story is consistent with the facts.'),
        ('B) representative of', 'rep-ri-ZEN-tuh-tiv', 'a typical example of', 'Taxes are not an example of jobs, housing or climate.', 'This painting is representative of her style.')],
       '“almost no” is not “no”. Avoid choices that are too extreme.')
@@ -138,7 +138,7 @@ def mk_john():
 <div class="lead" style="font-size:26px;font-style:italic">The following text is adapted from Zora Neale Hurston’s 1921 short story “John Redding Goes to Sea.” John is a child who lives in a town in the woods.</div>
 {tx('JOB 1 · THE DREAMER', s1)}{tx('JOB 2 · THE PLACE', s24)}{tx('JOB 3 · THE WISH (UNDERLINED)', '<span class="ul">' + s5 + '</span>')}"""
     ch = ['It provides an extended description of a location that John likes to visit.', 'It reveals that some residents of John’s town are confused by his behavior.', 'It illustrates the uniqueness of John’s imagination compared to the imaginations of other children.', 'It suggests that John longs to experience a larger life outside the Florida woods.']
-    fr = frame(1, '<span style="font-size:27px;line-height:1.5;display:block"><i>Underlined sentence, Job 3:</i><br><u style="text-decoration-thickness:3px;text-underline-offset:4px">' + s5 + '</u></span>', ch, prompt='Which choice best describes the function of the underlined sentence in the text as a whole?')
+    fr = frame(1, '<span style="font-size:27px;line-height:1.5;display:block"><i>Underlined sentence:</i><br><u style="text-decoration-thickness:3px;text-underline-offset:4px">' + s5 + '</u></span>', ch, prompt='Which choice best describes the function of the underlined sentence in the text as a whole?')
     p3 = qslide(fr, 'What job does the underlined sentence do? Decide, then swipe.')
     p3 = p3.replace('class="bxc"', 'class="bxc" style="font-size:25px"')
     cl = [('watch them sail away … to Jacksonville, the sea, the wide world', 'The places get bigger and farther away.'), ('wanted to follow them', 'He wishes to go too.'), ('fond of day-dreams (Sentence 1)', 'He already dreams about other places.')]
@@ -147,7 +147,7 @@ def mk_john():
 <div class="card" style="padding:6px 24px">{cluerows(cl).replace('width:330px','width:330px')}</div>
 <div class="card" style="padding:14px 24px"><div class="lab">WORD CARD · LONGS</div><div style="font-size:27px;font-weight:700;color:#334;line-height:1.4">Say it: LONGZ. Wishes very much for something.<br>Similar: yearns · wishes · dreams of</div></div>'''
     p5 = f'''<div class="pill">WHY THE OTHERS ARE WRONG</div><div class="h" style="font-size:64px">Why not <span class="blue">A, B, C?</span></div>
-{vc('A) extended description', '', '', 'The place is described in Sentences 2 to 4. Sentence 5 says what John does there and what he wants. It mentions the water’s edge, so students pick it.', '', True)}
+{vc('A) extended description', '', '', 'The place is described in Sentences 2 to 4. Sentence 5 says what John does there and what he wants. It mentions the water’s edge, so many students pick it.', '', True)}
 {vc('B) residents are confused', '', '', 'This idea appears only in Sentence 1 (“puzzling to the folk”).', '')}
 {vc('C) imagination is unique', '', '', 'No other children appear in the text, so nothing is compared.', '')}'''
     return dict(key='John-Redding', prefix='GMP-TextStructure', AC=AC, SOFT=SOFT, TINT=TINT, nxt='New', pages=[p1, p2, p3, p4, p5, endp()], foot='TEXT STRUCTURE AND PURPOSE')
@@ -172,10 +172,10 @@ def mk_chiq():
 <div class="lead" style="font-size:30px">Text 2: “it is <span class="hk">premature</span> to characterize them as tools.” Premature means too early, before there is enough proof.</div>
 <div class="card" style="padding:6px 24px">{cluerows(cl)}</div>
 <div class="rule" style="font-size:27px">Text 2 attacks the base: are the stones tools at all?</div>'''
-    wr = ''.join(f'<div class="wr"><span class="w">{a}</span><span>{b}</span></div>' for a, b in [('A) most tempting', 'Text 2 never calls the claim plausible. “Further study” only sounds like its caution.'), ('C) proved right', 'Opposite. Text 2 doubts the claim.'), ('D) ignores Clovis dates', 'Text 2 says nothing about the Clovis people. It only talks about the stones.')])
+    wr = ''.join(f'<div class="wr"><span class="w">{a}</span><span>{b}</span></div>' for a, b in [('A) needs more study', 'Most tempting. Text 2 never calls the claim plausible. “Further study” only sounds like its caution.'), ('C) proved right', 'Opposite. Text 2 doubts the claim.'), ('D) ignores Clovis dates', 'Text 2 says nothing about the Clovis people. It only talks about the stones.')])
     p5 = f'''<div class="pill">ANSWER</div><div class="okrow"><div class="ok">B)</div><div class="h" style="font-size:50px">assumption not supported</div></div>
 <div class="card" style="padding:14px 24px"><div class="lab">TEST IT</div><div class="sen" style="font-size:31px">The claim rests on <b>an assumption about the stone pieces</b> that is <b>not sufficiently supported by evidence</b>.</div></div>
-<div class="lead" style="font-size:27px">assumption = an idea believed without proof (uh-SUMP-shun)</div>
+<div class="lead" style="font-size:27px">assumption = an idea believed without proof (uh&#8209;SUMP&#8209;shun)</div>
 <div class="card" style="padding:8px 26px">{wr}</div>
 <div class="rule" style="font-size:26px">If Text 2 attacks what the claim depends on, choose “assumption not supported”.</div>'''
     return dict(key='Chiquihuite', prefix='GMP-CrossText', AC=AC, SOFT=SOFT, TINT=TINT, nxt='New', pages=[p1, p2, p3, p4, p5, endp()], foot='CROSS-TEXT CONNECTIONS')
