@@ -149,5 +149,9 @@ CAST = {
 }
 
 def draw_kid(word, mood):
-    import gmp_mascots
+    import gmp_mascots, os
+    if os.environ.get('GMPV') and word in CAST:
+        sp = dict(CAST[word])
+        sp['torso_extra'] = sp.get('torso_extra','').replace('>GMP<','><') + gmp_mascots.emblem(150, 292, 26)
+        return kid(sp, mood)
     return kid(gmp_mascots.KID, mood)

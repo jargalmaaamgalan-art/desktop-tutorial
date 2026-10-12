@@ -465,6 +465,17 @@ def tsize(sk, title):
 
 def mas(mood): return f'<div class="mas">{bear2(mood)}</div>'
 
+ORDER=['BEAR','DRAW','ACCOUNT','HOLD','SUPPORT','ADDRESS','FIGURE','CHARGE','MAINTAIN','TRACE']
+def lab(W):
+    import os, chars, gmp_mascots
+    if not os.environ.get('GMPV'): return ''
+    gee = chars.kid(gmp_mascots.KID, 'sun')
+    return (f'<div style="position:absolute;left:0;top:-6px;background:#14216b;color:#fff;font:800 22px Inter,sans-serif;letter-spacing:2px;padding:9px 18px;border-radius:30px;box-shadow:0 4px 0 #f2b632">'
+            f'<span style="color:#f2b632">GMP</span> WORD LAB · #{ORDER.index(W)+1} of 10</div>'
+            f'<div style="position:absolute;right:-6px;bottom:-14px;display:flex;align-items:flex-end;gap:6px">'
+            f'<div style="background:#fff;border:3px solid #14216b;border-radius:18px;padding:10px 14px;font:700 21px Inter,sans-serif;color:#14216b;margin-bottom:70px;transform:rotate(-3deg)">Gee says: class at 20:00 😎</div>'
+            f'<div style="width:150px;height:150px">{gee}</div></div>')
+
 def cover(W, D, sk):
     base, cw = sk['wsz']
     fs = int(min(base, 930 / (len(W) * cw)))
@@ -473,7 +484,7 @@ def cover(W, D, sk):
 <div class="pov">{D['pov']}</div>
 <div class="W" style="font-size:{fs}px">{W}</div>
 <div class="cv">{mas('sun')}<div class="stks"><div class="s1">6 MEANINGS 🤯</div><div class="s2">SKILL · Words in Context</div><div class="s3">{D['hook']}</div></div></div>
-<div class="sw">Swipe to level up →</div>"""
+<div class="sw">Swipe to level up →</div>{lab(W)}"""
 
 def exp(i, X, sk):
     return f"""<div class="hd"><div class="l"><div class="no">{i}</div><div class="of">OF 6 MEANINGS</div></div><div class="em">{X['stick']}</div></div>
