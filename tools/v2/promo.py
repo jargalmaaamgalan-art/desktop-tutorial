@@ -5,7 +5,8 @@ import gen41
 from gen41 import F
 from playwright.sync_api import sync_playwright
 
-T, T2, G, CREAM = '#0b2a38', '#123b4c', '#f3b045', '#fff8ea'
+T, T2, G, CREAM = '#1b3b48', '#26505f', '#f3b045', '#fff8ea'
+LOGO = 'data:image/png;base64,' + base64.b64encode(open('/home/claude/preview/gmp-logo.png', 'rb').read()).decode()
 PHOTO = 'data:image/jpeg;base64,' + base64.b64encode(open('/home/claude/preview/jg-photo.jpg', 'rb').read()).decode()
 
 MARK = f'''<svg viewBox="0 0 100 100" width="74" height="74"><g fill="none" stroke="#fff" stroke-width="4"><circle cx="50" cy="40" r="32"/><ellipse cx="50" cy="40" rx="14" ry="32"/><path d="M50 8V72M20 28Q50 38 80 28M20 52Q50 62 80 52"/></g>
@@ -36,8 +37,8 @@ HTML = f'''<!doctype html><html><head><meta charset="utf-8"><style>
 {F('SS', 'source-serif-4', [700, 800])}{F('IN', 'inter', [400, 600, 800])}
 *{{box-sizing:border-box;margin:0}}
 body{{width:1080px;height:1350px;background:{T};font-family:IN,sans-serif;color:#fff;overflow:hidden;position:relative}}
-.ph{{position:absolute;left:0;top:0;width:430px;height:1350px;background:{T} url({PHOTO}) center top/100% auto no-repeat;}}
-.ph:after{{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,42,56,0) 42%,rgba(11,42,56,1) 68%)}}
+.ph{{position:absolute;left:0;top:0;width:430px;height:1350px;background:{T} url({PHOTO}) center top/cover no-repeat;}}
+.ph:after{{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,59,72,0) 58%,rgba(27,59,72,1) 80%)}}
 .who{{position:absolute;left:0;bottom:0;width:430px;padding:0 30px 60px;z-index:2}}
 .who h2{{font-family:SS,serif;font-size:40px;font-weight:800;line-height:1.1}}
 .who .role{{color:{G};font-weight:800;font-size:17px;letter-spacing:1.5px;margin:10px 0 12px;text-transform:uppercase}}
@@ -46,7 +47,7 @@ body{{width:1080px;height:1350px;background:{T};font-family:IN,sans-serif;color:
 .logo{{display:flex;align-items:center;gap:14px;margin-bottom:4px}}
 .logo .n{{font-family:SS,serif;font-weight:800;font-size:34px;letter-spacing:1px;line-height:1}}
 .logo .s{{color:{G};font-weight:600;font-size:17px;letter-spacing:2.5px;margin-top:6px}}
-.card{{background:{T2};border:2px solid #24546a;border-radius:22px;padding:18px 22px 20px}}
+.card{{background:{T2};border:2px solid #39687a;border-radius:22px;padding:18px 22px 20px}}
 .ct{{font-family:SS,serif;font-size:42px;font-weight:800;line-height:1;margin-bottom:12px}}.ct b{{color:{G}}}
 .row{{display:flex;align-items:center;justify-content:space-between;gap:14px}}
 .days{{display:flex;gap:8px;margin-bottom:10px}}.days span{{background:{CREAM};color:{T};font-weight:800;font-size:19px;padding:6px 14px;border-radius:9px}}
@@ -58,7 +59,7 @@ body{{width:1080px;height:1350px;background:{T};font-family:IN,sans-serif;color:
 .big{{font-family:SS,serif;font-size:60px;font-weight:800;line-height:1.05}}.big small{{font-size:22px;color:#4a6675;margin-left:6px;font-family:IN}}
 .sub{{display:flex;gap:18px;font-size:15px;color:#4a6675;margin-top:4px}}.sub b{{color:{T};font-size:20px;margin-left:4px}}
 .fl{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
-.f{{background:{T2};border:2px solid #24546a;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:17px;line-height:1.3;font-weight:600}}
+.f{{background:{T2};border:2px solid #39687a;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:17px;line-height:1.3;font-weight:600}}
 .f i{{flex:none;width:46px;height:46px;border-radius:50%;background:{G};color:{T};display:flex;align-items:center;justify-content:center}}
 .cta{{background:{G};color:{T};font-weight:800;font-size:34px;text-align:center;padding:22px;border-radius:60px;letter-spacing:1.5px;box-shadow:0 8px 0 #b47d1f}}
 .foot{{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:600;margin-top:auto}}
@@ -68,7 +69,7 @@ body{{width:1080px;height:1350px;background:{T};font-family:IN,sans-serif;color:
 <div class="ph"></div>
 <div class="who"><h2>Жаргалмаа Амгалан</h2><div class="role">Математикийн багш · 2010 оноос</div><p>Цогц сургалтын төвийн багш. 2025 оноос хойш Канад улсаас онлайнаар хичээл зааж байна.</p></div>
 <div class="rt">
-<div class="logo">{MARK}<div><div class="n">GLOBAL MATH PREP</div><div class="s">JARGALMAA AMGALAN</div></div></div>
+<div class="logo"><img src="{LOGO}" style="height:112px"></div>
 {card('Математик', ['Да', 'Лх', 'Ба'], MATH)}
 {card('Англи хэл', ['Мя', 'Пү', 'Ня'], ENG)}
 <div class="fl">{feats}</div>
