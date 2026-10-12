@@ -55,9 +55,9 @@ WORDS['SUPPORT'] = dict(
   pov='POV: you think SUPPORT only means to help 🏗️', cover_em='🏗️', hook='Нэг үг, 6 өөр утга!',
   exps=[
    X('SUPPORT A CLAIM', 'To give proof that an idea is true.', 'Санааг нотлох, баталгаа өгөх', 'The data support the author’s claim.', 'support', 'The data support my plan.', 'out', '📊', '🔬', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
-   X('SUPPORT A WEIGHT', 'To hold something up so it does not fall.', 'Даах, дэмжин барих', 'Four columns support the roof.', 'support the roof', 'These arms support the whole team.', 'flex', '🏛️', '💪', 'What <b>supports</b> you every day? 👇'),
+   X('SUPPORT A WEIGHT', 'To hold something up so it does not fall.', 'Даац даах', 'Four columns support the roof.', 'support the roof', 'These arms support the whole team.', 'flex', '🏛️', '💪', 'What <b>supports</b> you every day? 👇'),
    X('SUPPORT A FAMILY', 'To give money for food and a home.', 'Гэр бүлээ тэжээх', 'She works two jobs to support her family.', 'support her family', 'I support my family. Hero job!', 'happy', '👨‍👩‍👧', '🏡', 'Tag someone who <b>supports</b> a whole family'),
-   X('IN SUPPORT OF', 'For, on the side of.', 'Талд нь, дэмжиж', 'Hundreds marched in support of the new law.', 'in support of', 'I march in support of snacks.', 'point', '📣', '🚩', 'What would you march <b>in support of</b>?'),
+   X('IN SUPPORT OF', 'For, on the side of.', '…-ыг дэмжиж', 'Hundreds marched in support of the new law.', 'in support of', 'I march in support of snacks.', 'point', '📣', '🚩', 'What would you march <b>in support of</b>?'),
    X('SUPPORTING EVIDENCE', 'Facts that help prove a point.', 'Нотлох баримт', 'The essay needs more supporting evidence.', 'supporting evidence', 'Supporting evidence: I saved the day.', 'out', '🔎', '🧪', '<b>Save</b> this post for your SAT revision'),
    X('EMOTIONAL SUPPORT', 'Kind help for someone’s feelings.', 'Сэтгэл санааны дэмжлэг', 'Friends give emotional support in hard times.', 'emotional support', 'Emotional support: one big hug.', 'happy', '🤗', '❤️', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
