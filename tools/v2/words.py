@@ -17,7 +17,7 @@ WORDS['DRAW'] = dict(
    X('DRAW TO A CLOSE', 'To be ending, or to end.', 'Дуусах дөхөх', 'The meeting drew to a close at noon.', 'drew to a close', 'The class draws to a close. Bye!', 'sleepy', '🎬', '🏁', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='draws on', sent='The historian draws on letters from soldiers to describe daily life.', key='draws on',
-            opts=['makes a picture of', 'uses as a source', 'pulls with force'], ans='B', expl='“Draw on” = use something as a source.', quip='Careful! Nobody is making a picture here. ✏️'),
+            opts=['uses as a source', 'makes a picture of', 'pulls with force'], ans='A', expl='“Draw on” = use something as a source.', quip='Careful! Nobody is making a picture here. ✏️'),
   cells=[('DECIDE', 'draw a conclusion', 'The team drew a conclusion.', 'дүгнэлт хийх'), ('USE', 'draw on', 'She draws on experience.', 'ашиглах'), ('NOTICE', 'draw attention to', 'It draws attention to the sale.', 'анхаарал татах'), ('FINISH', 'draw to a close', 'The talk drew to a close.', 'дуусах дөхөх')],
 )
 
@@ -32,7 +32,7 @@ WORDS['ACCOUNT'] = dict(
    X('BY ALL ACCOUNTS', 'According to what most people say.', 'Бүгдийн ярьж байгаагаар', 'By all accounts, the new teacher is excellent.', 'By all accounts', 'By all accounts, I am a genius.', 'sun', '⭐', '🌟', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='accounts for', sent='Tourism accounts for most of the island’s income.', key='accounts for',
-            opts=['explains why', 'makes up a large part of', 'keeps a bank record of'], ans='B', expl='“Accounts for” + a number or share = makes up that part.', quip='Careful! This is not about a bank. 💳'),
+            opts=['explains why', 'keeps a bank record of', 'makes up a large part of'], ans='C', expl='“Accounts for” + a number or share = makes up that part.', quip='Careful! This is not about a bank. 💳'),
   cells=[('EXPLAIN', 'account for', 'Rain accounts for the delay.', 'тайлбарлах'), ('SHARE', 'account for 40%', 'Exports account for 40%.', 'хувийг эзлэх'), ('CONSIDER', 'take into account', 'Take the cost into account.', 'тооцох'), ('REPORT', 'an account of', 'An account of her trip.', 'тайлан, түүх')],
 )
 
@@ -47,7 +47,7 @@ WORDS['HOLD'] = dict(
    X('HOLD OFF', 'To wait before doing something.', 'Хойшлуулах, хүлээх', 'We will hold off on the vote until Friday.', 'hold off', 'Hold off! The pizza is hot.', 'point', '✋', '🔥', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='holds up', sent='Her argument holds up under close study.', key='holds up',
-            opts=['lifts into the air', 'stays strong when tested', 'waits for a while'], ans='B', expl='“Holds up” = stays strong when it is tested.', quip='Careful! Nothing is being lifted. 🏋️'),
+            opts=['stays strong when tested', 'lifts into the air', 'waits for a while'], ans='A', expl='“Holds up” = stays strong when it is tested.', quip='Careful! Nothing is being lifted. 🏋️'),
   cells=[('STAY TRUE', 'hold true', 'The rule holds true.', 'үнэн хэвээр байх'), ('STAY STRONG', 'hold up', 'The bridge holds up.', 'тэсвэрлэх'), ('STOP', 'hold back', 'Fear held her back.', 'барьж зогсоох'), ('WAIT', 'hold off', 'Hold off on the vote.', 'хойшлуулах')],
 )
 
@@ -77,7 +77,7 @@ WORDS['ADDRESS'] = dict(
    X('HOME ADDRESS', 'The place where someone lives.', 'Оршин суугаа хаяг', 'Write your home address on the form.', 'home address', 'My home address: the blue house.', 'shrug', '🏔️', '🏠', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='addresses', sent='The article addresses the problem of plastic waste.', key='addresses',
-            opts=['writes a letter to', 'deals with', 'lives at'], ans='B', expl='“Addresses a problem” = starts dealing with it.', quip='Careful! No one is writing a letter. ✉️'),
+            opts=['writes a letter to', 'lives at', 'deals with'], ans='C', expl='“Addresses a problem” = starts dealing with it.', quip='Careful! No one is writing a letter. ✉️'),
   cells=[('DEAL WITH', 'address a problem', 'Address the traffic problem.', 'шийдвэрлэх'), ('SPEAK TO', 'address an audience', 'She addressed the school.', 'хандаж үг хэлэх'), ('WRITE TO', 'address a letter', 'Address the envelope.', 'хаяглах'), ('CALL', 'address someone as', 'Address her as “Ms. Lee”.', 'гэж дуудах')],
 )
 
@@ -92,7 +92,7 @@ WORDS['FIGURE'] = dict(
    X('A FIGURE IN A PICTURE', 'A person or shape you can see.', 'Дүр, дүрс', 'The small figure in the painting is a girl.', 'small figure', 'The small figure in the photo is me.', 'point', '🖼️', '🎨', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='figures prominently', sent='Music figures prominently in her stories.', key='figures prominently',
-            opts=['is counted as a number', 'plays an important part', 'is drawn as a shape'], ans='B', expl='“Figures prominently” = plays an important part.', quip='Careful! There is no maths here. 🔢'),
+            opts=['plays an important part', 'is counted as a number', 'is drawn as a shape'], ans='A', expl='“Figures prominently” = plays an important part.', quip='Careful! There is no maths here. 🔢'),
   cells=[('SOLVE', 'figure out', 'I figured out the puzzle.', 'олж мэдэх'), ('PERSON', 'public figure', 'The mayor is a public figure.', 'олонд танигдсан хүн'), ('NUMBERS', 'the figures', 'The figures show a rise.', 'тоон мэдээлэл'), ('ROLE', 'figure prominently', 'It figures prominently.', 'чухал байр эзлэх')],
 )
 
@@ -108,7 +108,7 @@ WORDS['CHARGE'] = dict(
   ],
   quiz=dict(word='charges', sent='The company charges a fee for late returns.', key='charges',
             opts=['attacks', 'asks for payment', 'fills with power'], ans='B', expl='“Charges a fee” = asks for money.', quip='Careful! No batteries here. 🔋'),
-  cells=[('PAY', 'charge a fee', 'It charges ten dollars.', 'хураамж авах'), ('LEAD', 'take charge', 'She took charge.', 'удирдах'), ('ACCUSE', 'charge with', 'He was charged with theft.', 'буруутгах'), ('POWER', 'charge a phone', 'Charge my phone.', 'цэнэглэх')],
+  cells=[('BILL', 'charge a fee', 'It charges ten dollars.', 'хураамж авах'), ('LEAD', 'take charge', 'She took charge.', 'удирдах'), ('ACCUSE', 'charge with', 'He was charged with theft.', 'буруутгах'), ('POWER', 'charge a phone', 'Charge my phone.', 'цэнэглэх')],
 )
 
 WORDS['MAINTAIN'] = dict(
@@ -122,7 +122,7 @@ WORDS['MAINTAIN'] = dict(
    X('MAINTAIN INNOCENCE', 'To keep saying you did not do it.', 'Гэм буруугүй гэдгээ хэлсээр байх', 'He maintains his innocence.', 'maintains his innocence', 'I maintain my innocence: no broken bricks!', 'please', '🧱', '😇', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='maintains', sent='The author maintains that cities should grow slowly.', key='maintains',
-            opts=['repairs', 'states firmly', 'keeps running'], ans='B', expl='“Maintains that” = states firmly that it is true.', quip='Careful! Nothing is broken here. 🔧'),
+            opts=['repairs', 'keeps running', 'states firmly'], ans='C', expl='“Maintains that” = states firmly that it is true.', quip='Careful! Nothing is broken here. 🔧'),
   cells=[('SAY', 'maintain that', 'She maintains that it is fair.', 'батлан хэлэх'), ('UPKEEP', 'maintain a bridge', 'Maintain the old bridge.', 'засварлах'), ('KEEP', 'maintain a pace', 'Maintain a steady pace.', 'хэвээр барих'), ('KEEP ORDER', 'maintain order', 'Guards maintain order.', 'дэг журам сахих')],
 )
 
@@ -137,7 +137,7 @@ WORDS['TRACE'] = dict(
    X('WITHOUT A TRACE', 'Leaving no sign at all.', 'Ор мөргүй', 'The ship vanished without a trace.', 'without a trace', 'The cookie vanished without a trace.', 'wow', '💨', '👻', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='trace', sent='Historians trace the tradition back to the 1600s.', key='trace',
-            opts=['draw over', 'find the starting point of', 'hide'], ans='B', expl='“Trace back to” = find where it started.', quip='Careful! Nobody is drawing here. 🔍'),
+            opts=['find the starting point of', 'draw over', 'hide'], ans='A', expl='“Trace back to” = find where it started.', quip='Careful! Nobody is drawing here. 🔍'),
   cells=[('FIND', 'trace the origin', 'Trace the virus to a market.', 'эх сурвалжийг олох'), ('SMALL', 'a trace of', 'A trace of sadness.', 'бага зэрэг'), ('COPY', 'trace a drawing', 'She traced the map.', 'хуулан зурах'), ('FOLLOW', 'trace a path', 'Trace the thief’s path.', 'замыг мөшгөх')],
 )
 
@@ -149,9 +149,9 @@ WORDS['BEAR'] = dict(
    X('BEAR WITH ME', 'Be patient with me for a short time.', 'Жаахан хүлээгээрэй', 'Please bear with me while I find the file.', 'bear with me', 'Bear with me… I am still thinking.', 'please', '⏳', '😅', 'Who says this the most? <b>Tag a friend</b>'),
    X('BEAR THE COST', 'To pay for something or take the responsibility.', 'Зардлыг хариуцах', 'The school will bear the cost of the trip.', 'bear the cost', 'Who bears the cost of my honey? You.', 'cost', '💰', '😱', 'Who <b>bears the cost</b> at your home?'),
    X('CAN’T BEAR', 'To be unable to stand something.', 'Тэвчиж чадахгүй', 'I can’t bear the noise in this room.', 'can’t bear', 'I can’t bear it! Too loud!', 'ears', '🔊', '😮', 'What can you <b>not bear</b>? Comment it 👇'),
-   X('BEAR OUT', 'To show that something is true.', 'Зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out', '📊', '🤓', '<b>Save</b> this post for your SAT revision'),
+   X('BEAR OUT', 'To show that something is true.', 'Зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out', '📊', '🤓', 'Which slide was your favourite? Comment <b>1 to 6</b>'),
   ],
   quiz=dict(word='bear out', sent='The latest experiments bear out the scientist’s hypothesis.', key='bear out',
             opts=['carry something heavy', 'show that it is true', 'put up with something bad'], ans='B', expl='“Bear out” = show that it is true.', quip='Careful! It is not about honey.'),
-  cells=[('CARRY', 'bear the cost', 'The school bears the cost.', 'хариуцах'), ('ENDURE', 'can’t bear', 'I can’t bear the noise.', 'тэвчих'), ('PRODUCE', 'bear fruit', 'Her work bore fruit.', 'үр дүнгээ өгөх'), ('CONFIRM', 'bear out', 'The data bear out his idea.', 'баталж өгөх')],
+  cells=[('CARRY', 'bear the cost', 'The school bears the cost.', 'хариуцах'), ('ENDURE', 'can’t bear', 'I can’t bear the noise.', 'тэвчих'), ('PRODUCE', 'bear fruit', 'Her work bore fruit.', 'үр дүнгээ өгөх'), ('CONFIRM', 'bear out', 'The data bear out her idea.', 'баталж өгөх')],
 )
