@@ -166,7 +166,7 @@ SKINS['cards'] = dict(
 SKINS['blueprint'] = dict(
   vars="--ink:#fff;--on:#0b3a6e;--card:#fff;--a:#ffe14d;--a2:#ffe14d;--b:#ffe14d;--c1:#cfe8ff;--c2:#ffe14d;--c3:#b9f6ca;--c4:#ffd1dc;--ft:Plex,monospace;--fb:Plex,monospace",
   fonts=lambda: F('Plex', 'ibm-plex-mono', [400, 500, 700]),
-  ts=(88, 0.62), wsz=(250, 0.62), t2=50, t3=52,
+  ts=(88, 0.62), wsz=(250, 0.78), t2=50, t3=52,
   css="""
 .pg{background:linear-gradient(rgba(255,255,255,.2) 2px,transparent 2px) 0 0/40px 40px,linear-gradient(90deg,rgba(255,255,255,.2) 2px,transparent 2px) 0 0/40px 40px,linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/10px 10px,linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/10px 10px,#0d4f94}
 .T{font-weight:700;border:4px solid #fff;padding:8px 18px;text-transform:uppercase;position:relative}
@@ -337,7 +337,7 @@ def _curve(c):
 SKINS['edit'] = dict(
   vars='--ink:#14216b;--on:#14216b;--card:#fff;--a:#fbe55e;--a2:#14216b;--b:#fbe55e;--c1:#f4f4fb;--c2:#f4f4fb;--c3:#f4f4fb;--c4:#f4f4fb;--ft:SS,serif;--fb:IN,sans-serif',
   fonts=lambda: F('SS', 'source-serif-4', [700, 800]) + F('IN', 'inter', [300, 400, 600]),
-  ts=(96, 0.56), wsz=(250, 0.62), t2=60, t3=60,
+  ts=(96, 0.56), wsz=(250, 0.78), t2=60, t3=60,
   css="""
 .top img{background:#fff;box-shadow:0 2px 10px rgba(20,33,107,.12)}
 .top span{font-family:IN;font-weight:600;color:#14216b}

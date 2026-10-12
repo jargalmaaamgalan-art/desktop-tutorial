@@ -149,4 +149,5 @@ CAST = {
 }
 
 def draw_kid(word, mood):
-    return kid(CAST[word], mood)
+    import gmp_mascots
+    return kid(gmp_mascots.KID, mood)

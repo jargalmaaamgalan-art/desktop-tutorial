@@ -99,7 +99,7 @@ WORDS['FIGURE'] = dict(
 WORDS['CHARGE'] = dict(
   pov='POV: you think CHARGE is only for phones 🔋', cover_em='🔋', hook='Нэг үг, 6 өөр утга!',
   exps=[
-   X('CHARGE A FEE', 'To ask for money for something.', 'Хураамж авах', 'The museum charges ten dollars.', 'charges ten dollars', 'My shop charges ten bolts.', 'cost', '💵', '🎟️', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
+   X('CHARGE A FEE', 'To ask for money for something.', 'Хураамж авах', 'The museum charges ten dollars.', 'charges ten dollars', 'My shop charges ten dollars.', 'cost', '💵', '🎟️', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
    X('IN CHARGE', 'Responsible for; in control of.', 'Хариуцсан, эрхлэгч', 'Who is in charge of the club?', 'in charge', 'I am in charge here. Listen up.', 'flex', '👑', '😎', 'Who is <b>in charge</b> at your home? 👇'),
    X('TAKE CHARGE', 'To start leading.', 'Удирдаж эхлэх', 'She took charge of the project.', 'took charge', 'I take charge: everyone, move!', 'point', '🍽️', '📣', 'Tag a friend who always <b>takes charge</b>'),
    X('CHARGE WITH (A CRIME)', 'To officially say that someone committed a crime.', 'Буруутгах, яллах', 'Police charged him with theft.', 'charged him with theft', 'They charged me with stealing a cookie.', 'please', '🚔', '😱', '<b>Save</b> this post for your SAT revision'),
