@@ -60,7 +60,7 @@ BASE = """
 .opts{display:flex;flex-direction:column;gap:12px}
 .opt{display:flex;align-items:center;gap:20px;background:var(--card);color:var(--on);border:3px solid var(--on);border-radius:60px;padding:10px 26px 10px 12px;font-size:36px;font-weight:900}
 .opt i{flex:none;width:64px;height:64px;border-radius:50%;background:var(--a);color:var(--on);font-style:normal;font-family:var(--ft);font-size:38px;display:flex;align-items:center;justify-content:center}
-.vis.sm{height:215px}.vis.sm .mas{width:215px;height:215px}.vis.sm .q{margin-bottom:50px;font-size:26px;max-width:480px;padding:12px 18px}
+.vis.sm{height:215px}.vis.sm .mas{width:215px;height:215px}.vis.sm .q{margin-bottom:50px;font-size:26px;max-width:480px;padding:12px 18px}.vis .mas{width:310px;height:310px}
 .note{font-size:21px;font-weight:700;text-align:center;color:var(--ink);opacity:.8}
 .ban{background:var(--a);color:var(--on);border-radius:26px;padding:16px 26px;font-size:32px;font-weight:900;line-height:1.3}
 .g4{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -321,9 +321,63 @@ SKINS['caseboard'] = dict(
 .vis.sm{height:215px}.vis.sm .mas{width:200px;height:200px;padding:8px 8px 34px}.vis.sm .q{font-size:36px}
 """)
 
-PLAN = {  # word -> skin
- 'DRAW': 'comic', 'ACCOUNT': 'notebook', 'HOLD': 'cards', 'SUPPORT': 'blueprint', 'ADDRESS': 'postcard',
- 'FIGURE': 'infographic', 'CHARGE': 'retro', 'MAINTAIN': 'newspaper', 'TRACE': 'caseboard'}
+
+# ---------------------------------------------------------------- editorial skin (College Board-style: calm, navy serif, soft tint, one highlight colour)
+PAL = {  # word -> (page tint, highlight, blob)
+ 'DRAW': ('#fff1ec', '#ffc7b4', '#ffdccf'), 'ACCOUNT': ('#eef6ff', '#bcdcff', '#d6e9ff'),
+ 'HOLD': ('#eefaf1', '#b4ecc6', '#d3f3df'), 'SUPPORT': ('#fdeffa', '#ffc4ea', '#ffdcf3'),
+ 'ADDRESS': ('#f1f1fd', '#cdd2ff', '#dfe2ff'), 'FIGURE': ('#fff6e4', '#ffdf84', '#ffecb8'),
+ 'CHARGE': ('#f4edff', '#d8c4ff', '#e7dbff'), 'MAINTAIN': ('#fffbe2', '#fbe55e', '#fff1a0'),
+ 'TRACE': ('#eaf7f6', '#a6e4dc', '#cbeee9'), 'BEAR': ('#fbf1e6', '#f2d2a6', '#f6e0c4')}
+def _curve(c):
+    import urllib.parse
+    s = f"<svg xmlns='http://www.w3.org/2000/svg' width='1080' height='1350'><path d='M-20 1180 Q300 1010 560 1130 T1100 1060' fill='none' stroke='{c}' stroke-width='3' stroke-dasharray='14 12'/><path d='M1100 250 Q860 330 900 520' fill='none' stroke='{c}' stroke-width='3' stroke-dasharray='14 12'/></svg>"
+    return 'url("data:image/svg+xml,' + urllib.parse.quote(s) + '")'
+
+SKINS['edit'] = dict(
+  vars='--ink:#14216b;--on:#14216b;--card:#fff;--a:#fbe55e;--a2:#14216b;--b:#fbe55e;--c1:#f4f4fb;--c2:#f4f4fb;--c3:#f4f4fb;--c4:#f4f4fb;--ft:SS,serif;--fb:IN,sans-serif',
+  fonts=lambda: F('SS', 'source-serif-4', [700, 800]) + F('IN', 'inter', [300, 400, 600]),
+  ts=(96, 0.56), wsz=(250, 0.62), t2=60, t3=60,
+  css="""
+.top img{background:#fff;box-shadow:0 2px 10px rgba(20,33,107,.12)}
+.top span{font-family:IN;font-weight:600;color:#14216b}
+.ft{font-family:IN;font-weight:400;color:#14216b;border-top:2px dashed #14216b55;opacity:1}
+.mn{left:70px;right:70px;gap:18px;justify-content:center}
+.no{background:transparent;border:4px solid #14216b;color:#14216b;width:76px;height:76px;font-size:44px;font-weight:800}
+.of,.dom{background:transparent;border:none;padding:0;font-family:IN;font-weight:600;font-size:22px;letter-spacing:3px;color:#14216b99}
+.em{font-size:76px;filter:none}
+.T{font-family:SS;font-weight:800;color:#14216b;line-height:1.05;text-transform:none}
+.en{font-family:IN;font-weight:300;font-size:36px;color:#14216b;line-height:1.3}
+.mg{font-family:SS;font-weight:700;font-size:46px;background:var(--hl);color:#14216b;border-radius:10px;padding:8px 26px;transform:rotate(-1.2deg);box-shadow:0 6px 16px rgba(20,33,107,.12)}
+.ex{font-family:IN;font-weight:300;font-size:38px;color:#14216b;line-height:1.35;border:none;background:transparent;padding:0 0 0 26px;border-left:8px solid var(--hl);border-radius:0}
+.k{background:var(--hl);font-weight:600;border-radius:8px;padding:0 8px;font-size:1em}
+.vis{height:330px;background:radial-gradient(ellipse 58% 62% at 56% 58%,var(--blob) 96%,transparent 100%)}
+.vis .q{font-family:SS;font-weight:700;font-size:32px;border:3px solid #14216b;border-radius:30px;background:#fff;color:#14216b;box-shadow:0 8px 20px rgba(20,33,107,.12)}
+.prop{font-size:92px;top:0;bottom:auto;right:14px}
+.rxn{background:var(--hl);border:3px solid #14216b;border-radius:70px;color:#14216b;font-family:SS;font-weight:700;font-size:34px;padding:16px 40px;box-shadow:0 8px 18px rgba(20,33,107,.12)}
+.rxn .lb{font-family:IN;font-size:17px;font-weight:600;opacity:.6}
+.rxn span b{text-decoration:none;box-shadow:inset 0 -12px 0 #fff9}
+.sat{font-family:SS;font-weight:800;font-size:50px;color:#14216b}.sat span{color:#14216b}
+.pov{font-family:IN;font-weight:300;font-style:italic;font-size:38px;color:#14216b}
+.W{font-family:SS;font-weight:800;color:#14216b;line-height:1}
+.s1{background:var(--hl);color:#14216b;font-family:SS;font-weight:700;font-style:italic;font-size:50px;border-radius:12px;transform:rotate(-2deg);box-shadow:0 6px 16px rgba(20,33,107,.14)}
+.s2{background:transparent;color:#14216b;font-family:IN;font-weight:600;font-size:26px;letter-spacing:2px;transform:none;padding:0}
+.s3{background:#fff;color:#14216b;font-family:IN;font-weight:600;font-size:30px;border:3px solid #14216b;transform:none}
+.sw{background:var(--hl);color:#14216b;font-family:SS;font-weight:700;font-size:34px;border:3px solid #14216b}
+.T2,.T3{font-family:SS;font-weight:800;color:#14216b}.T2 .k2,.T3 .k2{color:#14216b;background:var(--hl);padding:0 12px;border-radius:10px}
+.sent{font-family:IN;font-weight:300;border:none;background:transparent;padding:0 0 0 26px;border-left:8px solid var(--hl);border-radius:0;font-size:42px;color:#14216b}
+.opt{font-family:IN;font-weight:400;border:3px solid #14216b;background:#fff;color:#14216b;font-size:36px}
+.opt i{background:transparent;border:3px solid #14216b;color:#14216b;font-family:SS;font-weight:800}
+.ban{background:var(--hl);color:#14216b;font-family:IN;font-weight:600;border-radius:16px;font-size:30px}
+.g4{gap:0;border-top:2px dashed #14216b66}
+.g4 .c{background:transparent;border:none;border-bottom:2px dashed #14216b66;border-radius:0;padding:14px 18px;color:#14216b}
+.g4 .c:nth-child(odd){border-right:2px dashed #14216b66}
+.g4 .c b{font-family:SS;font-weight:800;font-size:38px}.g4 .c u{font-family:IN;font-weight:600;font-size:25px}.g4 .c i{font-family:IN;font-weight:300;font-size:24px}.g4 .c em{font-family:IN;font-weight:600;font-size:25px;background:var(--hl);border-radius:6px;padding:0 8px;display:inline-block;margin-top:6px}
+.su .qr,.su .info{border:3px solid #14216b;background:#fff;color:#14216b;font-family:IN}.su .info h4{font-family:SS;font-weight:800}.su .info{font-weight:400}.note{font-family:IN;font-weight:400}
+"""
+)
+
+PLAN = {w: 'edit' for w in ('BEAR','DRAW','ACCOUNT','HOLD','SUPPORT','ADDRESS','FIGURE','CHARGE','MAINTAIN','TRACE')}
 
 # ---------------------------------------------------------------- mascot with extra moods
 FUR, LIGHT, DARK = gen38.FUR, gen38.LIGHT, gen38.DARK
@@ -454,7 +508,12 @@ def tip(W, D, sk):
 CUR = {}
 def make_css(a, s, t):
     sk = SKINS[CUR['skin']]
-    return gen29.CSS + sk['fonts']() + ':root{' + sk['vars'] + '}' + BASE + sk['css']
+    pal = PAL.get(CUR['word'])
+    extra = ''
+    if CUR['skin'] == 'edit' and pal:
+        extra = ':root{--hl:%s;--blob:%s}.pg{background:%s %s center/cover}.pg:before{background:%s}' % (pal[1], pal[2], _curve('#14216b44'), pal[0], pal[1])
+        extra = extra.replace('background:url', 'background-image:url', 1).replace(' %s center/cover}' % pal[0], ';background-color:%s}' % pal[0])
+    return gen29.CSS + sk['fonts']() + ':root{' + sk['vars'] + '}' + BASE + sk['css'] + extra
 
 def page(C, n, T, body, tag):
     w = CUR['word']

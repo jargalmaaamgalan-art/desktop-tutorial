@@ -140,3 +140,18 @@ WORDS['TRACE'] = dict(
             opts=['draw over', 'find the starting point of', 'hide'], ans='B', expl='“Trace back to” = find where it started.', quip='Careful! Nobody is drawing here. 🔍'),
   cells=[('FIND', 'trace the origin', 'Trace the virus to a market.', 'эх сурвалжийг олох'), ('SMALL', 'a trace of', 'A trace of sadness.', 'бага зэрэг'), ('COPY', 'trace a drawing', 'She traced the map.', 'хуулан зурах'), ('FOLLOW', 'trace a path', 'Trace the thief’s path.', 'замыг мөшгөх')],
 )
+
+WORDS['BEAR'] = dict(
+  pov='POV: you think BEAR is just an animal 🐻', cover_em='🐻', hook='Баавгай биш! Нэг үг, 6 өөр утга',
+  exps=[
+   X('BEAR IN MIND', 'To remember something and think about it.', 'Санаж явах, анхаарах', 'Bear in mind that the shop closes at six.', 'Bear in mind', 'Bear in mind: the honey is MINE.', 'think', '💡', '🔥', 'Did you know this one? Comment <b>YES</b> or <b>NO</b>'),
+   X('BEAR FRUIT', 'To give good results after hard work.', 'Үр дүнгээ өгөх', 'Years of study finally bore fruit.', 'bore fruit', 'My tree bore fruit! Apples. Not honey.', 'fruit', '🍎', '💪', 'Name a goal that will <b>bear fruit</b> for you 👇'),
+   X('BEAR WITH ME', 'Be patient with me for a short time.', 'Жаахан хүлээгээрэй', 'Please bear with me while I find the file.', 'bear with me', 'Bear with me… I am still thinking.', 'please', '⏳', '😅', 'Who says this the most? <b>Tag a friend</b>'),
+   X('BEAR THE COST', 'To pay for something or take the responsibility.', 'Зардлыг хариуцах', 'The school will bear the cost of the trip.', 'bear the cost', 'Who bears the cost of my honey? You.', 'cost', '💰', '😱', 'Who <b>bears the cost</b> at your home?'),
+   X('CAN’T BEAR', 'To be unable to stand something.', 'Тэвчиж чадахгүй', 'I can’t bear the noise in this room.', 'can’t bear', 'I can’t bear it! Too loud!', 'ears', '🔊', '😮', 'What can you <b>not bear</b>? Comment it 👇'),
+   X('BEAR OUT', 'To show that something is true.', 'Зөв гэдгийг нотлох', 'The new data bear out her theory.', 'bear out', 'The data bear out my theory: honey wins.', 'out', '📊', '🤓', '<b>Save</b> this post for your SAT revision'),
+  ],
+  quiz=dict(word='bear out', sent='The latest experiments bear out the scientist’s hypothesis.', key='bear out',
+            opts=['carry something heavy', 'show that it is true', 'put up with something bad'], ans='B', expl='“Bear out” = show that it is true.', quip='Careful! It is not about honey.'),
+  cells=[('CARRY', 'bear the cost', 'The school bears the cost.', 'хариуцах'), ('ENDURE', 'can’t bear', 'I can’t bear the noise.', 'тэвчих'), ('PRODUCE', 'bear fruit', 'Her work bore fruit.', 'үр дүнгээ өгөх'), ('CONFIRM', 'bear out', 'The data bear out his idea.', 'баталж өгөх')],
+)
