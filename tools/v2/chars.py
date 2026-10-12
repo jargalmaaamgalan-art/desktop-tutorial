@@ -66,6 +66,7 @@ def _head(skin, hair_back='', hair_front='', hat='', ears=True, extra_face=''):
 
 def kid(spec, mood):
     fk, pk = MOOD[mood]
+    pk = spec.get('poses', {}).get(mood, pk)
     skin, tone = spec['skin'], spec.get('cheek', '#ff8fa3')
     out, sleeve = spec['outfit'], spec.get('sleeve', spec['outfit'])
     handc = skin
@@ -109,7 +110,7 @@ CAST = {
     hat='<rect x="110" y="104" width="180" height="20" rx="8" fill="#ef4444"/>',
     torso_extra='<path d="M168 286 L232 286" stroke="#14532d" stroke-width="6"/><text x="170" y="350" font-size="46" font-weight="900" fill="#fff" font-family="Arial Black,sans-serif">GMP</text>'),
  # SUPPORT: caped hero girl with a mask and puffy curls
- 'SUPPORT': dict(skin='#a8683f', outfit='#38bdf8', sleeve='#38bdf8', brow='#2a1408', cheek='#ff7a8a',
+ 'SUPPORT': dict(poses={'flex': 'hips', 'sun': 'hips', 'point': 'hips', 'out': 'hips'}, skin='#a8683f', outfit='#38bdf8', sleeve='#38bdf8', brow='#2a1408', cheek='#ff7a8a',
     back='<path d="M104 250 Q60 330 90 410 L310 410 Q340 330 296 250 Z" fill="#ec4899"/>' + curls(200, 96, 46, 9, '#2a1408', 96),
     front='<path d="M112 120 Q130 82 200 80 Q270 82 288 120 Q244 98 200 106 Q156 98 112 120Z" fill="#2a1408"/>',
     mid='<path d="M104 134 Q200 112 296 134 L292 184 Q250 172 218 186 Q200 192 182 186 Q150 172 108 184Z" fill="#ec4899"/>', hat='',
@@ -126,7 +127,7 @@ CAST = {
     hat='<path d="M102 116 Q100 24 200 22 Q300 24 298 116 Z" fill="#0ea5e9"/><rect x="96" y="100" width="208" height="30" rx="14" fill="#0284c7"/><circle cx="200" cy="18" r="18" fill="#fff"/>',
     torso_extra='<rect x="140" y="248" width="120" height="30" rx="15" fill="#0ea5e9"/><rect x="214" y="262" width="32" height="64" rx="14" fill="#0ea5e9"/><text x="160" y="360" font-size="60" font-weight="900" fill="#fff" font-family="Arial Black,sans-serif">%</text>'),
  # CHARGE: grumpy boss girl with a big ponytail and black outfit (angry-cute)
- 'CHARGE': dict(skin='#f3c8a6', outfit='#1f2937', sleeve='#1f2937', brow='#120d18', angry=True, cheek='#ff6b6b',
+ 'CHARGE': dict(poses={'flex': 'cross', 'sun': 'cross', 'out': 'cross', 'point': 'cross'}, skin='#f3c8a6', outfit='#1f2937', sleeve='#1f2937', brow='#120d18', angry=True, cheek='#ff6b6b',
     back='<path d="M262 70 Q380 40 372 170 Q366 250 322 300 Q340 200 300 150Z" fill="#120d18"/><ellipse cx="200" cy="132" rx="100" ry="92" fill="#120d18"/>',
     front='<path d="M106 150 Q100 66 200 60 Q300 66 294 150 Q276 110 236 104 Q200 120 150 100 Q118 116 106 150Z" fill="#120d18"/><circle cx="272" cy="62" r="18" fill="#f43f5e"/>',
     hat='', torso_extra='<path d="M168 286 L232 286" stroke="#374151" stroke-width="6"/><path d="M204 298 L184 338 L202 338 L194 372 L226 326 L208 326Z" fill="#facc15"/>'),
