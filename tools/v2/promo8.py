@@ -16,7 +16,7 @@ PHOTO = 'data:image/jpeg;base64,' + base64.b64encode(open('/home/claude/preview/
 LOGO = 'data:image/png;base64,' + base64.b64encode(open('/home/claude/preview/gmp-logo-dark.png', 'rb').read()).decode()
 
 HTML = f'''<!doctype html><html><head><meta charset="utf-8"><style>
-{F('CG', 'cormorant-garamond', [600])}{F('OS', 'oswald', [500])}{F('IN', 'inter', [400, 600, 800])}
+{F('SS', 'source-serif-4', [600])}{F('OS', 'oswald', [500])}{F('IN', 'inter', [400, 600, 800])}
 *{{box-sizing:border-box;margin:0}}
 body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};overflow:hidden;position:relative;background:{CREAM}}}
 .ph{{position:absolute;left:0;top:0;width:1080px;height:880px;background:url({PHOTO}) center top/cover}}
@@ -24,23 +24,23 @@ body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};overflow:hi
 .gold{{position:absolute;left:0;top:640px;width:1080px;height:600px;background:{G};clip-path:polygon(0 110px,1080px 0,1080px 12px,0 122px)}}
 .tag{{position:absolute;right:48px;top:48px;background:#fff;color:{T};font-family:OS,sans-serif;font-weight:500;font-size:23px;letter-spacing:3px;padding:10px 20px 10px 16px;text-transform:uppercase;display:flex;align-items:center;gap:12px}}.tag:before{{content:'';width:12px;height:12px;border-radius:50%;background:{G}}}
 .blk{{position:absolute;left:0;top:640px;width:1080px;height:600px;background:{CREAM};clip-path:polygon(0 122px,1080px 12px,1080px 100%,0 100%)}}
-h1{{position:absolute;left:56px;top:776px;font-family:CG,serif;font-weight:600;font-size:84px;line-height:1.0;color:{T};letter-spacing:-.5px}}
-.sub{{position:absolute;left:58px;top:1064px;font-size:22px;color:#55707c;font-weight:500;letter-spacing:.2px}}
-.row{{position:absolute;left:56px;right:56px;top:1128px;display:flex;align-items:center;justify-content:space-between}}
-.row img{{height:86px}}
-.btn{{background:{G};color:{T};font-weight:800;font-size:28px;padding:22px 44px;border-radius:12px;box-shadow:0 6px 18px rgba(243,176,69,.35)}}
+h1{{position:absolute;left:56px;top:776px;font-family:SS,serif;font-weight:600;font-size:80px;line-height:1.08;color:{T};letter-spacing:-1px}}
+.sub{{position:absolute;left:58px;top:980px;font-size:24px;color:#4a6572;font-weight:500;letter-spacing:.2px}}
+.row{{position:absolute;left:56px;right:56px;top:1090px;display:flex;align-items:center;justify-content:space-between}}
+.row img{{height:92px}}
+.btn{{background:{G};color:{T};font-weight:800;font-size:28px;padding:24px 48px;border-radius:12px;box-shadow:0 6px 18px rgba(243,176,69,.35)}}
 .strip{{position:absolute;left:0;right:0;bottom:0;height:96px;background:{T};color:#fff;display:flex;align-items:center;justify-content:center;font-family:OS,sans-serif;font-weight:500;font-size:23px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}}
 .strip i{{width:1.5px;height:36px;background:rgba(255,255,255,.35);margin:0 26px}}
 .disc{{position:absolute;left:0;right:0;bottom:104px;text-align:center;font-size:10.5px;color:#9aa9b0}}
 </style></head><body>
 <div class="ph"></div>
-<div class="tag">Элсэлт нээлттэй</div>
+<div class="tag">Элсэлт нээлттэй · 2026 намар</div>
 <div class="gold"></div><div class="blk"></div>
-<h1>Digital SAT бэлтгэл<br>Канадаас шууд<br>онлайнаар</h1>
-<div class="sub">15 жилийн туршлагатай багш · Цөөн сурагчтай бүлэг · Англи, Монгол хэлээр</div>
+<h1>Digital SAT-д<br>Канадаас бэлтгэе</h1>
+<div class="sub">Математик · Англи хэл · 15 жилийн туршлагатай багш · Цөөн сурагчтай бүлэг</div>
 <div class="row"><img src="{LOGO}"><div class="btn">Бүртгүүлэх →</div></div>
 <div class="disc">SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.</div>
-<div class="strip">Математик Да · Лх · Ба<i></i>Англи хэл Мя · Пү · Ня<i></i>Монголын цагаар 20:00 - 21:20</div>
+<div class="strip">Математик &nbsp;Да · Лх · Ба<i></i>Англи хэл &nbsp;Мя · Пү · Ня<i></i>20:00 - 21:20 &nbsp;Монголын цагаар</div>
 </body></html>'''
 open('/home/claude/preview/promo8.html', 'w').write(HTML)
 with sync_playwright() as p:
