@@ -20,16 +20,16 @@ body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};background:
 .blk{{padding:56px 70px 0}}
 .eye{{color:#b47d1f;font-weight:800;font-size:19px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}}
 h1{{font-family:CG,serif;font-weight:600;font-size:63px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}}
-.sub{{font-size:26px;color:{T};margin-top:22px;font-weight:600;line-height:1.55}}.sub b{{color:{T};font-weight:800}}
+.sub{{font-size:25px;color:#35505c;margin-top:22px;font-weight:500;line-height:1.55}}.sub b{{color:{T};font-weight:800}}
 .row{{position:absolute;left:70px;right:70px;bottom:66px;display:flex;align-items:center;justify-content:space-between}}
-.lg{{display:flex;align-items:center;gap:16px}}.lg .n{{font-family:CG,serif;font-weight:700;font-size:44px;letter-spacing:1px;line-height:1;color:{T}}}.lg .s{{color:#b47d1f;font-weight:800;font-size:20px;letter-spacing:3px;margin-top:6px}}
+.row img{{height:110px}}
 .btn{{background:{G};color:{T};font-weight:800;font-size:27px;padding:22px 40px;border-radius:12px}}
 .disc{{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:11px;color:#7d8f99}}
 </style></head><body>
 <div class="ph"></div>
 <div class="blk"><div class="eye">Элсэлт нээлттэй · 2026 оны намар</div><h1>Digital SAT бэлтгэл,<br>Канадаас шууд онлайнаар.</h1>
 <div class="sub"><b>Математик</b> Да · Лх · Ба &nbsp;&nbsp;<b>Англи хэл</b> Мя · Пү · Ня<br>Монголын цагаар 20:00 - 21:20 · 15 жилийн туршлагатай багш</div></div>
-<div class="row"><div class="lg"><svg viewBox="0 0 100 100" width="118" height="118"><g fill="none" stroke="{T}" stroke-width="4.5"><circle cx="50" cy="40" r="32"/><ellipse cx="50" cy="40" rx="14" ry="32"/><path d="M50 8V72M20 28Q50 38 80 28M20 52Q50 62 80 52"/></g><path d="M12 80Q30 68 50 82Q70 68 88 80L84 92Q68 82 50 94Q32 82 16 92Z" fill="{G}"/></svg><div><div class="n">GLOBAL MATH PREP</div><div class="s">JARGALMAA AMGALAN</div></div></div><div class="btn">Бүртгүүлэх →</div></div>
+<div class="row"><img src="{LOGO}"><div class="btn">Бүртгүүлэх →</div></div>
 <div class="disc">globalmathprep.academy · WhatsApp +1 428 880 1826 · SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.</div>
 </body></html>'''
 open('/home/claude/preview/promo5.html', 'w').write(HTML)
