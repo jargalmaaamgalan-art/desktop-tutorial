@@ -463,7 +463,13 @@ def tsize(sk, title):
     base, cw = sk['ts']
     return int(min(base, 930 / (len(title) * cw)))
 
-def mas(mood): return f'<div class="mas">{bear2(mood)}</div>'
+def mas(mood):
+    import os
+    if os.environ.get('NOCHAR'):
+        import logomas
+        if mood=='sun': return '<div class="mas" style="filter:none">'+logomas.logo_mark(face=False,arms=None).replace('fill="#1b3b48" stroke="#fff"','fill="#1b3b48" stroke="#fff"')+'</div>'
+        return '<div class="mas nc"></div>'
+    return f'<div class="mas">{bear2(mood)}</div>'
 
 ORDER=['BEAR','DRAW','ACCOUNT','HOLD','SUPPORT','ADDRESS','FIGURE','CHARGE','MAINTAIN','TRACE']
 def lab(W):
@@ -524,6 +530,9 @@ def make_css(a, s, t):
     if CUR['skin'] == 'edit' and pal:
         extra = ':root{--hl:%s;--blob:%s}.pg{background:%s %s center/cover}.pg:before{background:%s}' % (pal[1], pal[2], _curve('#14216b44'), pal[0], pal[1])
         extra = extra.replace('background:url', 'background-image:url', 1).replace(' %s center/cover}' % pal[0], ';background-color:%s}' % pal[0])
+    import os
+    if os.environ.get('NOCHAR'):
+        extra += ':root{--ink:#1b3b48}.mas.nc{display:none}.vis .q{margin-bottom:0;max-width:640px;font-size:34px}.vis .prop{position:static;font-size:150px;margin-left:30px}.vis{align-items:center;justify-content:center;gap:10px}.mas svg{filter:none!important;animation:none!important}.k,.T,.W{color:#1b3b48}.top{border-bottom:6px solid #f3b045}'
     return gen29.CSS + sk['fonts']() + ':root{' + sk['vars'] + '}' + BASE + sk['css'] + extra
 
 def page(C, n, T, body, tag):
