@@ -13,13 +13,13 @@ PHOTO = 'data:image/jpeg;base64,' + base64.b64encode(open('/home/claude/preview/
 LOGO = 'data:image/png;base64,' + base64.b64encode(open('/home/claude/preview/gmp-logo-dark.png', 'rb').read()).decode()
 
 HTML = f'''<!doctype html><html><head><meta charset="utf-8"><style>
-{F('SS', 'source-serif-4', [700])}{F('IN', 'inter', [400, 600, 800])}
+{F('CG', 'cormorant-garamond', [500, 600])}{F('IN', 'inter', [400, 600, 800])}
 *{{box-sizing:border-box;margin:0}}
 body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};background:{CREAM};overflow:hidden;position:relative}}
 .ph{{height:740px;background:url({PHOTO}) center/cover}}
 .blk{{padding:56px 70px 0}}
 .eye{{color:#b47d1f;font-weight:800;font-size:19px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}}
-h1{{font-family:SS,serif;font-weight:700;font-size:62px;line-height:1.12;letter-spacing:-.5px}}
+h1{{font-family:CG,serif;font-weight:600;font-size:63px;line-height:1.1;letter-spacing:1px;text-transform:uppercase}}
 .sub{{font-size:24px;color:#4a6675;margin-top:22px;font-weight:400;line-height:1.55}}.sub b{{color:{T};font-weight:800}}
 .row{{position:absolute;left:70px;right:70px;bottom:78px;display:flex;align-items:center;justify-content:space-between}}
 .row img{{height:84px}}
