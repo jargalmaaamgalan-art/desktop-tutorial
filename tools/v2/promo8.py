@@ -24,9 +24,9 @@ body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};overflow:hi
 .gold{{position:absolute;left:0;top:640px;width:1080px;height:600px;background:{G};clip-path:polygon(0 110px,1080px 0,1080px 12px,0 122px)}}
 .tag{{position:absolute;right:48px;top:48px;background:#fff;color:{T};font-family:OS,sans-serif;font-weight:500;font-size:23px;letter-spacing:3px;padding:10px 20px 10px 16px;text-transform:uppercase;display:flex;align-items:center;gap:12px}}.tag:before{{content:'';width:12px;height:12px;border-radius:50%;background:{G}}}
 .blk{{position:absolute;left:0;top:640px;width:1080px;height:600px;background:{CREAM};clip-path:polygon(0 122px,1080px 12px,1080px 100%,0 100%)}}
-h1{{position:absolute;left:56px;top:776px;font-family:SS,serif;font-weight:600;font-size:80px;line-height:1.08;color:{T};letter-spacing:-1px}}
-.sub{{position:absolute;left:58px;top:980px;font-size:24px;color:#4a6572;font-weight:500;letter-spacing:.2px}}
-.row{{position:absolute;left:56px;right:56px;top:1090px;display:flex;align-items:center;justify-content:space-between}}
+h1{{position:absolute;left:56px;top:776px;font-family:SS,serif;font-weight:600;font-size:76px;line-height:1.06;color:{T};letter-spacing:-1px}}
+.sub{{position:absolute;left:58px;top:1036px;font-size:24px;color:#4a6572;font-weight:500;letter-spacing:.2px}}
+.row{{position:absolute;left:56px;right:56px;top:1112px;display:flex;align-items:center;justify-content:space-between}}
 .row img{{height:92px}}
 .btn{{background:{G};color:{T};font-weight:800;font-size:28px;padding:24px 48px;border-radius:12px;box-shadow:0 6px 18px rgba(243,176,69,.35)}}
 .strip{{position:absolute;left:0;right:0;bottom:0;height:96px;background:{T};color:#fff;display:flex;align-items:center;justify-content:center;font-family:OS,sans-serif;font-weight:500;font-size:23px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}}
@@ -36,8 +36,8 @@ h1{{position:absolute;left:56px;top:776px;font-family:SS,serif;font-weight:600;f
 <div class="ph"></div>
 <div class="tag">Элсэлт нээлттэй · 2026 намар</div>
 <div class="gold"></div><div class="blk"></div>
-<h1>Digital SAT-д<br>Канадаас бэлтгэе</h1>
-<div class="sub">Математик · Англи хэл · 15 жилийн туршлагатай багш · Цөөн сурагчтай бүлэг</div>
+<h1>Digital SAT<br>Math + English багш<br>Канадаас онлайнаар</h1>
+<div class="sub">15 жилийн туршлагатай багш · Цөөн сурагчтай бүлэг · Англи, Монгол хэлээр</div>
 <div class="row"><img src="{LOGO}"><div class="btn">Бүртгүүлэх →</div></div>
 <div class="disc">SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.</div>
 <div class="strip">Математик &nbsp;Да · Лх · Ба<i></i>Англи хэл &nbsp;Мя · Пү · Ня<i></i>20:00 - 21:20 &nbsp;Монголын цагаар</div>
