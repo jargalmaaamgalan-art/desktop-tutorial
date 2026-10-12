@@ -17,18 +17,19 @@ HTML = f'''<!doctype html><html><head><meta charset="utf-8"><style>
 *{{box-sizing:border-box;margin:0}}
 body{{width:1080px;height:1350px;font-family:IN,sans-serif;color:{T};background:{CREAM};overflow:hidden;position:relative}}
 .ph{{height:740px;background:url({PHOTO}) center/cover}}
-.blk{{padding:66px 70px 0}}
-h1{{font-family:SS,serif;font-weight:700;font-size:76px;line-height:1.12;letter-spacing:-.5px}}
-.sub{{font-size:25px;color:#4a6675;margin-top:24px;font-weight:400;line-height:1.5}}
+.blk{{padding:56px 70px 0}}
+.eye{{color:#b47d1f;font-weight:800;font-size:19px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}}
+h1{{font-family:SS,serif;font-weight:700;font-size:62px;line-height:1.12;letter-spacing:-.5px}}
+.sub{{font-size:24px;color:#4a6675;margin-top:22px;font-weight:400;line-height:1.55}}.sub b{{color:{T};font-weight:800}}
 .row{{position:absolute;left:70px;right:70px;bottom:78px;display:flex;align-items:center;justify-content:space-between}}
 .row img{{height:84px}}
 .btn{{background:{G};color:{T};font-weight:800;font-size:27px;padding:22px 40px;border-radius:12px}}
 .disc{{position:absolute;left:0;right:0;bottom:18px;text-align:center;font-size:10.5px;color:#9aa9b0}}
 </style></head><body>
 <div class="ph"></div>
-<div class="blk"><h1>SAT бэлтгэл.<br>Канадаас онлайнаар.</h1>
-<div class="sub">Математик Да · Лх · Ба &nbsp;|&nbsp; Англи хэл Мя · Пү · Ня<br>Монголын цагаар 20:00 - 21:20</div></div>
-<div class="row"><img src="{LOGO}"><div class="btn">Элсэлт нээлттэй</div></div>
+<div class="blk"><div class="eye">Элсэлт нээлттэй · 2026 оны намар</div><h1>Digital SAT бэлтгэл,<br>Канадаас шууд онлайнаар.</h1>
+<div class="sub"><b>Математик</b> Да · Лх · Ба &nbsp;&nbsp;<b>Англи хэл</b> Мя · Пү · Ня<br>Монголын цагаар 20:00 - 21:20 · 15 жилийн туршлагатай багш</div></div>
+<div class="row"><img src="{LOGO}"><div class="btn">Бүртгүүлэх →</div></div>
 <div class="disc">globalmathprep.academy · WhatsApp +1 428 880 1826 · SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.</div>
 </body></html>'''
 open('/home/claude/preview/promo5.html', 'w').write(HTML)
