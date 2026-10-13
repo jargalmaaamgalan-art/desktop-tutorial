@@ -12,6 +12,26 @@ EXTRA = gen33.EXTRA.replace('#be185d', AC) + """
 .mt div{background:#fff;border:2px solid #e3e5f5;border-radius:16px;padding:16px 18px;text-align:center}
 .mt b{display:block;font-size:30px;color:#445;font-weight:700}
 .mt span{display:block;font-family:S,serif;font-size:50px;color:""" + AC + """;font-weight:700;margin-top:4px}
+/* bigger text (13 Oct feedback) */
+.lead{font-size:44px!important;line-height:1.35!important}
+.rule{font-size:40px!important;padding:24px 30px!important}
+.big{font-size:42px!important}
+.chips span{font-size:34px!important;padding:12px 26px!important}
+.swipe{font-size:30px!important}
+.mt b{font-size:40px!important}.mt span{font-size:68px!important}.mt div{padding:20px!important}
+.tag{font-size:32px!important;padding:6px 16px!important}
+.eqc{font-size:80px!important}
+.k{width:64px!important;height:64px!important;font-size:34px!important}
+.e{font-size:48px!important;width:auto!important;min-width:400px;white-space:nowrap}
+.st .d{font-size:34px!important}
+.d{font-size:40px!important}
+.st{padding:18px 0!important}
+.bxs{font-size:48px!important;line-height:1.35!important}
+.spr{font-size:30px!important}.bxin{width:260px!important;height:72px!important}
+.ok{font-size:60px!important}
+.pill{font-size:28px!important}
+.card[style*="font-size:27px"]{font-size:31px!important;white-space:nowrap}
+.card[style*="font-size:27px"] span{font-size:inherit}
 """
 
 def css():
