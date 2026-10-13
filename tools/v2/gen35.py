@@ -1,93 +1,67 @@
-"""Words-in-Context post: Cacao and Maize (answer D, confirm). Content from the owner's own explainer (Cacao_and_Maize_Explainer.html).
-Model: gen30/gen34. Run: python3 gen35.py [--video]"""
-import sys, shutil
-import gen30, gen29
-from gen30 import frame
-from gen18 import E, HERE
+"""SAT Math: percent as a multiplier; successive changes multiply, they do not add. One post, 6 slides.
+Content from sat-math/course/ch02-percent.html (GMP module), lesson 2-1: lesson text (multiplier,
+"percent of" vs "percent more than": 25% of 80 = 20, 25% more than 80 = 100) and Worked Example 1
+(jacket $80, +25% then -10%: 100, 90, 12.5% increase, multiplier 1.125, not 1.15)."""
+import sys
+import gen29, gen30, gen31, gen32, gen33
 
-AC, SOFT, TINT = '#c2410c', '#fde6d8', '#fff8f3'   # orange: not used by any scheduled post
+AC, SOFT, TINT = '#4338ca', '#e0e1fb', '#f6f6ff'   # indigo (not used by recent posts)
 
-EXTRA = """
-.hk{background:#fde68a;color:#1e1e1e;padding:0 6px;border-radius:8px;font-weight:700}
-.cl{display:flex;gap:16px;align-items:center;padding:12px 0;border-top:2px dashed #f3d3c0}
-.cl:first-child{border-top:0}
-.cl .no{flex:none;width:50px;height:50px;border-radius:50%;background:@AC@;color:#fff;font-size:28px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.cl .ph{flex:none;width:330px;font-family:S,serif;font-size:29px;font-weight:700;background:#fde68a;border-radius:10px;padding:4px 10px;line-height:1.3}
-.cl .ms{font-size:27px;font-weight:700;color:#334;line-height:1.3}
-.vc{background:#fff;border-radius:22px;padding:14px 24px 16px;border:2.5px solid @SOFT@}
-.vc.tp{border:3px solid #c62828}
-.vc .top2{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.vc .wd{font-family:S,serif;font-size:40px;font-weight:700;color:#c62828}
-.vc .pr{font-size:24px;font-weight:700;color:#667}
-.vc .tg{font-size:20px;font-weight:800;letter-spacing:1px;background:#c62828;color:#fff;border-radius:20px;padding:3px 14px}
-.vc .why{font-size:31px;font-weight:600;color:#223;line-height:1.35;margin-top:4px}
-.vc .ex{font-family:S,serif;font-style:italic;font-size:29px;color:#556;margin-top:4px}
-.trio{display:flex;gap:12px}
-.trio span{flex:1;text-align:center;background:#fff;border:2.5px solid @AC@;border-radius:18px;padding:12px 6px;font-family:S,serif;font-size:34px;font-weight:700;color:@AC@}
-.trio span.on{background:@AC@;color:#fff}
-""".replace('@AC@', AC).replace('@SOFT@', SOFT)
-_css = gen30.css
-gen30.css = lambda a, s, t: _css(a, s, t) + EXTRA
+EXTRA = gen33.EXTRA.replace('#be185d', AC) + """
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mt div{background:#fff;border:2px solid #e3e5f5;border-radius:16px;padding:16px 18px;text-align:center}
+.mt b{display:block;font-size:30px;color:#445;font-weight:700}
+.mt span{display:block;font-family:S,serif;font-size:50px;color:""" + AC + """;font-weight:700;margin-top:4px}
+"""
 
-def page(C, n, T, body, tag):
+def css():
+    return gen30.css(AC, SOFT, TINT) + EXTRA
+
+m = gen31.m
+
+STEM = (f'A jacket is priced at {m("$80")}. Its price is raised by {m("25%")}, and the new price is later reduced by {m("10%")}. '
+        f'By what percent is the final price greater than the original price?')
+
+PAGES = [
+    # 1. cover
+    gen30.cover('SAT MATH · PERCENT',
+                f'+25%, дараа нь −10%<br>= +15%?<br><span class="blue">Буруу.</span>',
+                'Хувийг нэмж хасдаггүй. Үржүүлэгч болгоод үржүүлнэ.',
+                ['×1.25', '×0.90', '= ×1.125'], '1f4c9').replace('font-size:104px', 'font-size:94px'),
+    # 2. the idea
+    f'''<div class="pill">ГОЛ САНАА</div><div class="h" style="font-size:72px">Өөрчлөлт бүр<br><span class="blue">үржүүлэгч</span></div>
+<div class="lead">25%-иар өсгөх нь "25 нэмэх" биш, <b class="hl">1.25-аар үржүүлэх</b>. 25%-иар бууруулах нь 0.75-аар үржүүлэх.</div>
+<div class="mt"><div><b>+25%</b><span>×1.25</span></div><div><b>−25%</b><span>×0.75</span></div>
+<div><b>+10%</b><span>×1.10</span></div><div><b>−10%</b><span>×0.90</span></div></div>
+<div class="rule">Хоёр өөрчлөлт дараалбал үржүүлэгчүүдийг үржүүлнэ</div>''',
+    # 3. of vs more than
+    f'''<div class="pill">АНХААР</div><div class="h" style="font-size:66px">"-ийн 25%" ба<br><span class="blue">"25%-иар их"</span></div>
+<div class="card"><div class="tag y">80-ийн 25%</div><div class="eqc">{m("0.25 × 80 = 20")}</div></div>
+<div class="card"><div class="tag y">80-аас 25%-иар их</div><div class="eqc">{m("1.25 × 80 = 100")}</div></div>
+<div class="rule">Хоёр хариу хоёулаа сонголтод гардаг. Асуултаа эхлээд уншаарай.</div>''',
+    # 4. question
+    f'''<div class="pill">ДАСГАЛ · ЭХЛЭЭД ӨӨРӨӨ БОД</div>{gen31.spr(5, STEM)}
+<div class="card big" style="padding:16px 24px">10%-ийг 80-аас биш, өссөн үнээс хасна.</div>''',
+    # 5. answer
+    f'''<div class="pill">ХАРИУ</div>
+<div class="okrow"><div class="ok">12.5%</div><div class="h" style="font-size:52px">15% биш</div></div>
+<div class="card" style="padding:8px 26px"><div class="steps">
+<div class="st"><div class="k">1</div><div class="e">80 × 1.25 = 100</div><div class="d">25%-иар өссөн</div></div>
+<div class="st"><div class="k">2</div><div class="e">100 × 0.90 = 90</div><div class="d">100-аас 10% хассан</div></div>
+<div class="st"><div class="k">3</div><div class="e">(90 − 80) ÷ 80</div><div class="d">= 0.125 = 12.5% өсөлт</div></div>
+<div class="st"><div class="k">4</div><div class="e">1.25 × 0.90 = 1.125</div><div class="d">Нэг үржүүлэгч: мөн 12.5%</div></div></div></div>
+<div class="rule">10%-ийг 25% нэмэгдсэн том тооноос хассан тул 15% гарахгүй</div>''',
+    # 6. end
+    gen30.endp('Шинэ сэдэв удахгүй'),
+]
+
+
+def page(C, n, T, body):
     return f'''<!doctype html><html lang="mn"><head><meta charset="utf-8"><style>{C}</style></head><body><div class="pg">
 <div class="top"><img src="{gen29.LOGO}"><span>{n:02d} / {T:02d}</span></div>
 <div class="mn">{body}</div>
-<div class="ft"><span>SAT R&amp;W · ҮГИЙН УТГА</span><span>{"Гүйлгээд үз →" if n < T else "@globalmathprep"}</span></div></div></body></html>'''
-gen30.page = page
+<div class="ft"><span>SAT MATH · PERCENT</span><span>{"Гүйлгээд үз →" if n < T else "@globalmathprep"}</span></div></div></body></html>'''
 
-S1 = 'Domesticated thousands of years ago by Indigenous people in South America, cacao, the plant from which chocolate is made, deviates structurally from the wild plant it is descended from.'
-S2 = 'Maize (corn), another crop domesticated by Indigenous Americans, shows so little resemblance to any wild plant that genetic research was necessary to ______ teosinte grass as its ancestor.'
-CH = ['acquire', 'develop', 'attract', 'confirm']
-PR = 'Which choice completes the text with the most logical and precise word or phrase?'
-PASS = f'<span style="font-size:27px;line-height:1.5;display:block">{S1} {S2}</span>'
-
-# 1 cover
-cov = gen30.cover('SAT R&amp;W · ҮГИЙН УТГА', '<span class="blue">Эрдэнэ шиш</span><br>өвөг дээдсээ<br>огт санагдуулдаггүй',
-                  'Тэгвэл эрдэмтэд түүний өвөг хэн гэдгийг яаж мэдсэн бэ? SAT-ийн нэг үгийн асуулт.',
-                  ['Words in Context', '4 сонголт', '1 түлхүүр'], '1f331')
-
-# 2 question
-p2 = f'''<div class="pill">ДАСГАЛ · ЭХЛЭЭД ӨӨРӨӨ БОД</div>{frame(1, PASS, CH, prompt=PR)}
-<div class="card big" style="padding:16px 24px">Хоосон зайд аль үг тохирох вэ? Хариугаа бодоод дараагийн слайд руу гүйлгээрэй.</div>'''
-
-# 3 clues
-S2h = ('Maize (corn), another crop domesticated by Indigenous Americans, shows <span class="hk">so little resemblance</span> to any wild plant that '
-       '<span class="hk">genetic research was necessary</span> to ______ <span class="hk">teosinte grass as its ancestor</span>.')
-cl = [('so little resemblance', 'Нүдээр харж таних боломжгүй. Бараг адилгүй.'),
-      ('genetic research was necessary', 'Эрдэмтдэд баталгаа хэрэгтэй байсан.'),
-      ('teosinte grass as its ancestor', 'Батлах гэж байгаа баримт.')]
-rows = ''.join(f'<div class="cl"><div class="no">{i}</div><div class="ph">{a}</div><div class="ms">{b}</div></div>' for i, (a, b) in enumerate(cl, 1))
-p3 = f'''<div class="pill">ТҮЛХҮҮР ҮГС</div>
-<div class="h" style="font-size:72px"><span class="blue">3 түлхүүр</span> хариуг<br>заана</div>
-<div class="card" style="padding:16px 24px"><div class="sen" style="font-size:31px;line-height:1.55">{S2h}</div></div>
-<div class="card" style="padding:6px 24px">{rows}</div>
-<div class="rule" style="font-size:27px">Нүдээр таних боломжгүй тул судалгаа хэрэгтэй болсон. Судалгаа баталгаа өгсөн.</div>'''
-
-# 4 answer
-p4 = f'''<div class="pill">ХАРИУ</div>
-<div class="okrow"><div class="ok">D) confirm</div><div class="h" style="font-size:56px">= батлах</div></div>
-<div class="lead" style="font-size:32px">Дуудлага: <b>kun-FURM</b>. Утга нь “зөв гэдгийг харуулах, батлах”.</div>
-<div class="card" style="padding:14px 24px"><div class="lab">“СУДАЛГАА ЮУ ХИЙДЭГ ВЭ?” ГЭЖ АСУУ</div>
-<div class="trio"><span>finds</span><span>proves</span><span class="on">confirms</span></div></div>
-<div class="card" style="padding:14px 24px"><div class="lab">ТУРШИЖ ҮЗ</div><div class="sen" style="font-size:36px">…genetic research was necessary to <b>confirm</b> teosinte grass as its ancestor.</div></div>
-<div class="rule" style="font-size:26px">Хэв маяг: <u>to ___ X as Y</u> → confirm, identify, establish<br>so … that research was necessary → баталгаа хэрэгтэй</div>'''
-
-# 5 wrong
-def vc(w, pr, mean, why, ex, trap=False):
-    tag = '<span class="tg">ХАМГИЙН СЭТГЭЛ ТАТАМ</span>' if trap else ''
-    return f'<div class="vc{" tp" if trap else ""}"><div class="top2"><span class="wd">{w}</span><span class="pr">{pr} · {mean}</span>{tag}</div><div class="why">{why}</div><div class="ex">{ex}</div></div>'
-p5 = f'''<div class="pill">БУРУУ СОНГОЛТУУД</div>
-<div class="h" style="font-size:66px">Яагаад <span class="blue">develop</span><br>урхи вэ?</div>
-{vc('B) develop', 'di-VEL-up', 'бүтээх', 'Судалгаа өвөг дээдсийг бүтээж чадахгүй. Teosinte өмнө нь байсан. Шинжлэх ухаан шиг сонсогддог тул олон хүн сонгодог.', 'Scientists developed a vaccine.', True)}
-{vc('A) acquire', 'uh-KWY-er', 'олж авах', 'Судалгаа өвс авдаггүй.', 'The museum acquired a painting.')}
-{vc('C) attract', 'uh-TRAKT', 'өөртөө татах', 'Судалгаа өвсийг өөртөө татдаггүй.', 'Flowers attract bees.')}'''
-
-POST = dict(key='Cacao-Maize', AC=AC, SOFT=SOFT, TINT=TINT, nxt='Шинэ SAT дасгал',
-            pages=[cov, p2, p3, p4, p5, gen30.endp('Шинэ SAT дасгал')])
 
 if __name__ == '__main__':
-    gen30.render(POST, '--video' in sys.argv)
-    out = HERE / ('out30-' + POST['key'])
-    for f in sorted(out.glob('GMP-Transitions-*')):
-        f.rename(out / f.name.replace('GMP-Transitions-Cacao-Maize', 'GMP-WordsInContext-Cacao-Maize'))
+    gen32.render('--video' in sys.argv, key='Percent-Multiplier', prefix='GMP-Math-Percent-Multiplier', pages=PAGES, cssf=css, pagef=page)
