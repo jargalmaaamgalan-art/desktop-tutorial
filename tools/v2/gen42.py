@@ -3,7 +3,11 @@ Content from sat-math/course/ch09-systems-of-equations.html (GMP module), lesson
 lesson text (3x+2y=5 vs 3x+2y=-4 no solution; vs 6x+4y=10 infinitely many; scale, match both variables,
 then the constant decides) and Worked Example 1 (-ax-12y=15, 4x+3y=-2, no solution -> a=16)."""
 import sys
+import base64
 import gen29, gen30, gen31, gen32, gen33
+
+def _b(f): return 'data:image/png;base64,' + base64.b64encode(open(f, 'rb').read()).decode()
+ROUND, WORD = _b('gmp-round.png'), _b('gmp-wordmark-dark.png')
 
 AC, SOFT, TINT = '#7e22ce', '#f0e4fb', '#faf6fe'   # purple (not used by recent posts)
 
@@ -29,6 +33,11 @@ EXTRA = gen33.EXTRA.replace('#be185d', AC) + """
 .cs svg{width:100%;height:auto;display:block}
 .cs b{display:block;font-size:34px;margin-top:10px;color:#1e1e1e}
 .cs span{display:block;font-size:26px;color:#556;font-weight:600;margin-top:4px;line-height:1.25}
+.brand{position:absolute;top:34px;left:56px;right:56px;display:flex;align-items:center;gap:18px;z-index:3}
+.brand .r{width:112px;height:112px;border-radius:50%;box-shadow:0 4px 14px rgba(15,30,80,.25)}
+.brand .w{height:64px}
+.brand .n{margin-left:auto;font-weight:800;font-size:26px;letter-spacing:2px;color:"""+AC+""";border:2.5px solid """+AC+""";border-radius:30px;padding:8px 18px}
+.ft b{color:#1e2a5a}
 .sys{font-family:S,serif;font-size:50px;line-height:1.5;text-align:center;margin:14px 0}
 """
 
@@ -87,9 +96,9 @@ PAGES = [
 
 def page(C, n, T, body):
     return f'''<!doctype html><html lang="mn"><head><meta charset="utf-8"><style>{C}</style></head><body><div class="pg">
-<div class="top"><img src="{gen29.LOGO}"><span>{n:02d} / {T:02d}</span></div>
+<div class="brand"><img class="r" src="{ROUND}"><img class="w" src="{WORD}"><span class="n">{n:02d} / {T:02d}</span></div>
 <div class="mn">{body}</div>
-<div class="ft"><span>SAT MATH · SYSTEMS</span><span>{"Гүйлгээд үз →" if n < T else "@globalmathprep"}</span></div></div></body></html>'''
+<div class="ft"><span><b>globalmathprep.academy</b> · SAT MATH</span><span>{"Гүйлгээд үз →" if n < T else "@globalmathprep"}</span></div></div></body></html>'''
 
 
 if __name__ == '__main__':
