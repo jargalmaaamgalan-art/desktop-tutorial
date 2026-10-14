@@ -5,7 +5,7 @@ then the constant decides) and Worked Example 1 (-ax-12y=15, 4x+3y=-2, no soluti
 import sys
 import gen29, gen30, gen31, gen32, gen33
 
-AC, SOFT, TINT = '#1d4ed8', '#dbe5fd', '#f5f8ff'   # royal blue (not used by recent posts)
+AC, SOFT, TINT = '#7e22ce', '#f0e4fb', '#faf6fe'   # purple (not used by recent posts)
 
 EXTRA = gen33.EXTRA.replace('#be185d', AC) + """
 .lead{font-size:44px!important;line-height:1.35!important}
