@@ -7,7 +7,7 @@ import base64
 import gen29, gen30, gen31, gen32, gen33
 
 def _b(f): return 'data:image/png;base64,' + base64.b64encode(open(f, 'rb').read()).decode()
-ROUND, WORD = _b('gmp-round.png'), _b('gmp-wordmark-dark.png')
+ROUND, WORD = _b('gmp-round.png'), _b('gmp-name-dark.png')
 
 AC, SOFT, TINT = '#7e22ce', '#f0e4fb', '#faf6fe'   # purple (not used by recent posts)
 
@@ -35,7 +35,9 @@ EXTRA = gen33.EXTRA.replace('#be185d', AC) + """
 .cs span{display:block;font-size:26px;color:#556;font-weight:600;margin-top:4px;line-height:1.25}
 .brand{position:absolute;top:34px;left:56px;right:56px;display:flex;align-items:center;gap:18px;z-index:3}
 .brand .r{width:112px;height:112px;border-radius:50%;box-shadow:0 4px 14px rgba(15,30,80,.25)}
-.brand .w{height:64px}
+.brand .w{height:36px;display:block}
+.brand .tx{display:flex;flex-direction:column;gap:12px}
+.brand .jg{font-family:S,serif;font-weight:700;font-size:27px;letter-spacing:5px;color:#af7f22;line-height:1}
 .brand .n{margin-left:auto;font-weight:800;font-size:26px;letter-spacing:2px;color:"""+AC+""";border:2.5px solid """+AC+""";border-radius:30px;padding:8px 18px}
 .ft b{color:#1e2a5a}
 .sys{font-family:S,serif;font-size:50px;line-height:1.5;text-align:center;margin:14px 0}
@@ -96,7 +98,7 @@ PAGES = [
 
 def page(C, n, T, body):
     return f'''<!doctype html><html lang="mn"><head><meta charset="utf-8"><style>{C}</style></head><body><div class="pg">
-<div class="brand"><img class="r" src="{ROUND}"><img class="w" src="{WORD}"><span class="n">{n:02d} / {T:02d}</span></div>
+<div class="brand"><img class="r" src="{ROUND}"><div class="tx"><img class="w" src="{WORD}"><div class="jg">JARGALMAA AMGALAN</div></div><span class="n">{n:02d} / {T:02d}</span></div>
 <div class="mn">{body}</div>
 <div class="ft"><span><b>globalmathprep.academy</b> · SAT MATH</span><span>{"Гүйлгээд үз →" if n < T else "@globalmathprep"}</span></div></div></body></html>'''
 
