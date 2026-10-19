@@ -1,0 +1,225 @@
+[
+ {
+  "date": "2026-10-20",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "mean-median",
+  "text": "1 тоо нэмэгдэхэд аль нь илүү өөрчлөгдөх вэ? 🤔\nДундаж уу, медиан уу?\n\n📌 Outlier дунджийг чирдэг. Медиан зөвхөн голын байрлалаас хамаарна.\n1, 2, 3, 4, 5 → дундаж 3, медиан 3\n15 нэмэгдвэл → дундаж 5 (+2), медиан 3.5 (+0.5)\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-20_0730_M_mean-median_1.png",
+   "2026-10-20_0730_M_mean-median_2.png",
+   "2026-10-20_0730_M_mean-median_3.png",
+   "2026-10-20_0730_M_mean-median_4.png",
+   "2026-10-20_0730_M_mean-median_5.png",
+   "2026-10-20_0730_M_mean-median_6.png"
+  ]
+ },
+ {
+  "date": "2026-10-20",
+  "time": "11:00",
+  "kind": "General",
+  "key": "dec-sat-dates",
+  "text": "12/5-ны SAT-д бүртгүүлэх үү? 📅 Мэдээллийн цуврал #03\n\n🗓️ Бүртгэл хаагдана: 11/20\n⏰ Хоцорсон бүртгэл, өөрчлөлт: 11/24 (+$38)\n✏️ Шалгалт: 12/5\n📊 Оноо гарна: 12/18\n💳 Нийт төлбөр: $111\n\nХугацаа АНУ-ын зүүн эргийн цагаар 23:59-д дуусна. Энэ нь УБ цагаар маргааш нь 12:59.\nЭх сурвалж: satsuite.collegeboard.org\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-20_1100_G_dec-sat-dates_1.png",
+   "2026-10-20_1100_G_dec-sat-dates_2.png",
+   "2026-10-20_1100_G_dec-sat-dates_3.png",
+   "2026-10-20_1100_G_dec-sat-dates_4.png",
+   "2026-10-20_1100_G_dec-sat-dates_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-21",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "linear-vs-exponential",
+  "text": "Нэмэгдэх үү, үржигдэх үү? 5 секундэд ялгаарай ⚡\n\n📌 +3 тутам → linear: y = 5 + 3x\n📌 ×2 тутам → exponential: y = 5 · 2ˣ\n📌 \"doubles every 4 hours\" → зэрэг нь t ÷ 4\n\n300 · 2^(12/4) = 2,400 ✅ (300 · 2¹² биш)\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-21_0730_M_linear-vs-exponential_1.png",
+   "2026-10-21_0730_M_linear-vs-exponential_2.png",
+   "2026-10-21_0730_M_linear-vs-exponential_3.png",
+   "2026-10-21_0730_M_linear-vs-exponential_4.png",
+   "2026-10-21_0730_M_linear-vs-exponential_5.png",
+   "2026-10-21_0730_M_linear-vs-exponential_6.png"
+  ]
+ },
+ {
+  "date": "2026-10-21",
+  "time": "11:00",
+  "kind": "General",
+  "key": "parents-portal",
+  "text": "Хүүхдийнхээ ахицыг утсаараа хараарай 📱\n\n✅ Гэрийн даалгавар автоматаар шалгагдана\n✅ 7 хоног бүр жинхэнэ SAT шиг сорил тест\n✅ Сул сэдвийг сайт өөрөө тооцоолж харуулна\n✅ Тасалсан хичээлийн бичлэг, ирц харагдана\n\nЭцэг эх өөрийн эрхээр нэвтэрч бүгдийг нь харна.\nЭхлээд үнэгүй түвшин тогтоох тест өгөөрэй 👇\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-21_1100_G_parents-portal_1.png",
+   "2026-10-21_1100_G_parents-portal_2.png",
+   "2026-10-21_1100_G_parents-portal_3.png",
+   "2026-10-21_1100_G_parents-portal_4.png",
+   "2026-10-21_1100_G_parents-portal_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-22",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "discriminant",
+  "text": "x² − 6x + 9 = 0 хэдэн шийдтэй вэ? 3 секундэд 🔍\n\n📌 D = b² − 4ac\nD > 0 → 2 шийд\nD = 0 → 1 шийд\nD < 0 → бодит шийдгүй\n\n⚠️ (−6)² = 36, −36 биш!\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-22_0730_M_discriminant_1.png",
+   "2026-10-22_0730_M_discriminant_2.png",
+   "2026-10-22_0730_M_discriminant_3.png",
+   "2026-10-22_0730_M_discriminant_4.png",
+   "2026-10-22_0730_M_discriminant_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-22",
+  "time": "11:00",
+  "kind": "General",
+  "key": "december-offer",
+  "text": "12-р сард SAT өгөх гэж байна уу? 🎯\n🎁 4 долоо хоног суралцаад нэмэлт 2 долоо хоног ҮНЭГҮЙ\n(Ирц, даалгавар, хичээл дээрх идэвх гурвуулаа 90%-иас доошгүй бол)\n\n📅 Эрчимжүүлсэн анги 10/26-нд эхэлнэ\n🕗 20:00–21:20 (УБ цаг), Zoom-ээр\n➗ SAT Математик: Даваа · Лхагва · Баасан\n📖 SAT Reading & Writing: Мягмар · Пүрэв · Бямба\n💳 960,000₮ / сар · хоёулаа 1,800,000₮\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-22_1100_G_december-offer_1.png",
+   "2026-10-22_1100_G_december-offer_2.png",
+   "2026-10-22_1100_G_december-offer_3.png",
+   "2026-10-22_1100_G_december-offer_4.png"
+  ]
+ },
+ {
+  "date": "2026-10-23",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "slope-meaning",
+  "text": "C = 45x + 120. 45 гэж юу вэ? 🤔\nSAT тооцоолохыг биш, утгыг нь асуудаг.\n\n📌 each, per, every → налуу (45 = нэг хичээл тутамд $45)\n📌 initial, fixed fee → эхний утга (120 = x = 0 үед)\n⚠️ x-гүй тоо бол эхлэл, нэгжийн үнэ биш\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-23_0730_M_slope-meaning_1.png",
+   "2026-10-23_0730_M_slope-meaning_2.png",
+   "2026-10-23_0730_M_slope-meaning_3.png",
+   "2026-10-23_0730_M_slope-meaning_4.png",
+   "2026-10-23_0730_M_slope-meaning_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-23",
+  "time": "09:00",
+  "kind": "English",
+  "key": "sva-quiz",
+  "text": "Баасан гарагийн сорил 🧠\n1 асуулт. 4 сонголт. Чадах уу?\n\nЗөвлөгөө: эзэн ба үйл үгийн хооронд урт хэсэг орсон байна. Түүнийг хаагаад уншаарай.\n\nХариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nЗөв хариуг Ням гарагт хэлнэ 🏆\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
+  "files": [
+   "2026-10-23_0900_E_sva-quiz_1.png",
+   "2026-10-23_0900_E_sva-quiz_2.png",
+   "2026-10-23_0900_E_sva-quiz_3.png",
+   "2026-10-23_0900_E_sva-quiz_4.png"
+  ]
+ },
+ {
+  "date": "2026-10-23",
+  "time": "11:00",
+  "kind": "General",
+  "key": "score-percentiles",
+  "text": "1400 гэдэг сайн оноо уу? 📊 Мэдээллийн цуврал #04\n\nSAT өгсөн сурагчдын дунд (user percentile):\n1000 → 47\n1100 → 62\n1200 → 75\n1300 → 85\n1400 → 93\n1500 → 97\n\n1400 = 100 сурагчаас 93 нь ижил буюу доогуур оноотой.\nЭх сурвалж: research.collegeboard.org\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-23_1100_G_score-percentiles_1.png",
+   "2026-10-23_1100_G_score-percentiles_2.png",
+   "2026-10-23_1100_G_score-percentiles_3.png",
+   "2026-10-23_1100_G_score-percentiles_4.png",
+   "2026-10-23_1100_G_score-percentiles_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-24",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "unit-conversion",
+  "text": "1 м² = 100 см²? Буруу! ❌\n\n📌 Урт × 100\n📌 Талбай × 100² = 10,000\n📌 Эзэлхүүн × 100³ = 1,000,000\n\n72 км/ц × 1000/3600 = 20 м/с ✅\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-24_0730_M_unit-conversion_1.png",
+   "2026-10-24_0730_M_unit-conversion_2.png",
+   "2026-10-24_0730_M_unit-conversion_3.png",
+   "2026-10-24_0730_M_unit-conversion_4.png",
+   "2026-10-24_0730_M_unit-conversion_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-24",
+  "time": "11:00",
+  "kind": "General",
+  "key": "test-required-schools",
+  "text": "SAT заавал уу? 🎓 Мэдээллийн цуврал #05\n2027 оны намар элсэх сурагчдын шаардлага:\n\n✅ Заавал: MIT, Harvard, Yale, Stanford, Brown, Cornell, Penn\n✅ Dartmouth: заавал, гадаадын сурагч AP, IB, A-Level эсвэл улсын шалгалтаар орлуулж болно\n🔸 Princeton, Columbia: энэ жил сонголттой\n🔸 U of T: сонголттой (Engineering-д бүх оноогоо илгээнэ)\n\nШаардлага жил бүр өөрчлөгддөг. Сургуулийнхаа сайтыг заавал шалгаарай.\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-24_1100_G_test-required-schools_1.png",
+   "2026-10-24_1100_G_test-required-schools_2.png",
+   "2026-10-24_1100_G_test-required-schools_3.png",
+   "2026-10-24_1100_G_test-required-schools_4.png",
+   "2026-10-24_1100_G_test-required-schools_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-25",
+  "time": "07:30",
+  "kind": "English",
+  "key": "sva-answer-5-words",
+  "text": "Баасан гарагийн хариу: B) attracts ✅\nЭзэн нь collection (ганц тоо), stamps биш.\n\nДараа нь танил боловч SAT дээр өөр утгатай 5 үг 👀\npedestrian · compromise · qualify · check · sanction\n\nАль үг нь шинэ байсан бэ? Коммент дээр бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
+  "files": [
+   "2026-10-25_0730_E_sva-answer-5-words_1.png",
+   "2026-10-25_0730_E_sva-answer-5-words_2.png",
+   "2026-10-25_0730_E_sva-answer-5-words_3.png",
+   "2026-10-25_0730_E_sva-answer-5-words_4.png",
+   "2026-10-25_0730_E_sva-answer-5-words_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-25",
+  "time": "11:00",
+  "kind": "General",
+  "key": "six-week-plan",
+  "text": "12/5 хүртэл 6 долоо хоног. Төлөвлөгөө 🗓️ Мэдээллийн цуврал #06\n\n1️⃣ 10/26–11/1: Bluebook дээр бүтэн тест\n2️⃣ 11/2–11/8: Хамгийн их алдсан 2 сэдэв\n3️⃣ 11/9–11/15: Дараагийн 2 сэдэв\n4️⃣ 11/16–11/22: 2 дахь бүтэн тест (бүртгэл 11/20-ны дотор!)\n5️⃣ 11/23–11/29: Алдааны дэвтрээ давтах\n6️⃣ 11/30–12/4: Хөнгөн давталт, сайн унтах\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-25_1100_G_six-week-plan_1.png",
+   "2026-10-25_1100_G_six-week-plan_2.png",
+   "2026-10-25_1100_G_six-week-plan_3.png",
+   "2026-10-25_1100_G_six-week-plan_4.png"
+  ]
+ },
+ {
+  "date": "2026-10-26",
+  "time": "07:30",
+  "kind": "Math",
+  "key": "given-that-probability",
+  "text": "\"Given that\" гэдэг 2 үг хариуг өөрчилнө 🎯\n\n27/100 ❌ бүх сурагчаас\n27/60 ❌ 12-р ангиас\n27/45 ✅ ном уншдаг сурагчдаас\n\n📌 \"Given that\" ард байгаа бүлгийн нийт тоо хуваарь болно.\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #GlobalMathPrep",
+  "files": [
+   "2026-10-26_0730_M_given-that-probability_1.png",
+   "2026-10-26_0730_M_given-that-probability_2.png",
+   "2026-10-26_0730_M_given-that-probability_3.png",
+   "2026-10-26_0730_M_given-that-probability_4.png",
+   "2026-10-26_0730_M_given-that-probability_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-26",
+  "time": "09:00",
+  "kind": "English",
+  "key": "semicolon-colon",
+  "text": "; ба : хоёр өөр ажил хийдэг ✍️\n\n📌 ; → 2 бүтэн өгүүлбэрийг холбоно\n📌 : → зүүн тал бүтэн, баруун тал тайлбар, жагсаалт\n⚠️ \"The trip includes: ...\" буруу\n\nӨөрөө бодоод, хариугаа коммент дээр A, B, C, D гэж бичээрэй 👇\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
+  "files": [
+   "2026-10-26_0900_E_semicolon-colon_1.png",
+   "2026-10-26_0900_E_semicolon-colon_2.png",
+   "2026-10-26_0900_E_semicolon-colon_3.png",
+   "2026-10-26_0900_E_semicolon-colon_4.png",
+   "2026-10-26_0900_E_semicolon-colon_5.png"
+  ]
+ },
+ {
+  "date": "2026-10-26",
+  "time": "11:00",
+  "kind": "General",
+  "key": "bluebook-tools",
+  "text": "Bluebook-д 9 хэрэгсэл бий. Ашигладаг уу? 🧰 Мэдээллийн цуврал #07\n\n🧮 Desmos тооны машин\n✂️ Option Eliminator: буруу сонголтыг зурах\n🔖 Mark for Review: дараа нь буцах\n📄 Reference Sheet, Highlights & Notes, Testing Timer, Line Reader, Question Menu, Zoom\n\nBluebook дээр бүтэн, үнэгүй practice тест байдаг. Хэрэгслүүдээ тэнд ашиглаж дадаарай.\nЭх сурвалж: bluebook.collegeboard.org\nХадгалаад, найздаа илгээгээрэй 📌\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMongolia #GlobalMathPrep",
+  "files": [
+   "2026-10-26_1100_G_bluebook-tools_1.png",
+   "2026-10-26_1100_G_bluebook-tools_2.png",
+   "2026-10-26_1100_G_bluebook-tools_3.png",
+   "2026-10-26_1100_G_bluebook-tools_4.png",
+   "2026-10-26_1100_G_bluebook-tools_5.png"
+  ]
+ }
+]
