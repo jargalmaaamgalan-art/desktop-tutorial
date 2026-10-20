@@ -6,12 +6,12 @@
   "key": "m-desmos-system",
   "text": "Энэ системийг 5 секундэд бодоорой ⚡\nГараар 1–2 минут. Desmos-оор 5 секунд.\n\n1️⃣ 2 тэгшитгэлээ Desmos-д бичнэ\n2️⃣ Огтлолцох цэг дээр дарна\n3️⃣ (x, y) гарна\n\n⚠️ Асуулт x-ийг асууж байна уу, y-ийг үү? Энэ урхинд олон хүн оноо алддаг.\n\nХариугаа харахаасаа өмнө өөрөө бодоод, коммент дээр A, B, C, D гэж бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #Desmos #GlobalMathPrep",
   "files": [
-   "2026-10-27_0730_M_m-desmos-system_1.png",
-   "2026-10-27_0730_M_m-desmos-system_2.png",
-   "2026-10-27_0730_M_m-desmos-system_3.png",
-   "2026-10-27_0730_M_m-desmos-system_4.png",
-   "2026-10-27_0730_M_m-desmos-system_5.png",
-   "2026-10-27_0730_M_m-desmos-system_6.png"
+   "2026-10-27_0730_M_m-desmos-system_1_v2.png",
+   "2026-10-27_0730_M_m-desmos-system_2_v2.png",
+   "2026-10-27_0730_M_m-desmos-system_3_v2.png",
+   "2026-10-27_0730_M_m-desmos-system_4_v2.png",
+   "2026-10-27_0730_M_m-desmos-system_5_v2.png",
+   "2026-10-27_0730_M_m-desmos-system_6_v2.png"
   ]
  },
  {
@@ -21,12 +21,12 @@
   "key": "e-5-words",
   "text": "SAT-д байнга гардаг 5 үг 📚\n\nundermine: сулруулах\nunderscore: онцлон харуулах\ncorroborate: нотлох, батлах\nreconcile: нийцүүлэх, эвлэрүүлэх\nambivalent: хоёр янзын бодолтой\n\n4-р слайдын асуултыг бодоод, хариугаа коммент дээр бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
   "files": [
-   "2026-10-27_0900_E_e-5-words_1.png",
-   "2026-10-27_0900_E_e-5-words_2.png",
-   "2026-10-27_0900_E_e-5-words_3.png",
-   "2026-10-27_0900_E_e-5-words_4.png",
-   "2026-10-27_0900_E_e-5-words_5.png",
-   "2026-10-27_0900_E_e-5-words_6.png"
+   "2026-10-27_0900_E_e-5-words_1_v2.png",
+   "2026-10-27_0900_E_e-5-words_2_v2.png",
+   "2026-10-27_0900_E_e-5-words_3_v2.png",
+   "2026-10-27_0900_E_e-5-words_4_v2.png",
+   "2026-10-27_0900_E_e-5-words_5_v2.png",
+   "2026-10-27_0900_E_e-5-words_6_v2.png"
   ]
  },
  {
@@ -36,10 +36,10 @@
   "key": "g-opendoors",
   "text": "АНУ-д сурч буй монгол оюутны тоо 19% өслөө 🇺🇸 Мэдээллийн цуврал #08\n\n📊 2024/25: 1,991 оюутан (өмнөх жил 1,671)\n🎓 Бакалавр: 1,253 (+27.1%)\n🎓 Магистр, доктор: 367 (+9.6%)\n\nИлүү олон хүүхэд өрсөлдөж байна. 11-р ангидаа гол SAT-аа өгөх төлөвлөгөө гаргаарай.\n\nЭх сурвалж: Open Doors 2025, Mongolia fact sheet\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\n#SAT #StudyAbroad #SATMongolia #GlobalMathPrep",
   "files": [
-   "2026-10-27_1100_G_g-opendoors_1.png",
-   "2026-10-27_1100_G_g-opendoors_2.png",
-   "2026-10-27_1100_G_g-opendoors_3.png",
-   "2026-10-27_1100_G_g-opendoors_4.png"
+   "2026-10-27_1100_G_g-opendoors_1_v2.png",
+   "2026-10-27_1100_G_g-opendoors_2_v2.png",
+   "2026-10-27_1100_G_g-opendoors_3_v2.png",
+   "2026-10-27_1100_G_g-opendoors_4_v2.png"
   ]
  },
  {
@@ -49,12 +49,12 @@
   "key": "m-circle-radius",
   "text": "Радиус нь 11 биш ⭕\n\nx² + y² − 6x + 8y = 11\n📌 Бүтэн квадрат болгоод, зүүн талд нэмсэн 9, 16-г баруун талд бас нэмнэ\n📌 r² = 36 → r = 6\n\nDesmos-д тэгшитгэлээ бичээд шалгаж болно.\n\nХариугаа харахаасаа өмнө өөрөө бодоод, коммент дээр A, B, C, D гэж бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #Desmos #GlobalMathPrep",
   "files": [
-   "2026-10-28_0730_M_m-circle-radius_1.png",
-   "2026-10-28_0730_M_m-circle-radius_2.png",
-   "2026-10-28_0730_M_m-circle-radius_3.png",
-   "2026-10-28_0730_M_m-circle-radius_4.png",
-   "2026-10-28_0730_M_m-circle-radius_5.png",
-   "2026-10-28_0730_M_m-circle-radius_6.png"
+   "2026-10-28_0730_M_m-circle-radius_1_v2.png",
+   "2026-10-28_0730_M_m-circle-radius_2_v2.png",
+   "2026-10-28_0730_M_m-circle-radius_3_v2.png",
+   "2026-10-28_0730_M_m-circle-radius_4_v2.png",
+   "2026-10-28_0730_M_m-circle-radius_5_v2.png",
+   "2026-10-28_0730_M_m-circle-radius_6_v2.png"
   ]
  },
  {
@@ -64,11 +64,11 @@
   "key": "e-notes-question",
   "text": "Notes асуултыг 10 секундэд 📝\nСүүлийн асуултууд ихэвчлэн ийм байдаг.\n\n1️⃣ Асуултын төгсгөлөөс зорилгыг олно\n2️⃣ Зорилготой таарах тэмдэглэлийг олно\n3️⃣ Тэр мэдээллийг агуулсан сонголтыг сонгоно\n\n⚠️ Бүх сонголт үнэн байж болно. Зорилгод таарсан нь л зөв.\n\nХариугаа харахаасаа өмнө өөрөө бодоод, коммент дээр A, B, C, D гэж бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
   "files": [
-   "2026-10-28_0900_E_e-notes-question_1.png",
-   "2026-10-28_0900_E_e-notes-question_2.png",
-   "2026-10-28_0900_E_e-notes-question_3.png",
-   "2026-10-28_0900_E_e-notes-question_4.png",
-   "2026-10-28_0900_E_e-notes-question_5.png"
+   "2026-10-28_0900_E_e-notes-question_1_v2.png",
+   "2026-10-28_0900_E_e-notes-question_2_v2.png",
+   "2026-10-28_0900_E_e-notes-question_3_v2.png",
+   "2026-10-28_0900_E_e-notes-question_4_v2.png",
+   "2026-10-28_0900_E_e-notes-question_5_v2.png"
   ]
  },
  {
@@ -78,10 +78,10 @@
   "key": "g-early",
   "text": "Early Decision, Early Action: ялгаа нь? 🎓 Мэдээллийн цуврал #10\n\n✅ ED: тэнцвэл заавал очно\n✅ EA: заавал биш\n✅ Restrictive EA: заавал биш, гэхдээ бусад хувийн сургуульд early өгөхийг хязгаарладаг (Harvard, Yale, Princeton, Stanford)\n✅ RD: ихэвчлэн 1/1–1/15\n\nХугацаа сургууль бүр өөр. Сургуулийнхаа сайтыг заавал шалгаарай.\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\n#SAT #StudyAbroad #SATMongolia #GlobalMathPrep",
   "files": [
-   "2026-10-28_1100_G_g-early_1.png",
-   "2026-10-28_1100_G_g-early_2.png",
-   "2026-10-28_1100_G_g-early_3.png",
-   "2026-10-28_1100_G_g-early_4.png"
+   "2026-10-28_1100_G_g-early_1_v2.png",
+   "2026-10-28_1100_G_g-early_2_v2.png",
+   "2026-10-28_1100_G_g-early_3_v2.png",
+   "2026-10-28_1100_G_g-early_4_v2.png"
   ]
  },
  {
@@ -91,11 +91,11 @@
   "key": "m-sum-of-roots",
   "text": "2 шийдийн нийлбэр? Бодохгүйгээр 🤯\n\n📌 ax² + bx + c = 0\nНийлбэр = −b / a\nҮржвэр = c / a\n\n3 секунд. Томьёогүй бол 2 минут.\n\nХариугаа харахаасаа өмнө өөрөө бодоод, коммент дээр A, B, C, D гэж бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATMath #Desmos #GlobalMathPrep",
   "files": [
-   "2026-10-29_0730_M_m-sum-of-roots_1.png",
-   "2026-10-29_0730_M_m-sum-of-roots_2.png",
-   "2026-10-29_0730_M_m-sum-of-roots_3.png",
-   "2026-10-29_0730_M_m-sum-of-roots_4.png",
-   "2026-10-29_0730_M_m-sum-of-roots_5.png"
+   "2026-10-29_0730_M_m-sum-of-roots_1_v2.png",
+   "2026-10-29_0730_M_m-sum-of-roots_2_v2.png",
+   "2026-10-29_0730_M_m-sum-of-roots_3_v2.png",
+   "2026-10-29_0730_M_m-sum-of-roots_4_v2.png",
+   "2026-10-29_0730_M_m-sum-of-roots_5_v2.png"
   ]
  },
  {
@@ -105,11 +105,11 @@
   "key": "e-apostrophe",
   "text": "'s уу, s' үү? ✍️\n\nresearcher's → 1 судлаачийн\nresearchers' → олон судлаачийн\nresearchers → олон судлаач\nits → түүний · it's → it is\n\nНэг жижиг тэмдэг 1 оноо шийднэ.\n\nХариугаа харахаасаа өмнө өөрөө бодоод, коммент дээр A, B, C, D гэж бичээрэй 👇\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\nSAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this content.\n\n#SAT #DigitalSAT #SATEnglish #GlobalMathPrep",
   "files": [
-   "2026-10-29_0900_E_e-apostrophe_1.png",
-   "2026-10-29_0900_E_e-apostrophe_2.png",
-   "2026-10-29_0900_E_e-apostrophe_3.png",
-   "2026-10-29_0900_E_e-apostrophe_4.png",
-   "2026-10-29_0900_E_e-apostrophe_5.png"
+   "2026-10-29_0900_E_e-apostrophe_1_v2.png",
+   "2026-10-29_0900_E_e-apostrophe_2_v2.png",
+   "2026-10-29_0900_E_e-apostrophe_3_v2.png",
+   "2026-10-29_0900_E_e-apostrophe_4_v2.png",
+   "2026-10-29_0900_E_e-apostrophe_5_v2.png"
   ]
  },
  {
@@ -119,10 +119,10 @@
   "key": "g-roadmap",
   "text": "Гадаадад сурах замнал: 9–12-р анги 🗺️ Мэдээллийн цуврал #09\n\n9️⃣ Дүн, англи хэл, клуб, олимпиад\n🔟 Анхны SAT эсвэл IELTS туршилт, зуны хөтөлбөр\n1️⃣1️⃣ Гол SAT оноо, AP, сургуулийн жагсаалт\n1️⃣2️⃣ 11/1 эсвэл 11/15 Early, 1-р сард Regular, тэтгэлэг\n\n12-р ангидаа эхлэхэд оройтдог. Эрт эхлээрэй.\n\n📤 SAT өгөх найздаа илгээгээрэй. 📌 Хадгалаарай.\n\n#SAT #StudyAbroad #SATMongolia #GlobalMathPrep",
   "files": [
-   "2026-10-29_1100_G_g-roadmap_1.png",
-   "2026-10-29_1100_G_g-roadmap_2.png",
-   "2026-10-29_1100_G_g-roadmap_3.png",
-   "2026-10-29_1100_G_g-roadmap_4.png"
+   "2026-10-29_1100_G_g-roadmap_1_v2.png",
+   "2026-10-29_1100_G_g-roadmap_2_v2.png",
+   "2026-10-29_1100_G_g-roadmap_3_v2.png",
+   "2026-10-29_1100_G_g-roadmap_4_v2.png"
   ]
  }
 ]
